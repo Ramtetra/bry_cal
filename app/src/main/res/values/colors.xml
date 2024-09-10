@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="yellow">#FFC107</color>
+    <color name="green">#15931A</color>
+    <color name="theme_color">#FFC107</color>
+    <color name="gray">#FFFFFF</color>
+    <color name="heading_color">#333333</color>
+    <color name="text_button_color">#000000</color>
+    <color name="text_color">#545454</color>
+    <color name="text_color_blue">#1A3BF4</color>
+    <color name="red">#B63B14</color>
+    <color name="blue_color">#00BCD4</color>
+    <color name="red_color">#FF5722</color>
+    <color name="green_color_card">#00B050</color>
+    <color name="light_yellow_card">#FFEAAc</color>
+
+
+</resources>

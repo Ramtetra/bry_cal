@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">BryCal</string>
+    <string name="psycal">Psycal</string>
+    <string name="mixed_air_conditions">Mixed Air\nConditions</string>
+    <string name="unit_converter">Unit\nConverter</string>
+    <string name="ductulator">Ductulator</string>
+    <string name="co2">Co2</string>
+    <string name="weather_bin_data">Weather\nBin Data</string>
+    <string name="si">SI</string>
+    <string name="ip">IP</string>
+    <string name="input_output">INPUT/OUTPUT</string>
+    <string name="air_stream_a">Air Stream-A</string>
+    <string name="air_stream_b">Air Stream-B</string>
+    <string name="air_stream_c">Air Stream-C</string>
+
+
+    <style name="CustomTextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:layout_height">70dp</item>
+        <item name="android:padding">8dp</item>
+        <item name="boxStrokeColor">#FF6200EE</item>
+        <item name="hintTextAppearance">@style/HintTextAppearance</item>
+    </style>
+    <!-- Example for customizing hint text appearance -->
+    <style name="HintTextAppearance" parent="TextAppearance.AppCompat.Small">
+        <item name="android:textColor">#FF6200EE</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+</resources>

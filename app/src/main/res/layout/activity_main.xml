@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/app_bar"/>
+
+
+ <androidx.constraintlayout.widget.ConstraintLayout
+     app:layout_constraintTop_toBottomOf="@+id/toolbar"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        app:cardCornerRadius="6dp"
+        app:cardElevation="10dp"
+        app:cardMaxElevation="10dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:cardBackgroundColor="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_marginBottom="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioGroup
+                android:id="@+id/radioGroup1"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp">
+
+                <RadioButton
+                    android:id="@+id/rbPsycal"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:padding="4dp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textColor="@color/text_button_color"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:drawablePadding="5dp"
+                    android:background="@drawable/shape_border_radius"
+                    android:drawableRight="@drawable/psycal_icon"
+                    android:text="@string/psycal"
+                    android:textSize="13sp" />
+
+                <!--adding a radio button -->
+                <RadioButton
+                    android:id="@+id/rbMixedAir"
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:padding="4dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:drawablePadding="5dp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textColor="@color/text_button_color"
+                    android:drawableRight="@drawable/mixed_air_icon"
+                    android:background="@drawable/shape_border_radius"
+                    android:text="@string/mixed_air_conditions"
+                    android:textSize="13sp" />
+
+            </RadioGroup>
+
+            <RadioGroup
+                android:id="@+id/radioGroup2"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/radioGroup1"
+                android:orientation="horizontal"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp">
+
+                <RadioButton
+                    android:id="@+id/rbUnitConverter"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:padding="4dp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textColor="@color/text_button_color"
+                    android:layout_gravity="center"
+                    android:drawablePadding="5dp"
+                    android:background="@drawable/shape_border_radius"
+                    android:drawableRight="@drawable/unit_converter_icon"
+                    android:text="@string/unit_converter"
+                    android:textSize="13sp" />
+
+                <!--adding a radio button -->
+                <RadioButton
+                    android:id="@+id/rbDuctulator"
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:padding="4dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:drawablePadding="5dp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textColor="@color/text_button_color"
+                    android:drawableRight="@drawable/ductulator_icon"
+                    android:background="@drawable/shape_border_radius"
+                    android:text="@string/ductulator"
+                    android:textSize="13sp" />
+
+            </RadioGroup>
+            <RadioGroup
+                android:id="@+id/radioGroup3"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/radioGroup2"
+                android:orientation="horizontal"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp">
+
+                <RadioButton
+                    android:id="@+id/rbCo2"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:padding="4dp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textColor="@color/text_button_color"
+                    android:layout_gravity="center"
+                    android:drawablePadding="5dp"
+                    android:background="@drawable/shape_border_radius"
+                    android:drawableRight="@drawable/co2_icon"
+                    android:text="@string/co2"
+                    android:textSize="13sp" />
+
+                <!--adding a radio button -->
+                <RadioButton
+                    android:id="@+id/rbWeatherBin"
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:padding="4dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:drawablePadding="5dp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textColor="@color/text_button_color"
+                    android:drawableRight="@drawable/weather_icon"
+                    android:background="@drawable/shape_border_radius"
+                    android:text="@string/weather_bin_data"
+                    android:textSize="13sp" />
+
+            </RadioGroup>
+
+            <ImageView
+                android:id="@+id/imageLogo"
+                app:layout_constraintTop_toBottomOf="@+id/radioGroup3"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:src="@drawable/image"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+   <!-- <LinearLayout
+        android:id="@+id/btnEnter"
+        android:layout_marginTop="30dp"
+        android:padding="10dp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginLeft="20dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:background="@drawable/btn_bg_selector"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textSize="15sp"
+            android:text="Enter"
+            android:fontFamily="@font/poppins_regular"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>-->
+ </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
