@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DuctulatorActivity">
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/app_bar"/>
+    <LinearLayout
+        android:id="@+id/layoutHeader"
+        android:orientation="horizontal"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/layout1"
+            android:orientation="vertical"
+            android:background="@drawable/shape_border_radius"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:src="@drawable/psycal_icon"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="@string/psycal"
+                android:textColor="@color/heading_color"
+                android:textSize="13sp"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/layout2"
+            android:orientation="vertical"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/shape_border_radius"
+            android:layout_width="55dp"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:src="@drawable/mixed_air_icon"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="@string/mixed_air_conditions"
+                android:textColor="@color/heading_color"
+                android:textSize="13sp"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/layout3"
+            android:orientation="vertical"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/shape_border_radius"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_gravity="center"
+                android:src="@drawable/unit_converter_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="@string/unit_converter"
+                android:textColor="@color/heading_color"
+                android:textSize="13sp"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/layout4"
+            android:orientation="vertical"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/shape_border_radius"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_gravity="center"
+                android:src="@drawable/ductulator_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="@string/ductulator"
+                android:textColor="@color/heading_color"
+                android:textSize="14sp"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/layout5"
+            android:orientation="vertical"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/shape_border_radius_active"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_gravity="center"
+                android:src="@drawable/co2_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="@string/co2"
+                android:textColor="@color/heading_color"
+                android:textSize="14sp"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout6"
+            android:orientation="vertical"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/shape_border_radius"
+            android:layout_width="55dp"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_gravity="center"
+                android:src="@drawable/psycal_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="@string/weather_bin_data"
+                android:textColor="@color/heading_color"
+                android:textSize="14sp"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+    </LinearLayout>
+    <ScrollView
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:paddingBottom="30dp"
+        android:layout_marginTop="160dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_marginTop="100dp"
+            app:cardCornerRadius="8dp"
+            android:layout_margin="10dp"
+            android:paddingBottom="20dp"
+            android:elevation="10dp"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="300dp">
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

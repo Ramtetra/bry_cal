@@ -529,7 +529,7 @@
                             android:layout_marginTop="10dp"
                             android:layout_marginLeft="10dp"
                             android:layout_marginRight="10dp"
-                            android:background="@drawable/button_shape_corner_radius"
+                            android:background="@drawable/shape_rectangel_green"
                             android:layout_width="100dp"
                             android:layout_height="30dp">
 
@@ -557,6 +557,7 @@
 
                         <com.google.android.material.textfield.TextInputLayout
                             android:layout_weight="1"
+                            android:layout_marginRight="5dp"
                             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -577,7 +578,7 @@
                         <com.google.android.material.textfield.TextInputLayout
                             android:layout_weight="1"
                             android:layout_marginLeft="5dp"
-                            android:layout_marginRight="10dp"
+                            android:layout_marginRight="5dp"
                             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -593,13 +594,11 @@
                                 android:textSize="15sp">
                             </com.google.android.material.textfield.TextInputEditText>
                         </com.google.android.material.textfield.TextInputLayout>
-
-
-
-
                     </LinearLayout>
+
                     <LinearLayout
                         android:weightSum="2"
+                        android:layout_marginBottom="50dp"
                         android:orientation="horizontal"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">

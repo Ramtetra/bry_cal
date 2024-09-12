@@ -6,20 +6,20 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.tetra.brycal.databinding.ActivityDuctulatorBinding;
+import com.tetra.brycal.databinding.ActivityCo2Binding;
 
-public class DuctulatorActivity extends AppCompatActivity {
-   ActivityDuctulatorBinding binding;
+public class Co2Activity extends AppCompatActivity {
+    ActivityCo2Binding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-       // setContentView(R.layout.activity_ductulator);
-        binding=ActivityDuctulatorBinding.inflate(getLayoutInflater());
+       // setContentView(R.layout.activity_co2);
+        binding=ActivityCo2Binding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         binding.layout1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(DuctulatorActivity.this, PsycalActivity.class);
+                Intent intent=new Intent(Co2Activity.this, PsycalActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
             }
@@ -27,7 +27,7 @@ public class DuctulatorActivity extends AppCompatActivity {
         binding.layout2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent1=new Intent(DuctulatorActivity.this, MixedAirActivity.class);
+                Intent intent1=new Intent(Co2Activity.this, MixedAirActivity.class);
                 intent1.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent1);
             }
@@ -35,7 +35,7 @@ public class DuctulatorActivity extends AppCompatActivity {
         binding.layout3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent2=new Intent(DuctulatorActivity.this, UnitConverterActivity.class);
+                Intent intent2=new Intent(Co2Activity.this, UnitConverterActivity.class);
                 intent2.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent2);
             }
@@ -43,7 +43,7 @@ public class DuctulatorActivity extends AppCompatActivity {
         binding.layout4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent2=new Intent(DuctulatorActivity.this, DuctulatorActivity.class);
+                Intent intent2=new Intent(Co2Activity.this, DuctulatorActivity.class);
                 intent2.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent2);
             }
@@ -51,7 +51,7 @@ public class DuctulatorActivity extends AppCompatActivity {
         binding.layout5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent2=new Intent(DuctulatorActivity.this, Co2Activity.class);
+                Intent intent2=new Intent(Co2Activity.this, Co2Activity.class);
                 intent2.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent2);
             }
@@ -59,7 +59,7 @@ public class DuctulatorActivity extends AppCompatActivity {
         binding.layout6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent2=new Intent(DuctulatorActivity.this, WeatherActivity.class);
+                Intent intent2=new Intent(Co2Activity.this, WeatherActivity.class);
                 intent2.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent2);
             }

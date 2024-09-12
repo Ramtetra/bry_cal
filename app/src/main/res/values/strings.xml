@@ -12,12 +12,22 @@
     <string name="air_stream_a">Air Stream-A</string>
     <string name="air_stream_b">Air Stream-B</string>
     <string name="air_stream_c">Air Stream-C</string>
-
+    <string name="duct_air_flow">DUCT LENGTH(FEET)</string>
+    <string name="duct_length_fit">DUCT AIR FLOW</string>
+    <string name="input_3">INPUT-3</string>
+    <string name="enter_number_of_bend">ENTER NUMBER OF BENDS</string>
+    <string name="fourty_five_bend">45° BENDS(QTY)</string>
+    <string name="ninty_bend">90° BENDS(QTY)</string>
+    <string name="one_eighty_bend">180° BENDS(QTY)</string>
+    <string name="calculate">Calculate</string>
+    <string name="duct_diameter">Duct Diameter(IN)</string>
+    <string name="Friction_loss">Friction Loss-(Inches w.c)</string>
+    <string name="Duct_Velocity">Duct Velocity-(FPM)</string>
 
     <style name="CustomTextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
         <item name="android:layout_height">70dp</item>
         <item name="android:padding">8dp</item>
-        <item name="boxStrokeColor">#FF6200EE</item>
+        <item name="boxStrokeColor">@color/theme_color</item>
         <item name="hintTextAppearance">@style/HintTextAppearance</item>
     </style>
     <!-- Example for customizing hint text appearance -->
