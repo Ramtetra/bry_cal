@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginBottom="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioGroup
+            android:id="@+id/radioGroup1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="15dp">
+
+            <RadioButton
+                android:id="@+id/rb1"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:padding="4dp"
+                android:fontFamily="@font/poppins_medium"
+                android:textColor="@color/text_button_color"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:drawablePadding="5dp"
+                android:background="@drawable/shape_border_radius"
+                android:drawableRight="@drawable/psycal_icon"
+                android:text="@string/psycal"
+                android:textSize="13sp" />
+
+            <!--adding a radio button -->
+            <RadioButton
+                android:id="@+id/rb2"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:padding="4dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:drawablePadding="5dp"
+                android:fontFamily="@font/poppins_medium"
+                android:textColor="@color/text_button_color"
+                android:drawableRight="@drawable/mixed_air_icon"
+                android:background="@drawable/shape_border_radius"
+                android:text="@string/mixed_air_conditions"
+                android:textSize="13sp" />
+
+        </RadioGroup>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
