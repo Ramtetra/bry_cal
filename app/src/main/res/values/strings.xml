@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">BryCal</string>
+    <string name="app_name">AirProperties</string>
     <string name="psycal">Psycal</string>
     <string name="mixed_air_conditions">Mixed Air\nConditions</string>
     <string name="unit_converter">Unit\nConverter</string>
@@ -23,6 +23,12 @@
     <string name="duct_diameter">Duct Diameter(IN)</string>
     <string name="Friction_loss">Friction Loss-(Inches w.c)</string>
     <string name="Duct_Velocity">Duct Velocity-(FPM)</string>
+    <string name="total_electric_load">Duct Velocity-(FPM)</string>
+    <string name="total_electric">Total Electric</string>
+    <string name="service_factor">Service Factor(%)</string>
+    <string name="running_hrs">Running HRS/DAY</string>
+    <string name="no_of_work">No. of work ing days</string>
+
 
     <style name="CustomTextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
         <item name="android:layout_height">70dp</item>

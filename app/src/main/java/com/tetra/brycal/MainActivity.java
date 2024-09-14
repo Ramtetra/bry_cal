@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
         binding.toolbar.txtTitle.setText("BryCal");
 
-       binding.radioGroup1.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+/*       binding.radioGroup1.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
            @Override
            public void onCheckedChanged(RadioGroup group, int checkedId) {
                int selectedOptionId = binding.radioGroup1.getCheckedRadioButtonId();
@@ -40,7 +40,51 @@ public class MainActivity extends AppCompatActivity {
                    startActivity(intent);
                }
            }
+       });*/
+       binding.rbPsycal.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               Intent intent=new Intent(MainActivity.this, PsycalActivity.class);
+               startActivity(intent);
+           }
        });
+       binding.rbMixedAir.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               Intent intent=new Intent(MainActivity.this, MixedAirActivity.class);
+               startActivity(intent);
+           }
+       });
+
+        binding.rbUnitConverter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(MainActivity.this, UnitConverterActivity.class);
+                startActivity(intent);
+            }
+        });
+        binding.rbDuctulator.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(MainActivity.this, DuctulatorActivity.class);
+                startActivity(intent);
+            }
+        });
+        binding.rbCo2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(MainActivity.this, Co2Activity.class);
+                startActivity(intent);
+            }
+        });
+        binding.rbWeatherBin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(MainActivity.this, WeatherActivity.class);
+                startActivity(intent);
+            }
+        });
+
 
     }
 /*    private void replaceFragment(Fragment fragment){

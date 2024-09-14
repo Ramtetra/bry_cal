@@ -173,7 +173,217 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_width="match_parent"
-                android:layout_height="300dp">
+                android:layout_height="wrap_content">
+            <TextView
+                android:background="@color/light_blue"
+                android:layout_width="150dp"
+                android:padding="7dp"
+                android:text="INPUT"
+                android:textSize="15sp"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:fontFamily="@font/poppins_medium"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content"/>
+           <LinearLayout
+               android:orientation="horizontal"
+               android:layout_marginTop="10dp"
+               android:weightSum="4"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content">
+              <LinearLayout
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_weight="1"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="@string/total_electric"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <EditText
+                    android:id="@+id/et1"
+                    android:layout_weight="1"
+                    android:inputType="numberDecimal"
+                    android:layout_marginTop="10dp"
+                    android:padding="5dp"
+                    android:background="@drawable/shape_edittext_rounded"
+                    android:layout_width="80dp"
+                    android:layout_height="45dp"/>
+            </LinearLayout>
+               <LinearLayout
+                   android:layout_marginTop="10dp"
+                   android:orientation="vertical"
+                   android:layout_weight="1"
+                   android:layout_marginLeft="5dp"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content">
+                   <TextView
+                       android:layout_weight="1"
+                       android:fontFamily="@font/poppins_medium"
+                       android:text="@string/service_factor"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"/>
+
+                   <EditText
+                       android:id="@+id/et2"
+                       android:layout_weight="1"
+                       android:inputType="numberDecimal"
+                       android:layout_marginTop="10dp"
+                       android:padding="5dp"
+                       android:background="@drawable/shape_edittext_rounded"
+                       android:layout_width="80dp"
+                       android:layout_height="45dp"/>
+               </LinearLayout>
+               <LinearLayout
+                   android:layout_marginTop="10dp"
+                   android:orientation="vertical"
+                   android:layout_weight="1"
+                   android:layout_marginLeft="5dp"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content">
+                   <TextView
+                       android:layout_weight="1"
+                       android:fontFamily="@font/poppins_medium"
+                       android:text="@string/running_hrs"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"/>
+
+                   <EditText
+                       android:id="@+id/et3"
+                       android:layout_weight="1"
+                       android:inputType="numberDecimal"
+                       android:layout_marginTop="10dp"
+                       android:padding="5dp"
+                       android:background="@drawable/shape_edittext_rounded"
+                       android:layout_width="80dp"
+                       android:layout_height="45dp"/>
+               </LinearLayout>
+
+               <LinearLayout
+                   android:layout_marginTop="10dp"
+                   android:orientation="vertical"
+                   android:layout_weight="1"
+                   android:layout_marginLeft="5dp"
+
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content">
+                   <TextView
+                       android:layout_weight="1"
+                       android:fontFamily="@font/poppins_medium"
+                       android:text="@string/no_of_work"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"/>
+
+                   <EditText
+                       android:id="@+id/et4"
+                       android:layout_weight="1"
+                       android:inputType="numberDecimal"
+                       android:layout_marginTop="10dp"
+                       android:padding="5dp"
+                       android:background="@drawable/shape_edittext_rounded"
+                       android:layout_width="80dp"
+                       android:layout_height="45dp"/>
+               </LinearLayout>
+           </LinearLayout>
+
+         <ImageView
+             android:layout_marginTop="20dp"
+             android:layout_gravity="center"
+             android:src="@drawable/co2_icon_main"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"/>
+                <LinearLayout
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="50dp"
+                    android:orientation="vertical"
+                    android:background="@drawable/shape_rectangle_light_gray"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="30dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/shape_rectangel_green"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp">
+                        <TextView
+                            android:text="Result"
+                            android:textColor="@color/white"
+                            android:gravity="center"
+                            android:layout_gravity="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_weight="1"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginTop="10dp"
+                        android:hint="@string/duct_diameter"
+                        app:layout_constraintTop_toBottomOf="@+id/layoutProjectName">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etDuctDiameter"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="numberDecimal"
+                            android:textSize="15sp">
+                        </com.google.android.material.textfield.TextInputEditText>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_weight="1"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginTop="10dp"
+                        android:hint="@string/Friction_loss"
+                        app:layout_constraintTop_toBottomOf="@+id/layoutProjectName">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etFractionLoss"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="numberDecimal"
+                            android:textSize="15sp">
+                        </com.google.android.material.textfield.TextInputEditText>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_weight="1"
+                        android:layout_marginBottom="50dp"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:hint="@string/Duct_Velocity"
+                        app:layout_constraintTop_toBottomOf="@+id/layoutProjectName">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etDuctVelocity"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="numberDecimal"
+                            android:textSize="15sp">
+                        </com.google.android.material.textfield.TextInputEditText>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
