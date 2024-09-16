@@ -4,6 +4,7 @@
     <string name="mixed_air_conditions">Mixed Air\nConditions</string>
     <string name="unit_converter">Unit\nConverter</string>
     <string name="ductulator">Ductulator</string>
+    <string name="region">Region</string>
     <string name="co2">Co2</string>
     <string name="weather_bin_data">Weather\nBin Data</string>
     <string name="si">SI</string>
@@ -20,8 +21,8 @@
     <string name="ninty_bend">90° BENDS(QTY)</string>
     <string name="one_eighty_bend">180° BENDS(QTY)</string>
     <string name="calculate">Calculate</string>
-    <string name="duct_diameter">Duct Diameter(IN)</string>
-    <string name="Friction_loss">Friction Loss-(Inches w.c)</string>
+    <string name="total_kwh_consume">Total KWH Consumed</string>
+    <string name="co2_commission">Co2 Commission(Tons/Annum)</string>
     <string name="Duct_Velocity">Duct Velocity-(FPM)</string>
     <string name="total_electric_load">Duct Velocity-(FPM)</string>
     <string name="total_electric">Total Electric</string>

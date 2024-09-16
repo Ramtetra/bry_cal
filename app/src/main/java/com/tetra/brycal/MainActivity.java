@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         //setContentView(R.layout.activity_main);
         binding=ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        binding.toolbar.txtTitle.setText("BryCal");
+       // binding.toolbar.txtTitle.setText("BryCal");
 
 /*       binding.radioGroup1.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
            @Override

@@ -301,11 +301,10 @@
                     android:layout_marginTop="20dp"
                     android:layout_marginBottom="50dp"
                     android:orientation="vertical"
-                    android:background="@drawable/shape_rectangle_light_gray"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <LinearLayout
+                   <!-- <LinearLayout
                         android:layout_marginLeft="30dp"
                         android:layout_marginRight="30dp"
                         android:layout_marginTop="10dp"
@@ -320,7 +319,31 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"/>
 
-                    </LinearLayout>
+                    </LinearLayout>-->
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="1"
+                        android:hint="@string/region"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/layoutMotorType">
+
+                        <AutoCompleteTextView
+                            android:id="@+id/etRegion"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_regular"
+                            android:inputType="none"
+                            android:textSize="14sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
                     <com.google.android.material.textfield.TextInputLayout
                         android:layout_weight="1"
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -329,11 +352,11 @@
                         android:layout_marginLeft="5dp"
                         android:layout_marginRight="5dp"
                         android:layout_marginTop="10dp"
-                        android:hint="@string/duct_diameter"
+                        android:hint="@string/total_kwh_consume"
                         app:layout_constraintTop_toBottomOf="@+id/layoutProjectName">
 
                         <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/etDuctDiameter"
+                            android:id="@+id/etKwhConsume"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:inputType="numberDecimal"
@@ -349,32 +372,11 @@
                         android:layout_marginLeft="5dp"
                         android:layout_marginRight="5dp"
                         android:layout_marginTop="10dp"
-                        android:hint="@string/Friction_loss"
+                        android:hint="@string/co2_commission"
                         app:layout_constraintTop_toBottomOf="@+id/layoutProjectName">
 
                         <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/etFractionLoss"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:inputType="numberDecimal"
-                            android:textSize="15sp">
-                        </com.google.android.material.textfield.TextInputEditText>
-                    </com.google.android.material.textfield.TextInputLayout>
-
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:layout_weight="1"
-                        android:layout_marginBottom="50dp"
-                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginLeft="5dp"
-                        android:layout_marginRight="5dp"
-                        android:hint="@string/Duct_Velocity"
-                        app:layout_constraintTop_toBottomOf="@+id/layoutProjectName">
-
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/etDuctVelocity"
+                            android:id="@+id/etCo2Commision"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:inputType="numberDecimal"

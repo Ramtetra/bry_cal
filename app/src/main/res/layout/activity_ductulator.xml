@@ -373,7 +373,7 @@
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
                 android:layout_marginTop="10dp"
-                android:hint="@string/duct_diameter"
+                android:hint="Duct Diameter(IN)"
                 app:layout_constraintTop_toBottomOf="@+id/layoutProjectName">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -393,7 +393,7 @@
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
                 android:layout_marginTop="10dp"
-                android:hint="@string/Friction_loss"
+                android:hint="Fraction Loss"
                 app:layout_constraintTop_toBottomOf="@+id/layoutProjectName">
 
                 <com.google.android.material.textfield.TextInputEditText
