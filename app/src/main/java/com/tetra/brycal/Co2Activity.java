@@ -36,20 +36,25 @@ public class Co2Activity extends AppCompatActivity {
                }else if (regionValue.equalsIgnoreCase("USA")){
                    region="0.43";
                }
-                double et1Value= Double.parseDouble(binding.et1.getText().toString());
-                double et2Value= Double.parseDouble(binding.et2.getText().toString());
-                double et3Value= Double.parseDouble(binding.et3.getText().toString());
-                double et4Value= Double.parseDouble(binding.et4.getText().toString());
-                double totalKwh=et1Value+et2Value+et3Value+et4Value;
-                double commValue=(totalKwh*Float.parseFloat(region))/1000;
-                BigDecimal num1 = new BigDecimal(totalKwh);
-                BigDecimal roundedValue1 = num1.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
+               if (binding.et1.getText().toString().isEmpty() && binding.et2.getText().toString().isEmpty() && binding.et3.getText().toString().isEmpty() && binding.et4.getText().toString().isEmpty()){
 
-                BigDecimal num2 = new BigDecimal(commValue);
-                BigDecimal roundedValue2 = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
+               }else {
+                   double et1Value= Double.parseDouble(binding.et1.getText().toString());
+                   double et2Value= Double.parseDouble(binding.et2.getText().toString());
+                   double et3Value= Double.parseDouble(binding.et3.getText().toString());
+                   double et4Value= Double.parseDouble(binding.et4.getText().toString());
+                   double totalKwh=et1Value+et2Value+et3Value+et4Value;
+                   double commValue=(totalKwh*Float.parseFloat(region))/1000;
+                   BigDecimal num1 = new BigDecimal(totalKwh);
+                   BigDecimal roundedValue1 = num1.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
 
-                binding.etKwhConsume.setText(String.valueOf(roundedValue1));
-                binding.etCo2Commision.setText(String.valueOf(roundedValue2));
+                   BigDecimal num2 = new BigDecimal(commValue);
+                   BigDecimal roundedValue2 = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
+
+                   binding.etKwhConsume.setText(String.valueOf(roundedValue1));
+                   binding.etCo2Commision.setText(String.valueOf(roundedValue2));
+               }
+
             }
         });
         binding.layout1.setOnClickListener(new View.OnClickListener() {

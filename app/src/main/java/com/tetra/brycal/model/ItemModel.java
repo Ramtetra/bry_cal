@@ -2,9 +2,9 @@ package com.tetra.brycal.model;
 
 public class ItemModel {
     String title;
-    int image;
+    String image;
 
-    public ItemModel(String title, int image) {
+    public ItemModel(String title, String image) {
         this.title = title;
         this.image = image;
     }
@@ -17,11 +17,11 @@ public class ItemModel {
         this.title = title;
     }
 
-    public int getImage() {
+    public String getImage() {
         return image;
     }
 
-    public void setImage(int image) {
+    public void setImage(String image) {
         this.image = image;
     }
 }

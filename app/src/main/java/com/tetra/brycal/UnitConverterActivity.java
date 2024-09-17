@@ -33,10 +33,28 @@ public class UnitConverterActivity extends AppCompatActivity {
 
         ArrayAdapter outputAdapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, unitsList);
         binding.etUnitOutput.setAdapter(outputAdapter);
+        binding.cardLength.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                binding.layout1.setBackground(getResources().getDrawable(R.drawable.shape_border_radius_active));
+                binding.layout2.setBackground(getResources().getDrawable(R.drawable.shape_border_radius));
+                binding.layout3.setBackground(getResources().getDrawable(R.drawable.shape_border_radius));
+                binding.layout4.setBackground(getResources().getDrawable(R.drawable.shape_border_radius));
+                ArrayAdapter inputAdapter = new ArrayAdapter(UnitConverterActivity.this, android.R.layout.simple_spinner_item, unitsList);
+                binding.etUnitInput.setAdapter(inputAdapter);
+
+                ArrayAdapter outputAdapter = new ArrayAdapter(UnitConverterActivity.this, android.R.layout.simple_spinner_item, unitsList);
+                binding.etUnitOutput.setAdapter(outputAdapter);
+            }
+        });
 
         binding.cardArea.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                binding.layout1.setBackground(getResources().getDrawable(R.drawable.shape_border_radius));
+                binding.layout2.setBackground(getResources().getDrawable(R.drawable.shape_border_radius_active));
+                binding.layout3.setBackground(getResources().getDrawable(R.drawable.shape_border_radius));
+                binding.layout4.setBackground(getResources().getDrawable(R.drawable.shape_border_radius));
                 ArrayAdapter inputAdapter = new ArrayAdapter(UnitConverterActivity.this, android.R.layout.simple_spinner_item, unitsArea);
                 binding.etUnitInput.setAdapter(inputAdapter);
 
@@ -47,6 +65,10 @@ public class UnitConverterActivity extends AppCompatActivity {
         binding.cardVolume.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                binding.layout1.setBackground(getResources().getDrawable(R.drawable.shape_border_radius));
+                binding.layout2.setBackground(getResources().getDrawable(R.drawable.shape_border_radius));
+                binding.layout3.setBackground(getResources().getDrawable(R.drawable.shape_border_radius_active));
+                binding.layout4.setBackground(getResources().getDrawable(R.drawable.shape_border_radius));
                 ArrayAdapter inputAdapter = new ArrayAdapter(UnitConverterActivity.this, android.R.layout.simple_spinner_item, unitsVolume);
                 binding.etUnitInput.setAdapter(inputAdapter);
 
@@ -57,6 +79,10 @@ public class UnitConverterActivity extends AppCompatActivity {
         binding.cardTemperature.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                binding.layout1.setBackground(getResources().getDrawable(R.drawable.shape_border_radius));
+                binding.layout2.setBackground(getResources().getDrawable(R.drawable.shape_border_radius));
+                binding.layout3.setBackground(getResources().getDrawable(R.drawable.shape_border_radius));
+                binding.layout4.setBackground(getResources().getDrawable(R.drawable.shape_border_radius_active));
                 ArrayAdapter inputAdapter = new ArrayAdapter(UnitConverterActivity.this, android.R.layout.simple_spinner_item, unitsTemp);
                 binding.etUnitInput.setAdapter(inputAdapter);
 
@@ -116,6 +142,7 @@ public class UnitConverterActivity extends AppCompatActivity {
                     BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
                     binding.etTo.setText(String.valueOf(roundedValue));
                 }
+
             }
         });
         binding.layout1.setOnClickListener(new View.OnClickListener() {
