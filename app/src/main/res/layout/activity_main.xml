@@ -34,35 +34,57 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <RadioGroup
-                android:id="@+id/radioGroup1"
+            <ImageView
+                android:id="@+id/imageLogo"
+                app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
+                android:src="@drawable/image"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"/>
+
+            <TextView
+                android:id="@+id/txtEngineer"
+                android:text="I am an Engineer"
+                android:textSize="16sp"
+                android:fontFamily="@font/poppins_bold"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageLogo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <LinearLayout
+                android:id="@+id/radioGroup1"
+                app:layout_constraintTop_toBottomOf="@+id/txtEngineer"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="15dp">
 
-                <RadioButton
+                <TextView
                     android:id="@+id/rbPsycal"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:checked="false"
                     android:padding="4dp"
+                    android:background="@drawable/shape_border_radius"
                     android:fontFamily="@font/poppins_medium"
                     android:textColor="@color/text_button_color"
                     android:layout_gravity="center"
                     android:layout_marginTop="5dp"
                     android:drawablePadding="5dp"
-                    android:background="@drawable/shape_border_radius"
                     android:drawableRight="@drawable/psycal_icon"
                     android:text="@string/psycal"
                     android:textSize="13sp" />
 
                 <!--adding a radio button -->
-                <RadioButton
+                <TextView
                     android:id="@+id/rbMixedAir"
                     android:layout_width="170dp"
                     android:layout_height="wrap_content"
@@ -78,9 +100,9 @@
                     android:text="@string/mixed_air_conditions"
                     android:textSize="13sp" />
 
-            </RadioGroup>
+            </LinearLayout>
 
-            <RadioGroup
+            <LinearLayout
                 android:id="@+id/radioGroup2"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
@@ -91,7 +113,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp">
 
-                <RadioButton
+                <TextView
                     android:id="@+id/rbUnitConverter"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
@@ -107,7 +129,7 @@
                     android:textSize="13sp" />
 
                 <!--adding a radio button -->
-                <RadioButton
+                <TextView
                     android:id="@+id/rbDuctulator"
                     android:layout_width="170dp"
                     android:layout_height="wrap_content"
@@ -123,8 +145,8 @@
                     android:text="@string/ductulator"
                     android:textSize="13sp" />
 
-            </RadioGroup>
-            <RadioGroup
+            </LinearLayout>
+            <LinearLayout
                 android:id="@+id/radioGroup3"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
@@ -135,7 +157,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp">
 
-                <RadioButton
+                <TextView
                     android:id="@+id/rbCo2"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
@@ -151,7 +173,7 @@
                     android:textSize="13sp" />
 
                 <!--adding a radio button -->
-                <RadioButton
+                <TextView
                     android:id="@+id/rbWeatherBin"
                     android:layout_width="170dp"
                     android:layout_height="wrap_content"
@@ -167,18 +189,7 @@
                     android:text="@string/weather_bin_data"
                     android:textSize="13sp" />
 
-            </RadioGroup>
-
-            <ImageView
-                android:id="@+id/imageLogo"
-                app:layout_constraintTop_toBottomOf="@+id/radioGroup3"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                android:src="@drawable/image"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="10dp"
-                android:layout_width="wrap_content"
-                android:layout_height="200dp"/>
+            </LinearLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

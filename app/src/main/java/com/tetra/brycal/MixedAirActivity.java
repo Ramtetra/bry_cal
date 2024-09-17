@@ -5,6 +5,10 @@ import android.os.Bundle;
 import com.google.android.material.snackbar.Snackbar;
 import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+
 import androidx.core.view.WindowCompat;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -14,7 +18,7 @@ import com.tetra.brycal.databinding.ActivityMixedAirBinding;
 
 public class MixedAirActivity extends AppCompatActivity {
     private ActivityMixedAirBinding binding;
-
+   String selectedOption;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,6 +70,41 @@ public class MixedAirActivity extends AppCompatActivity {
                 Intent intent2=new Intent(MixedAirActivity.this, WeatherActivity.class);
                 intent2.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent2);
+            }
+        });
+        binding.radioGroup1.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                int selectedOptionId = binding.radioGroup1.getCheckedRadioButtonId();
+                RadioButton selectedRadioButton = binding.getRoot().findViewById(selectedOptionId);
+                selectedOption = selectedRadioButton.getText().toString();
+                if (selectedOption.equalsIgnoreCase("SI")){
+                 binding.txt1.setText("°F db");
+                 binding.txt2.setText("°F db");
+                 binding.txt3.setText("°F wb");
+                 binding.txt4.setText("°F wb");
+                 binding.txt5.setText("%RH");
+                 binding.txt6.setText("°%RH");
+                 binding.txt7.setText("Btu/ib");
+                 binding.txt8.setText("Btu/ib");
+                 binding.txt9.setText("°F dp");
+                 binding.txt10.setText("°F dp");
+                 binding.txt11.setText("°Gr/ib");
+                 binding.txt12.setText("°Gr/ib");
+                }else{
+                    binding.txt1.setText("°C db");
+                    binding.txt2.setText("°C db");
+                    binding.txt3.setText("°C wb");
+                    binding.txt4.setText("°C wb");
+                    binding.txt5.setText("%RH");
+                    binding.txt6.setText("°%RH");
+                    binding.txt7.setText("KJ/ib");
+                    binding.txt8.setText("KJ/ib");
+                    binding.txt9.setText("°C dp");
+                    binding.txt10.setText("°F dp");
+                    binding.txt11.setText("°g/kg");
+                    binding.txt12.setText("°g/kg");
+                }
             }
         });
 
