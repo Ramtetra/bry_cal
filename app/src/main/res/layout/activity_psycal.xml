@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@color/back_color"
     tools:context=".PsycalActivity">
 
     <include
@@ -31,8 +31,8 @@
             <ImageView
                 android:src="@drawable/psycal_icon"
                 android:layout_gravity="center"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_width="50dp"
+                android:layout_height="50dp"/>
             <TextView
                 android:text="@string/psycal"
                 android:textColor="@color/heading_color"
@@ -54,8 +54,8 @@
             <ImageView
                 android:src="@drawable/mixed_air_icon"
                 android:layout_gravity="center"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_width="50dp"
+                android:layout_height="50dp"/>
             <TextView
                 android:text="@string/mixed_air_conditions"
                 android:textColor="@color/heading_color"
@@ -77,8 +77,8 @@
             <ImageView
                 android:layout_gravity="center"
                 android:src="@drawable/unit_converter_icon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_width="50dp"
+                android:layout_height="50dp"/>
             <TextView
                 android:text="@string/unit_converter"
                 android:textColor="@color/heading_color"
@@ -98,8 +98,8 @@
             <ImageView
                 android:layout_gravity="center"
                 android:src="@drawable/ductulator_icon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_width="50dp"
+                android:layout_height="50dp"/>
             <TextView
                 android:text="@string/ductulator"
                 android:textColor="@color/heading_color"
@@ -119,8 +119,8 @@
             <ImageView
                 android:layout_gravity="center"
                 android:src="@drawable/co2_icon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_width="50dp"
+                android:layout_height="50dp"/>
             <TextView
                 android:text="@string/co2"
                 android:textColor="@color/heading_color"
@@ -141,8 +141,8 @@
             <ImageView
                 android:layout_gravity="center"
                 android:src="@drawable/psycal_icon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_width="50dp"
+                android:layout_height="50dp"/>
             <TextView
                 android:text="@string/weather_bin_data"
                 android:textColor="@color/heading_color"
@@ -191,9 +191,28 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
 
+                <LinearLayout
+                    android:id="@+id/layoutToggle"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtInputOutput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <ToggleButton
+                        android:background="@drawable/shape_dark_blue_color"
+                        android:id="@+id/toggleButton"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textOn="SI"
+                        android:textOff="IP"/>
+                </LinearLayout>
                 <RadioGroup
                     android:id="@+id/radioGroup"
-                    app:layout_constraintTop_toBottomOf="@+id/txtInputOutput"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toBottomOf="@+id/layoutToggle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"

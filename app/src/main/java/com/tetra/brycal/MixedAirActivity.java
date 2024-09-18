@@ -72,39 +72,33 @@ public class MixedAirActivity extends AppCompatActivity {
                 startActivity(intent2);
             }
         });
-        binding.radioGroup1.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                int selectedOptionId = binding.radioGroup1.getCheckedRadioButtonId();
-                RadioButton selectedRadioButton = binding.getRoot().findViewById(selectedOptionId);
-                selectedOption = selectedRadioButton.getText().toString();
-                if (selectedOption.equalsIgnoreCase("SI")){
-                 binding.txt1.setText("°F db");
-                 binding.txt2.setText("°F db");
-                 binding.txt3.setText("°F wb");
-                 binding.txt4.setText("°F wb");
-                 binding.txt5.setText("%RH");
-                 binding.txt6.setText("°%RH");
-                 binding.txt7.setText("Btu/ib");
-                 binding.txt8.setText("Btu/ib");
-                 binding.txt9.setText("°F dp");
-                 binding.txt10.setText("°F dp");
-                 binding.txt11.setText("°Gr/ib");
-                 binding.txt12.setText("°Gr/ib");
-                }else{
-                    binding.txt1.setText("°C db");
-                    binding.txt2.setText("°C db");
-                    binding.txt3.setText("°C wb");
-                    binding.txt4.setText("°C wb");
-                    binding.txt5.setText("%RH");
-                    binding.txt6.setText("°%RH");
-                    binding.txt7.setText("KJ/ib");
-                    binding.txt8.setText("KJ/ib");
-                    binding.txt9.setText("°C dp");
-                    binding.txt10.setText("°F dp");
-                    binding.txt11.setText("°g/kg");
-                    binding.txt12.setText("°g/kg");
-                }
+        binding.toggleButton.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            if (isChecked) {
+                binding.txt1.setText("°C db");
+                binding.txt2.setText("°C db");
+                binding.txt3.setText("°C wb");
+                binding.txt4.setText("°C wb");
+                binding.txt5.setText("%RH");
+                binding.txt6.setText("°%RH");
+                binding.txt7.setText("KJ/ib");
+                binding.txt8.setText("KJ/ib");
+                binding.txt9.setText("°C dp");
+                binding.txt10.setText("°F dp");
+                binding.txt11.setText("°g/kg");
+                binding.txt12.setText("°g/kg");
+            } else {
+                binding.txt1.setText("°F db");
+                binding.txt2.setText("°F db");
+                binding.txt3.setText("°F wb");
+                binding.txt4.setText("°F wb");
+                binding.txt5.setText("%RH");
+                binding.txt6.setText("°%RH");
+                binding.txt7.setText("Btu/ib");
+                binding.txt8.setText("Btu/ib");
+                binding.txt9.setText("°F dp");
+                binding.txt10.setText("°F dp");
+                binding.txt11.setText("°Gr/ib");
+                binding.txt12.setText("°Gr/ib");
             }
         });
 

@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/back_color"
     android:fitsSystemWindows="true"
     tools:context=".MixedAirActivity">
 
@@ -228,45 +229,30 @@
 
         </RadioGroup>
 
-        <RadioGroup
-            android:id="@+id/radioGroup1"
-            app:layout_constraintTop_toBottomOf="@+id/radioGroup"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:orientation="horizontal"
-            android:layout_marginStart="10dp">
-
-            <RadioButton
-                android:id="@+id/rbCurrent"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:id="@+id/layoutToggle"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/radioGroup"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="4dp"
-                android:checked="true"
-                android:fontFamily="@font/poppins_regular"
-                android:layout_marginLeft="20dp"
-                android:text="@string/si"
-                android:textSize="20sp" />
+                android:orientation="vertical"
+                android:padding="16dp">
 
-            <RadioButton
-                android:id="@+id/rbPower"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:checked="false"
-                android:padding="4dp"
-                android:fontFamily="@font/poppins_regular"
-                android:layout_marginLeft="20dp"
-                android:text="@string/ip"
-                android:textAlignment="center"
-                android:textSize="20sp" />
-
-        </RadioGroup>
+                <ToggleButton
+                    android:background="@drawable/shape_dark_blue_color"
+                    android:id="@+id/toggleButton"
+                    android:textColor="@color/white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textOn="SI"
+                    android:textOff="IP"/>
+            </LinearLayout>
 
        <LinearLayout
            android:orientation="vertical"
            android:layout_marginLeft="30dp"
            android:layout_marginRight="30dp"
-           app:layout_constraintTop_toBottomOf="@+id/radioGroup1"
+           app:layout_constraintTop_toBottomOf="@+id/layoutToggle"
            android:layout_width="match_parent"
            android:layout_height="wrap_content">
 

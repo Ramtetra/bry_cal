@@ -14,9 +14,12 @@
     <color name="blue_color">#00BCD4</color>
     <color name="red_color">#FF5722</color>
     <color name="green_color_card">#00B050</color>
-    <color name="light_yellow_card">#FFEAAc</color>
-    <color name="light_blue">#40A8f5</color>
+    <color name="light_yellow_card">#7bb1f3</color>
+    <color name="light_blue">#5dade2</color>
     <color name="light_gray">#97B2C7</color>
+    <color name="dark_blue">#3F51B5</color>
+    <color name="back_color">#E9F7FD</color>
+
 
 
 </resources>

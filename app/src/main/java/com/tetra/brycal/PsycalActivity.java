@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 import com.tetra.brycal.databinding.ActivityPsycalBinding;
 
@@ -22,6 +23,8 @@ public class PsycalActivity extends AppCompatActivity {
         //setContentView(R.layout.activity_psycal);
         binding=ActivityPsycalBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+
         binding.layout1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -70,39 +73,35 @@ public class PsycalActivity extends AppCompatActivity {
                 startActivity(intent2);
             }
         });
-        binding.radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                int selectedOptionId = binding.radioGroup.getCheckedRadioButtonId();
-                RadioButton selectedRadioButton = binding.getRoot().findViewById(selectedOptionId);
-                selectedOption = selectedRadioButton.getText().toString();
-                if (selectedOption.equalsIgnoreCase("SI")){
-                    ArrayAdapter ad1 = new ArrayAdapter(PsycalActivity.this, android.R.layout.simple_spinner_item, siSelected);
-                    binding.spinner1.setAdapter(ad1);
-                    ArrayAdapter ad2 = new ArrayAdapter(PsycalActivity.this, android.R.layout.simple_spinner_item, siSelected);
-                    binding.spinner2.setAdapter(ad2);
-                    ArrayAdapter ad3 = new ArrayAdapter(PsycalActivity.this, android.R.layout.simple_spinner_item, siSelected);
-                    binding.spinner3.setAdapter(ad3);
-                    ArrayAdapter ad4 = new ArrayAdapter(PsycalActivity.this, android.R.layout.simple_spinner_item, siSelected);
-                    binding.spinner4.setAdapter(ad4);
-                    ArrayAdapter ad5 = new ArrayAdapter(PsycalActivity.this, android.R.layout.simple_spinner_item, siSelected);
-                    binding.spinner5.setAdapter(ad5);
-                    ArrayAdapter ad6 = new ArrayAdapter(PsycalActivity.this, android.R.layout.simple_spinner_item, siSelected);
-                    binding.spinner6.setAdapter(ad6);
-                }else{
-                    ArrayAdapter ad1 = new ArrayAdapter(PsycalActivity.this, android.R.layout.simple_spinner_item, ipSelected);
-                    binding.spinner1.setAdapter(ad1);
-                    ArrayAdapter ad2 = new ArrayAdapter(PsycalActivity.this, android.R.layout.simple_spinner_item, ipSelected);
-                    binding.spinner2.setAdapter(ad2);
-                    ArrayAdapter ad3 = new ArrayAdapter(PsycalActivity.this, android.R.layout.simple_spinner_item, ipSelected);
-                    binding.spinner3.setAdapter(ad3);
-                    ArrayAdapter ad4 = new ArrayAdapter(PsycalActivity.this, android.R.layout.simple_spinner_item, ipSelected);
-                    binding.spinner4.setAdapter(ad4);
-                    ArrayAdapter ad5 = new ArrayAdapter(PsycalActivity.this, android.R.layout.simple_spinner_item, ipSelected);
-                    binding.spinner5.setAdapter(ad5);
-                    ArrayAdapter ad6 = new ArrayAdapter(PsycalActivity.this, android.R.layout.simple_spinner_item, ipSelected);
-                    binding.spinner6.setAdapter(ad6);
-                }
+        binding.toggleButton.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            if (isChecked) {
+                // Toggle is enabled (ON)
+                ArrayAdapter ad1 = new ArrayAdapter(PsycalActivity.this, android.R.layout.simple_spinner_item, ipSelected);
+                binding.spinner1.setAdapter(ad1);
+                ArrayAdapter ad2 = new ArrayAdapter(PsycalActivity.this, android.R.layout.simple_spinner_item, ipSelected);
+                binding.spinner2.setAdapter(ad2);
+                ArrayAdapter ad3 = new ArrayAdapter(PsycalActivity.this, android.R.layout.simple_spinner_item, ipSelected);
+                binding.spinner3.setAdapter(ad3);
+                ArrayAdapter ad4 = new ArrayAdapter(PsycalActivity.this, android.R.layout.simple_spinner_item, ipSelected);
+                binding.spinner4.setAdapter(ad4);
+                ArrayAdapter ad5 = new ArrayAdapter(PsycalActivity.this, android.R.layout.simple_spinner_item, ipSelected);
+                binding.spinner5.setAdapter(ad5);
+                ArrayAdapter ad6 = new ArrayAdapter(PsycalActivity.this, android.R.layout.simple_spinner_item, ipSelected);
+                binding.spinner6.setAdapter(ad6);
+            } else {
+                // Toggle is disabled (OFF)
+                ArrayAdapter ad1 = new ArrayAdapter(PsycalActivity.this, android.R.layout.simple_spinner_item, siSelected);
+                binding.spinner1.setAdapter(ad1);
+                ArrayAdapter ad2 = new ArrayAdapter(PsycalActivity.this, android.R.layout.simple_spinner_item, siSelected);
+                binding.spinner2.setAdapter(ad2);
+                ArrayAdapter ad3 = new ArrayAdapter(PsycalActivity.this, android.R.layout.simple_spinner_item, siSelected);
+                binding.spinner3.setAdapter(ad3);
+                ArrayAdapter ad4 = new ArrayAdapter(PsycalActivity.this, android.R.layout.simple_spinner_item, siSelected);
+                binding.spinner4.setAdapter(ad4);
+                ArrayAdapter ad5 = new ArrayAdapter(PsycalActivity.this, android.R.layout.simple_spinner_item, siSelected);
+                binding.spinner5.setAdapter(ad5);
+                ArrayAdapter ad6 = new ArrayAdapter(PsycalActivity.this, android.R.layout.simple_spinner_item, siSelected);
+                binding.spinner6.setAdapter(ad6);
             }
         });
         ArrayAdapter ad1 = new ArrayAdapter(PsycalActivity.this, android.R.layout.simple_spinner_item, siSelected);

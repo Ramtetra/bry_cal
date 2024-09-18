@@ -42,7 +42,7 @@ public class UnitConverterActivity extends AppCompatActivity {
         binding.cardLength.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                binding.cardLength.setBackgroundColor(getResources().getColor(R.color.theme_color));
+                binding.cardLength.setBackgroundColor(getResources().getColor(R.color.dark_blue));
                 binding.cardArea.setBackgroundColor(getResources().getColor(R.color.light_yellow_card));
                 binding.cardVolume.setBackgroundColor(getResources().getColor(R.color.light_yellow_card));
                 binding.cardTemperature.setBackgroundColor(getResources().getColor(R.color.light_yellow_card));
@@ -63,7 +63,7 @@ public class UnitConverterActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 binding.cardLength.setBackgroundColor(getResources().getColor(R.color.light_yellow_card));
-                binding.cardArea.setBackgroundColor(getResources().getColor(R.color.theme_color));
+                binding.cardArea.setBackgroundColor(getResources().getColor(R.color.dark_blue));
                 binding.cardVolume.setBackgroundColor(getResources().getColor(R.color.light_yellow_card));
                 binding.cardTemperature.setBackgroundColor(getResources().getColor(R.color.light_yellow_card));
                 binding.cardPressure.setBackgroundColor(getResources().getColor(R.color.light_yellow_card));
@@ -84,7 +84,7 @@ public class UnitConverterActivity extends AppCompatActivity {
             public void onClick(View v) {
                 binding.cardLength.setBackgroundColor(getResources().getColor(R.color.light_yellow_card));
                 binding.cardArea.setBackgroundColor(getResources().getColor(R.color.light_yellow_card));
-                binding.cardVolume.setBackgroundColor(getResources().getColor(R.color.theme_color));
+                binding.cardVolume.setBackgroundColor(getResources().getColor(R.color.dark_blue));
                 binding.cardTemperature.setBackgroundColor(getResources().getColor(R.color.light_yellow_card));
                 binding.cardPressure.setBackgroundColor(getResources().getColor(R.color.light_yellow_card));
                 binding.cardAirFlow.setBackgroundColor(getResources().getColor(R.color.light_yellow_card));
@@ -106,7 +106,7 @@ public class UnitConverterActivity extends AppCompatActivity {
                 binding.cardLength.setBackgroundColor(getResources().getColor(R.color.light_yellow_card));
                 binding.cardArea.setBackgroundColor(getResources().getColor(R.color.light_yellow_card));
                 binding.cardVolume.setBackgroundColor(getResources().getColor(R.color.light_yellow_card));
-                binding.cardTemperature.setBackgroundColor(getResources().getColor(R.color.theme_color));
+                binding.cardTemperature.setBackgroundColor(getResources().getColor(R.color.dark_blue));
                 binding.cardPressure.setBackgroundColor(getResources().getColor(R.color.light_yellow_card));
                 binding.cardAirFlow.setBackgroundColor(getResources().getColor(R.color.light_yellow_card));
                 binding.cardWeight.setBackgroundColor(getResources().getColor(R.color.light_yellow_card));
@@ -127,7 +127,7 @@ public class UnitConverterActivity extends AppCompatActivity {
                 binding.cardArea.setBackgroundColor(getResources().getColor(R.color.light_yellow_card));
                 binding.cardVolume.setBackgroundColor(getResources().getColor(R.color.light_yellow_card));
                 binding.cardTemperature.setBackgroundColor(getResources().getColor(R.color.light_yellow_card));
-                binding.cardPressure.setBackgroundColor(getResources().getColor(R.color.theme_color));
+                binding.cardPressure.setBackgroundColor(getResources().getColor(R.color.dark_blue));
                 binding.cardAirFlow.setBackgroundColor(getResources().getColor(R.color.light_yellow_card));
                 binding.cardWeight.setBackgroundColor(getResources().getColor(R.color.light_yellow_card));
                 binding.cardPower.setBackgroundColor(getResources().getColor(R.color.light_yellow_card));
@@ -149,7 +149,7 @@ public class UnitConverterActivity extends AppCompatActivity {
                 binding.cardVolume.setBackgroundColor(getResources().getColor(R.color.light_yellow_card));
                 binding.cardTemperature.setBackgroundColor(getResources().getColor(R.color.light_yellow_card));
                 binding.cardPressure.setBackgroundColor(getResources().getColor(R.color.light_yellow_card));
-                binding.cardAirFlow.setBackgroundColor(getResources().getColor(R.color.theme_color));
+                binding.cardAirFlow.setBackgroundColor(getResources().getColor(R.color.dark_blue));
                 binding.cardWeight.setBackgroundColor(getResources().getColor(R.color.light_yellow_card));
                 binding.cardPower.setBackgroundColor(getResources().getColor(R.color.light_yellow_card));
                 binding.cardEnergy.setBackgroundColor(getResources().getColor(R.color.light_yellow_card));
@@ -170,7 +170,7 @@ public class UnitConverterActivity extends AppCompatActivity {
                 binding.cardTemperature.setBackgroundColor(getResources().getColor(R.color.light_yellow_card));
                 binding.cardPressure.setBackgroundColor(getResources().getColor(R.color.light_yellow_card));
                 binding.cardAirFlow.setBackgroundColor(getResources().getColor(R.color.light_yellow_card));
-                binding.cardWeight.setBackgroundColor(getResources().getColor(R.color.theme_color));
+                binding.cardWeight.setBackgroundColor(getResources().getColor(R.color.dark_blue));
                 binding.cardPower.setBackgroundColor(getResources().getColor(R.color.light_yellow_card));
                 binding.cardEnergy.setBackgroundColor(getResources().getColor(R.color.light_yellow_card));
                 binding.cardHumidity.setBackgroundColor(getResources().getColor(R.color.light_yellow_card));
@@ -191,7 +191,7 @@ public class UnitConverterActivity extends AppCompatActivity {
                 binding.cardPressure.setBackgroundColor(getResources().getColor(R.color.light_yellow_card));
                 binding.cardAirFlow.setBackgroundColor(getResources().getColor(R.color.light_yellow_card));
                 binding.cardWeight.setBackgroundColor(getResources().getColor(R.color.light_yellow_card));
-                binding.cardPower.setBackgroundColor(getResources().getColor(R.color.theme_color));
+                binding.cardPower.setBackgroundColor(getResources().getColor(R.color.dark_blue));
                 binding.cardEnergy.setBackgroundColor(getResources().getColor(R.color.light_yellow_card));
                 binding.cardHumidity.setBackgroundColor(getResources().getColor(R.color.light_yellow_card));
                 ArrayAdapter inputAdapter = new ArrayAdapter(UnitConverterActivity.this, android.R.layout.simple_spinner_item, unitsPower);
@@ -212,7 +212,7 @@ public class UnitConverterActivity extends AppCompatActivity {
                 binding.cardAirFlow.setBackgroundColor(getResources().getColor(R.color.light_yellow_card));
                 binding.cardWeight.setBackgroundColor(getResources().getColor(R.color.light_yellow_card));
                 binding.cardPower.setBackgroundColor(getResources().getColor(R.color.light_yellow_card));
-                binding.cardEnergy.setBackgroundColor(getResources().getColor(R.color.theme_color));
+                binding.cardEnergy.setBackgroundColor(getResources().getColor(R.color.dark_blue));
                 binding.cardHumidity.setBackgroundColor(getResources().getColor(R.color.light_yellow_card));
                 ArrayAdapter inputAdapter = new ArrayAdapter(UnitConverterActivity.this, android.R.layout.simple_spinner_item, unitsEnergy);
                 binding.etUnitInput.setAdapter(inputAdapter);
@@ -233,7 +233,7 @@ public class UnitConverterActivity extends AppCompatActivity {
                 binding.cardWeight.setBackgroundColor(getResources().getColor(R.color.light_yellow_card));
                 binding.cardPower.setBackgroundColor(getResources().getColor(R.color.light_yellow_card));
                 binding.cardEnergy.setBackgroundColor(getResources().getColor(R.color.light_yellow_card));
-                binding.cardHumidity.setBackgroundColor(getResources().getColor(R.color.theme_color));
+                binding.cardHumidity.setBackgroundColor(getResources().getColor(R.color.dark_blue));
                 ArrayAdapter inputAdapter = new ArrayAdapter(UnitConverterActivity.this, android.R.layout.simple_spinner_item, unitsHumidity);
                 binding.etUnitInput.setAdapter(inputAdapter);
 
@@ -361,31 +361,111 @@ public class UnitConverterActivity extends AppCompatActivity {
 
                   ///.........Area...........///
 
+                   else if (inputUnits.equalsIgnoreCase("Square Meter")){
+                     if (outputUnits.equalsIgnoreCase("Square Meter")){
+                          double meterValue=inputValue;
+                          BigDecimal num2 = new BigDecimal(meterValue);
+                          BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
+                          binding.etTo.setText(String.valueOf(roundedValue));
+                      }
+                      else if (outputUnits.equalsIgnoreCase("Square Foot")){
+                          double footValue=inputValue*10.764;
+                          BigDecimal num2 = new BigDecimal(footValue);
+                          BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
+                          binding.etTo.setText(String.valueOf(roundedValue));
+                      }
+                      else if (outputUnits.equalsIgnoreCase("Square Inch")){
+                          double footValue=inputValue*1550;
+                          BigDecimal num2 = new BigDecimal(footValue);
+                          BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
+                          binding.etTo.setText(String.valueOf(roundedValue));
+                      }
+                      else if (outputUnits.equalsIgnoreCase("Square Yard")){
+                          double footValue=inputValue*1.196;
+                          BigDecimal num2 = new BigDecimal(footValue);
+                          BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
+                          binding.etTo.setText(String.valueOf(roundedValue));
+                      }
+                    }
+                   else if (inputUnits.equalsIgnoreCase("Square Foot")){
+                      if (outputUnits.equalsIgnoreCase("Square Meter")){
+                          double meterValue=inputValue/10.764;
+                          BigDecimal num2 = new BigDecimal(meterValue);
+                          BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
+                          binding.etTo.setText(String.valueOf(roundedValue));
+                      }
+                      else if (outputUnits.equalsIgnoreCase("Square Foot")){
+                          double footValue=inputValue;
+                          BigDecimal num2 = new BigDecimal(footValue);
+                          BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
+                          binding.etTo.setText(String.valueOf(roundedValue));
+                      }
+                      else if (outputUnits.equalsIgnoreCase("Square Inch")){
+                          double footValue=inputValue*144;
+                          BigDecimal num2 = new BigDecimal(footValue);
+                          BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
+                          binding.etTo.setText(String.valueOf(roundedValue));
+                      }
+                      else if (outputUnits.equalsIgnoreCase("Square Yard")){
+                          double footValue=inputValue/9;
+                          BigDecimal num2 = new BigDecimal(footValue);
+                          BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
+                          binding.etTo.setText(String.valueOf(roundedValue));
+                      }
+                  }
+                   else if (inputUnits.equalsIgnoreCase("Square Inch")){
+                      if (outputUnits.equalsIgnoreCase("Square Meter")){
+                          double meterValue=inputValue/10.764;
+                          BigDecimal num2 = new BigDecimal(meterValue);
+                          BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
+                          binding.etTo.setText(String.valueOf(roundedValue));
+                      }
+                      else if (outputUnits.equalsIgnoreCase("Square Foot")){
+                          double footValue=inputValue;
+                          BigDecimal num2 = new BigDecimal(footValue);
+                          BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
+                          binding.etTo.setText(String.valueOf(roundedValue));
+                      }
+                     else if (outputUnits.equalsIgnoreCase("Square Inch")){
+                          double footValue=inputValue*144;
+                          BigDecimal num2 = new BigDecimal(footValue);
+                          BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
+                          binding.etTo.setText(String.valueOf(roundedValue));
+                      }
+                      else if (outputUnits.equalsIgnoreCase("Square Yard")){
+                          double footValue=inputValue/9;
+                          BigDecimal num2 = new BigDecimal(footValue);
+                          BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
+                          binding.etTo.setText(String.valueOf(roundedValue));
+                      }
+                  }
+                   else if (inputUnits.equalsIgnoreCase("Square Yard")){
+                      if (outputUnits.equalsIgnoreCase("Square Meter")){
+                          double meterValue=inputValue/1.196    ;
+                          BigDecimal num2 = new BigDecimal(meterValue);
+                          BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
+                          binding.etTo.setText(String.valueOf(roundedValue));
+                      }
+                      else if (outputUnits.equalsIgnoreCase("Square Foot")){
+                          double footValue=inputValue*9;
+                          BigDecimal num2 = new BigDecimal(footValue);
+                          BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
+                          binding.etTo.setText(String.valueOf(roundedValue));
+                      }
+                      else if (outputUnits.equalsIgnoreCase("Square Inch")){
+                          double footValue=inputValue*1296;
+                          BigDecimal num2 = new BigDecimal(footValue);
+                          BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
+                          binding.etTo.setText(String.valueOf(roundedValue));
+                      }
+                      else if (outputUnits.equalsIgnoreCase("Square Yard")){
+                          double footValue=inputValue;
+                          BigDecimal num2 = new BigDecimal(footValue);
+                          BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
+                          binding.etTo.setText(String.valueOf(roundedValue));
+                      }
+                  }
 
-                else if (outputUnits.equalsIgnoreCase("Square Meter")){
-                    double meterValue=inputValue/39.37;
-                    BigDecimal num2 = new BigDecimal(meterValue);
-                    BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
-                    binding.etTo.setText(String.valueOf(roundedValue));
-                }
-                else if (outputUnits.equalsIgnoreCase("Square Foot")){
-                    double footValue=inputValue/12;
-                    BigDecimal num2 = new BigDecimal(footValue);
-                    BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
-                    binding.etTo.setText(String.valueOf(roundedValue));
-                }
-                else if (outputUnits.equalsIgnoreCase("Square Inch")){
-                    double footValue=inputValue*12;
-                    BigDecimal num2 = new BigDecimal(footValue);
-                    BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
-                    binding.etTo.setText(String.valueOf(roundedValue));
-                }
-                else if (outputUnits.equalsIgnoreCase("Square Yard")){
-                    double footValue=inputValue/36;
-                    BigDecimal num2 = new BigDecimal(footValue);
-                    BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
-                    binding.etTo.setText(String.valueOf(roundedValue));
-                }
        /// .................... Volume.........................//
                 else if (inputUnits.equalsIgnoreCase("Cubic Meter")){
                     if (outputUnits.equalsIgnoreCase("Cubic Meter")){
@@ -492,7 +572,7 @@ public class UnitConverterActivity extends AppCompatActivity {
                     }
                 }
 
-      ///............ Temperature..............................
+      ///............ Temperature..............................///
                 else if (inputUnits.equalsIgnoreCase("Celsius")){
                     if (outputUnits.equalsIgnoreCase("Fahrenheit")){
                         double footValue=(inputValue*9/5)+32;
@@ -553,6 +633,112 @@ public class UnitConverterActivity extends AppCompatActivity {
                         binding.etTo.setText(String.valueOf(roundedValue));
                     }
                 }
+
+     ///........... Pressure........................///
+                  else if (inputUnits.equalsIgnoreCase("Pascal")){
+                      if (outputUnits.equalsIgnoreCase("Pascal")){
+                          double footValue=(inputValue);
+                          BigDecimal num2 = new BigDecimal(footValue);
+                          BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
+                          binding.etTo.setText(String.valueOf(roundedValue));
+                      }
+                      else if (outputUnits.equalsIgnoreCase("Bar")){
+                          double footValue=(inputValue/100000);
+                          BigDecimal num2 = new BigDecimal(footValue);
+                          BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
+                          binding.etTo.setText(String.valueOf(roundedValue));
+                      }
+                      else if (outputUnits.equalsIgnoreCase("PSI")){
+                          double footValue=(inputValue/6895);
+                          BigDecimal num2 = new BigDecimal(footValue);
+                          BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
+                          binding.etTo.setText(String.valueOf(roundedValue));
+                      }
+                      else if (outputUnits.equalsIgnoreCase("atm")){
+                          double footValue=(inputValue/101300);
+                          BigDecimal num2 = new BigDecimal(footValue);
+                          BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
+                          binding.etTo.setText(String.valueOf(roundedValue));
+                      }
+                  }
+                  else if (inputUnits.equalsIgnoreCase("Bar")){
+                      if (outputUnits.equalsIgnoreCase("Pascal")){
+                          double footValue=(inputValue);
+                          BigDecimal num2 = new BigDecimal(footValue);
+                          BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
+                          binding.etTo.setText(String.valueOf(roundedValue));
+                      }
+                      else if (outputUnits.equalsIgnoreCase("Bar")){
+                          double footValue=(inputValue/100000);
+                          BigDecimal num2 = new BigDecimal(footValue);
+                          BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
+                          binding.etTo.setText(String.valueOf(roundedValue));
+                      }
+                      else if (outputUnits.equalsIgnoreCase("PSI")){
+                          double footValue=(inputValue/6895);
+                          BigDecimal num2 = new BigDecimal(footValue);
+                          BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
+                          binding.etTo.setText(String.valueOf(roundedValue));
+                      }
+                      else if (outputUnits.equalsIgnoreCase("atm")){
+                          double footValue=(inputValue/101300);
+                          BigDecimal num2 = new BigDecimal(footValue);
+                          BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
+                          binding.etTo.setText(String.valueOf(roundedValue));
+                      }
+                  }
+                  else if (inputUnits.equalsIgnoreCase("PSI")){
+                      if (outputUnits.equalsIgnoreCase("Pascal")){
+                          double footValue=(inputValue);
+                          BigDecimal num2 = new BigDecimal(footValue);
+                          BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
+                          binding.etTo.setText(String.valueOf(roundedValue));
+                      }
+                      else if (outputUnits.equalsIgnoreCase("Bar")){
+                          double footValue=(inputValue/100000);
+                          BigDecimal num2 = new BigDecimal(footValue);
+                          BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
+                          binding.etTo.setText(String.valueOf(roundedValue));
+                      }
+                      else if (outputUnits.equalsIgnoreCase("PSI")){
+                          double footValue=(inputValue/6895);
+                          BigDecimal num2 = new BigDecimal(footValue);
+                          BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
+                          binding.etTo.setText(String.valueOf(roundedValue));
+                      }
+                      else if (outputUnits.equalsIgnoreCase("atm")){
+                          double footValue=(inputValue/101300);
+                          BigDecimal num2 = new BigDecimal(footValue);
+                          BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
+                          binding.etTo.setText(String.valueOf(roundedValue));
+                      }
+                  }
+                  else if (inputUnits.equalsIgnoreCase("atm")){
+                      if (outputUnits.equalsIgnoreCase("Pascal")){
+                          double footValue=(inputValue);
+                          BigDecimal num2 = new BigDecimal(footValue);
+                          BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
+                          binding.etTo.setText(String.valueOf(roundedValue));
+                      }
+                      else if (outputUnits.equalsIgnoreCase("Bar")){
+                          double footValue=(inputValue/100000);
+                          BigDecimal num2 = new BigDecimal(footValue);
+                          BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
+                          binding.etTo.setText(String.valueOf(roundedValue));
+                      }
+                      else if (outputUnits.equalsIgnoreCase("PSI")){
+                          double footValue=(inputValue/6895);
+                          BigDecimal num2 = new BigDecimal(footValue);
+                          BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
+                          binding.etTo.setText(String.valueOf(roundedValue));
+                      }
+                      else if (outputUnits.equalsIgnoreCase("atm")){
+                          double footValue=(inputValue/101300);
+                          BigDecimal num2 = new BigDecimal(footValue);
+                          BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
+                          binding.etTo.setText(String.valueOf(roundedValue));
+                      }
+                  }
 
                 }
             }
