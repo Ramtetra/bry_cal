@@ -263,20 +263,105 @@ public class UnitConverterActivity extends AppCompatActivity {
                 if (binding.etFrom.getText().toString().isEmpty()){
                 }else {
                     double inputValue= Double.parseDouble(binding.etFrom.getText().toString());
-                if (outputUnits.equalsIgnoreCase("Meter")){
-                    binding.etTo.setText(String.valueOf(inputValue*1000));
-                } else if (outputUnits.equalsIgnoreCase("Foot")){
-                    binding.etTo.setText(String.valueOf(inputValue*3281));
-                }
-                else if (outputUnits.equalsIgnoreCase("Inch")){
-                    binding.etTo.setText(String.valueOf(inputValue*39370));
-                }
-                else if (outputUnits.equalsIgnoreCase("Kilometer")){
-                    double kilometerValue=inputValue/39370;
-                    BigDecimal num2 = new BigDecimal(kilometerValue);
-                    BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
-                    binding.etTo.setText(String.valueOf(roundedValue));
-                }
+                    ///................Length................///
+                  if (inputUnits.equalsIgnoreCase("Meter")){
+                      if (outputUnits.equalsIgnoreCase("Meter")){
+                          binding.etTo.setText(String.valueOf(inputValue));
+                      } else if (outputUnits.equalsIgnoreCase("Foot")){
+                          double footValue=inputValue*3.281;
+                          BigDecimal num2 = new BigDecimal(footValue);
+                          BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP);
+                          binding.etTo.setText(String.valueOf(roundedValue));
+                      }
+                      else if (outputUnits.equalsIgnoreCase("Inch")){
+                          binding.etTo.setText(String.valueOf(inputValue*39.37));
+                      }
+                      else if (outputUnits.equalsIgnoreCase("Kilometer")){
+                          double kilometerValue=inputValue/1000;
+                          BigDecimal num2 = new BigDecimal(kilometerValue);
+                          BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
+                          binding.etTo.setText(String.valueOf(roundedValue));
+                      }
+                  }
+                  else if (inputUnits.equalsIgnoreCase("Foot")){
+                      if (outputUnits.equalsIgnoreCase("Meter")){
+                          double footValue=inputValue/3.281;
+                          BigDecimal num2 = new BigDecimal(footValue);
+                          BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP);
+                          binding.etTo.setText(String.valueOf(roundedValue));
+                      }
+                      else if (outputUnits.equalsIgnoreCase("Foot")){
+                          double footValue=inputValue;
+                          BigDecimal num2 = new BigDecimal(footValue);
+                          BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP);
+                          binding.etTo.setText(String.valueOf(roundedValue));
+                      }
+                      else if (outputUnits.equalsIgnoreCase("Inch")){
+                          binding.etTo.setText(String.valueOf(inputValue*12));
+                      }
+                      else if (outputUnits.equalsIgnoreCase("Kilometer")){
+                          double kilometerValue=inputValue/3281;
+                          BigDecimal num2 = new BigDecimal(kilometerValue);
+                          BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
+                          binding.etTo.setText(String.valueOf(roundedValue));
+                      }
+                  }
+
+                  else if (inputUnits.equalsIgnoreCase("Inch")){
+                      if (outputUnits.equalsIgnoreCase("Meter")){
+                          double footValue=inputValue/39.37;
+                          BigDecimal num2 = new BigDecimal(footValue);
+                          BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP);
+                          binding.etTo.setText(String.valueOf(roundedValue));
+                      } else if (outputUnits.equalsIgnoreCase("Foot")){
+                          double footValue=inputValue/12;
+                          BigDecimal num2 = new BigDecimal(footValue);
+                          BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP);
+                          binding.etTo.setText(String.valueOf(roundedValue));
+                      }
+                      else if (outputUnits.equalsIgnoreCase("Inch")){
+                          double footValue=inputValue;
+                          BigDecimal num2 = new BigDecimal(footValue);
+                          BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP);
+                          binding.etTo.setText(String.valueOf(roundedValue));
+                      }
+                      else if (outputUnits.equalsIgnoreCase("Kilometer")){
+                          double kilometerValue=inputValue/39370;
+                          BigDecimal num2 = new BigDecimal(kilometerValue);
+                          BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
+                          binding.etTo.setText(String.valueOf(roundedValue));
+                      }
+                  }
+
+                  else if (inputUnits.equalsIgnoreCase("Kilometer")){
+                      if (outputUnits.equalsIgnoreCase("Meter")){
+                          double footValue=inputValue*1000;
+                          BigDecimal num2 = new BigDecimal(footValue);
+                          BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP);
+                          binding.etTo.setText(String.valueOf(roundedValue));
+                      } else if (outputUnits.equalsIgnoreCase("Foot")){
+                          double footValue=inputValue*3281;
+                          BigDecimal num2 = new BigDecimal(footValue);
+                          BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP);
+                          binding.etTo.setText(String.valueOf(roundedValue));
+                      }
+                      else if (outputUnits.equalsIgnoreCase("Inch")){
+                          double footValue=inputValue*39370;
+                          BigDecimal num2 = new BigDecimal(footValue);
+                          BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP);
+                          binding.etTo.setText(String.valueOf(roundedValue));
+                      }
+                      else if (outputUnits.equalsIgnoreCase("Kilometer")){
+                          double kilometerValue=inputValue;
+                          BigDecimal num2 = new BigDecimal(kilometerValue);
+                          BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
+                          binding.etTo.setText(String.valueOf(roundedValue));
+                      }
+                  }
+
+                  ///.........Area...........///
+
+
                 else if (outputUnits.equalsIgnoreCase("Square Meter")){
                     double meterValue=inputValue/39.37;
                     BigDecimal num2 = new BigDecimal(meterValue);
