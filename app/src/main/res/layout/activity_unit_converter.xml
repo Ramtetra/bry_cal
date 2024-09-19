@@ -24,17 +24,18 @@
             android:orientation="vertical"
             android:background="@drawable/shape_border_radius"
             android:layout_width="50dp"
-            android:layout_height="wrap_content">
+            android:layout_height="100dp">
 
             <ImageView
                 android:src="@drawable/psycal_icon"
                 android:layout_gravity="center"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_width="50dp"
+                android:layout_height="50dp"/>
             <TextView
                 android:text="@string/psycal"
                 android:textColor="@color/heading_color"
-                android:textSize="13sp"
+                android:textSize="11sp"
+                android:fontFamily="@font/poppins_regular"
                 android:layout_gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
@@ -44,21 +45,22 @@
         <LinearLayout
             android:id="@+id/layout2"
             android:orientation="vertical"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="3dp"
             android:background="@drawable/shape_border_radius"
-            android:layout_width="55dp"
-            android:layout_height="wrap_content">
+            android:layout_width="60dp"
+            android:layout_height="100dp">
 
             <ImageView
                 android:src="@drawable/mixed_air_icon"
                 android:layout_gravity="center"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_width="50dp"
+                android:layout_height="50dp"/>
             <TextView
                 android:text="@string/mixed_air_conditions"
                 android:textColor="@color/heading_color"
-                android:textSize="13sp"
+                android:textSize="11sp"
                 android:layout_gravity="center"
+                android:fontFamily="@font/poppins_regular"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
         </LinearLayout>
@@ -67,62 +69,65 @@
         <LinearLayout
             android:id="@+id/layout3"
             android:orientation="vertical"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="3dp"
             android:background="@drawable/shape_border_radius_active"
-            android:layout_width="50dp"
-            android:layout_height="wrap_content">
+            android:layout_width="52dp"
+            android:layout_height="100dp">
 
             <ImageView
                 android:layout_gravity="center"
                 android:src="@drawable/unit_converter_icon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_width="50dp"
+                android:layout_height="50dp"/>
             <TextView
                 android:text="@string/unit_converter"
                 android:textColor="@color/heading_color"
-                android:textSize="13sp"
+                android:textSize="11sp"
                 android:layout_gravity="center"
+                android:fontFamily="@font/poppins_regular"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
         </LinearLayout>
         <LinearLayout
             android:id="@+id/layout4"
             android:orientation="vertical"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="3dp"
             android:background="@drawable/shape_border_radius"
-            android:layout_width="50dp"
-            android:layout_height="wrap_content">
+            android:layout_width="60dp"
+            android:layout_height="100dp">
 
             <ImageView
                 android:layout_gravity="center"
                 android:src="@drawable/ductulator_icon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_width="50dp"
+                android:layout_height="50dp"/>
             <TextView
                 android:text="@string/ductulator"
                 android:textColor="@color/heading_color"
-                android:textSize="14sp"
+                android:textSize="11sp"
                 android:layout_gravity="center"
+                android:fontFamily="@font/poppins_regular"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
         </LinearLayout>
         <LinearLayout
             android:id="@+id/layout5"
             android:orientation="vertical"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="3dp"
             android:background="@drawable/shape_border_radius"
-            android:layout_width="50dp"
-            android:layout_height="wrap_content">
+            android:layout_width="60dp"
+            android:layout_height="100dp">
 
             <ImageView
                 android:layout_gravity="center"
                 android:src="@drawable/co2_icon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_width="50dp"
+                android:layout_height="50dp"/>
             <TextView
                 android:text="@string/co2"
                 android:textColor="@color/heading_color"
-                android:textSize="14sp"
+                android:textSize="11sp"
+                android:fontFamily="@font/poppins_regular"
                 android:layout_gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
@@ -131,20 +136,21 @@
         <LinearLayout
             android:id="@+id/layout6"
             android:orientation="vertical"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="3dp"
             android:background="@drawable/shape_border_radius"
-            android:layout_width="55dp"
-            android:layout_height="wrap_content">
+            android:layout_width="60dp"
+            android:layout_height="100dp">
 
             <ImageView
                 android:layout_gravity="center"
                 android:src="@drawable/psycal_icon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_width="50dp"
+                android:layout_height="50dp"/>
             <TextView
                 android:text="@string/weather_bin_data"
                 android:textColor="@color/heading_color"
-                android:textSize="14sp"
+                android:textSize="11sp"
+                android:fontFamily="@font/poppins_regular"
                 android:layout_gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>

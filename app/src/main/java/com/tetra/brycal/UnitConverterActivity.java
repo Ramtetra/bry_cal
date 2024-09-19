@@ -675,13 +675,13 @@ public class UnitConverterActivity extends AppCompatActivity {
                           binding.etTo.setText(String.valueOf(roundedValue));
                       }
                       else if (outputUnits.equalsIgnoreCase("PSI")){
-                          double footValue=(inputValue/6895);
+                          double footValue=(inputValue*14.504);
                           BigDecimal num2 = new BigDecimal(footValue);
                           BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
                           binding.etTo.setText(String.valueOf(roundedValue));
                       }
                       else if (outputUnits.equalsIgnoreCase("atm")){
-                          double footValue=(inputValue/101300);
+                          double footValue=(inputValue/1.013);
                           BigDecimal num2 = new BigDecimal(footValue);
                           BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
                           binding.etTo.setText(String.valueOf(roundedValue));
@@ -689,25 +689,25 @@ public class UnitConverterActivity extends AppCompatActivity {
                   }
                   else if (inputUnits.equalsIgnoreCase("PSI")){
                       if (outputUnits.equalsIgnoreCase("Pascal")){
-                          double footValue=(inputValue);
+                          double footValue=(inputValue*6895);
                           BigDecimal num2 = new BigDecimal(footValue);
                           BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
                           binding.etTo.setText(String.valueOf(roundedValue));
                       }
                       else if (outputUnits.equalsIgnoreCase("Bar")){
-                          double footValue=(inputValue/100000);
+                          double footValue=(inputValue/14.504);
                           BigDecimal num2 = new BigDecimal(footValue);
                           BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
                           binding.etTo.setText(String.valueOf(roundedValue));
                       }
                       else if (outputUnits.equalsIgnoreCase("PSI")){
-                          double footValue=(inputValue/6895);
+                          double footValue=(inputValue);
                           BigDecimal num2 = new BigDecimal(footValue);
                           BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
                           binding.etTo.setText(String.valueOf(roundedValue));
                       }
                       else if (outputUnits.equalsIgnoreCase("atm")){
-                          double footValue=(inputValue/101300);
+                          double footValue=(inputValue/14.696);
                           BigDecimal num2 = new BigDecimal(footValue);
                           BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
                           binding.etTo.setText(String.valueOf(roundedValue));
@@ -715,25 +715,25 @@ public class UnitConverterActivity extends AppCompatActivity {
                   }
                   else if (inputUnits.equalsIgnoreCase("atm")){
                       if (outputUnits.equalsIgnoreCase("Pascal")){
-                          double footValue=(inputValue);
+                          double footValue=(inputValue*101300);
                           BigDecimal num2 = new BigDecimal(footValue);
                           BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
                           binding.etTo.setText(String.valueOf(roundedValue));
                       }
                       else if (outputUnits.equalsIgnoreCase("Bar")){
-                          double footValue=(inputValue/100000);
+                          double footValue=(inputValue*1.013);
                           BigDecimal num2 = new BigDecimal(footValue);
                           BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
                           binding.etTo.setText(String.valueOf(roundedValue));
                       }
                       else if (outputUnits.equalsIgnoreCase("PSI")){
-                          double footValue=(inputValue/6895);
+                          double footValue=(inputValue*14.696);
                           BigDecimal num2 = new BigDecimal(footValue);
                           BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
                           binding.etTo.setText(String.valueOf(roundedValue));
                       }
                       else if (outputUnits.equalsIgnoreCase("atm")){
-                          double footValue=(inputValue/101300);
+                          double footValue=(inputValue);
                           BigDecimal num2 = new BigDecimal(footValue);
                           BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
                           binding.etTo.setText(String.valueOf(roundedValue));
