@@ -73,7 +73,7 @@ public class PsycalActivity extends AppCompatActivity {
                 startActivity(intent2);
             }
         });
-        binding.toggleButton.setOnCheckedChangeListener((buttonView, isChecked) -> {
+        binding.switchBtn.setOnCheckedChangeListener((buttonView, isChecked) -> {
             if (isChecked) {
                 // Toggle is enabled (ON)
                 ArrayAdapter ad1 = new ArrayAdapter(PsycalActivity.this, android.R.layout.simple_spinner_item, ipSelected);

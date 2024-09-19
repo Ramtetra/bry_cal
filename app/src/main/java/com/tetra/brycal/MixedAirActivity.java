@@ -72,7 +72,7 @@ public class MixedAirActivity extends AppCompatActivity {
                 startActivity(intent2);
             }
         });
-        binding.toggleButton.setOnCheckedChangeListener((buttonView, isChecked) -> {
+        binding.switchBtn.setOnCheckedChangeListener((buttonView, isChecked) -> {
             if (isChecked) {
                 binding.txt1.setText("°C db");
                 binding.txt2.setText("°C db");

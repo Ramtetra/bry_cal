@@ -12,7 +12,6 @@
     <include
         android:id="@+id/toolbar"
         layout="@layout/app_bar"/>
-
     <LinearLayout
         android:id="@+id/layoutHeader"
         android:orientation="horizontal"
@@ -28,17 +27,17 @@
             android:orientation="vertical"
             android:background="@drawable/shape_border_radius"
             android:layout_width="50dp"
-            android:layout_height="100dp">
+            android:layout_height="75dp">
 
             <ImageView
                 android:src="@drawable/psycal_icon"
                 android:layout_gravity="center"
-                android:layout_width="50dp"
-                android:layout_height="50dp"/>
+                android:layout_width="40dp"
+                android:layout_height="40dp"/>
             <TextView
                 android:text="@string/psycal"
                 android:textColor="@color/heading_color"
-                android:textSize="11sp"
+                android:textSize="10sp"
                 android:fontFamily="@font/poppins_regular"
                 android:layout_gravity="center"
                 android:layout_width="wrap_content"
@@ -52,17 +51,17 @@
             android:layout_marginLeft="3dp"
             android:background="@drawable/shape_border_radius_active"
             android:layout_width="60dp"
-            android:layout_height="100dp">
+            android:layout_height="75dp">
 
             <ImageView
                 android:src="@drawable/mixed_air_icon"
                 android:layout_gravity="center"
-                android:layout_width="50dp"
-                android:layout_height="50dp"/>
+                android:layout_width="40dp"
+                android:layout_height="40dp"/>
             <TextView
                 android:text="@string/mixed_air_conditions"
                 android:textColor="@color/heading_color"
-                android:textSize="11sp"
+                android:textSize="10sp"
                 android:layout_gravity="center"
                 android:fontFamily="@font/poppins_regular"
                 android:layout_width="wrap_content"
@@ -76,17 +75,17 @@
             android:layout_marginLeft="3dp"
             android:background="@drawable/shape_border_radius"
             android:layout_width="52dp"
-            android:layout_height="100dp">
+            android:layout_height="75dp">
 
             <ImageView
                 android:layout_gravity="center"
                 android:src="@drawable/unit_converter_icon"
-                android:layout_width="50dp"
-                android:layout_height="50dp"/>
+                android:layout_width="40dp"
+                android:layout_height="40dp"/>
             <TextView
                 android:text="@string/unit_converter"
                 android:textColor="@color/heading_color"
-                android:textSize="11sp"
+                android:textSize="10sp"
                 android:layout_gravity="center"
                 android:fontFamily="@font/poppins_regular"
                 android:layout_width="wrap_content"
@@ -98,17 +97,17 @@
             android:layout_marginLeft="3dp"
             android:background="@drawable/shape_border_radius"
             android:layout_width="60dp"
-            android:layout_height="100dp">
+            android:layout_height="75dp">
 
             <ImageView
                 android:layout_gravity="center"
                 android:src="@drawable/ductulator_icon"
-                android:layout_width="50dp"
-                android:layout_height="50dp"/>
+                android:layout_width="40dp"
+                android:layout_height="40dp"/>
             <TextView
                 android:text="@string/ductulator"
                 android:textColor="@color/heading_color"
-                android:textSize="11sp"
+                android:textSize="10sp"
                 android:layout_gravity="center"
                 android:fontFamily="@font/poppins_regular"
                 android:layout_width="wrap_content"
@@ -120,17 +119,17 @@
             android:layout_marginLeft="3dp"
             android:background="@drawable/shape_border_radius"
             android:layout_width="60dp"
-            android:layout_height="100dp">
+            android:layout_height="75dp">
 
             <ImageView
                 android:layout_gravity="center"
                 android:src="@drawable/co2_icon"
-                android:layout_width="50dp"
-                android:layout_height="50dp"/>
+                android:layout_width="40dp"
+                android:layout_height="40dp"/>
             <TextView
                 android:text="@string/co2"
                 android:textColor="@color/heading_color"
-                android:textSize="11sp"
+                android:textSize="10sp"
                 android:fontFamily="@font/poppins_regular"
                 android:layout_gravity="center"
                 android:layout_width="wrap_content"
@@ -143,17 +142,17 @@
             android:layout_marginLeft="3dp"
             android:background="@drawable/shape_border_radius"
             android:layout_width="60dp"
-            android:layout_height="100dp">
+            android:layout_height="75dp">
 
             <ImageView
                 android:layout_gravity="center"
-                android:src="@drawable/psycal_icon"
-                android:layout_width="50dp"
-                android:layout_height="50dp"/>
+                android:src="@drawable/weather_icon"
+                android:layout_width="40dp"
+                android:layout_height="40dp"/>
             <TextView
                 android:text="@string/weather_bin_data"
                 android:textColor="@color/heading_color"
-                android:textSize="11sp"
+                android:textSize="10sp"
                 android:fontFamily="@font/poppins_regular"
                 android:layout_gravity="center"
                 android:layout_width="wrap_content"
@@ -161,8 +160,9 @@
         </LinearLayout>
 
     </LinearLayout>
+
     <ScrollView
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="170dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -172,7 +172,7 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView"
-            android:layout_marginTop="190dp"
+            android:layout_marginTop="170dp"
             app:cardCornerRadius="8dp"
             android:layout_margin="10dp"
             android:paddingBottom="20dp"
@@ -201,40 +201,72 @@
                 android:id="@+id/rbAirStreamA"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="2dp"
                 android:checked="true"
                 android:fontFamily="@font/poppins_regular"
                 android:layout_marginLeft="20dp"
                 android:text="@string/air_stream_a"
-                android:textSize="16sp" />
+                android:textSize="14sp" />
 
             <RadioButton
                 android:id="@+id/rbAirStreamB"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:checked="false"
-                android:padding="2dp"
                 android:fontFamily="@font/poppins_regular"
                 android:layout_marginLeft="20dp"
                 android:text="@string/air_stream_b"
                 android:textAlignment="center"
-                android:textSize="16sp" />
+                android:textSize="14sp" />
 
             <RadioButton
                 android:id="@+id/rbAirStreamC"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:checked="false"
-                android:padding="2dp"
                 android:fontFamily="@font/poppins_regular"
                 android:layout_marginLeft="20dp"
                 android:text="@string/air_stream_c"
                 android:textAlignment="center"
-                android:textSize="16sp" />
+                android:textSize="14sp" />
 
         </RadioGroup>
 
             <LinearLayout
+                android:id="@+id/layoutToggle"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/radioGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:text="SI"
+                    android:gravity="center"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textColor="@color/white"
+                    android:background="@color/dark_blue"
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"/>
+                <Switch
+                    android:id="@+id/switchBtn"
+                    android:thumbTint="@color/dark_blue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:text="PI"
+                    android:gravity="center"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textColor="@color/white"
+                    android:background="@color/dark_blue"
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+
+<!--            <LinearLayout
                 android:id="@+id/layoutToggle"
                 android:layout_marginLeft="20dp"
                 app:layout_constraintLeft_toLeftOf="parent"
@@ -252,7 +284,7 @@
                     android:layout_height="wrap_content"
                     android:textOn="SI"
                     android:textOff="IP"/>
-            </LinearLayout>
+            </LinearLayout>-->
 
        <LinearLayout
            android:orientation="vertical"
@@ -284,6 +316,7 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_weight="1"
+                android:layout_marginLeft="5dp"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

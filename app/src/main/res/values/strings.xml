@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">AirProperties</string>
+    <string name="app_name">BryCal</string>
     <string name="psycal">Psycal</string>
     <string name="mixed_air_conditions">Mixed Air\nConditions</string>
     <string name="unit_converter">Unit\nConverter</string>

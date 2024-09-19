@@ -24,17 +24,17 @@
             android:orientation="vertical"
             android:background="@drawable/shape_border_radius"
             android:layout_width="50dp"
-            android:layout_height="100dp">
+            android:layout_height="75dp">
 
             <ImageView
                 android:src="@drawable/psycal_icon"
                 android:layout_gravity="center"
-                android:layout_width="50dp"
-                android:layout_height="50dp"/>
+                android:layout_width="40dp"
+                android:layout_height="40dp"/>
             <TextView
                 android:text="@string/psycal"
                 android:textColor="@color/heading_color"
-                android:textSize="11sp"
+                android:textSize="10sp"
                 android:fontFamily="@font/poppins_regular"
                 android:layout_gravity="center"
                 android:layout_width="wrap_content"
@@ -48,17 +48,17 @@
             android:layout_marginLeft="3dp"
             android:background="@drawable/shape_border_radius"
             android:layout_width="60dp"
-            android:layout_height="100dp">
+            android:layout_height="75dp">
 
             <ImageView
                 android:src="@drawable/mixed_air_icon"
                 android:layout_gravity="center"
-                android:layout_width="50dp"
-                android:layout_height="50dp"/>
+                android:layout_width="40dp"
+                android:layout_height="40dp"/>
             <TextView
                 android:text="@string/mixed_air_conditions"
                 android:textColor="@color/heading_color"
-                android:textSize="11sp"
+                android:textSize="10sp"
                 android:layout_gravity="center"
                 android:fontFamily="@font/poppins_regular"
                 android:layout_width="wrap_content"
@@ -72,17 +72,17 @@
             android:layout_marginLeft="3dp"
             android:background="@drawable/shape_border_radius"
             android:layout_width="52dp"
-            android:layout_height="100dp">
+            android:layout_height="75dp">
 
             <ImageView
                 android:layout_gravity="center"
                 android:src="@drawable/unit_converter_icon"
-                android:layout_width="50dp"
-                android:layout_height="50dp"/>
+                android:layout_width="40dp"
+                android:layout_height="40dp"/>
             <TextView
                 android:text="@string/unit_converter"
                 android:textColor="@color/heading_color"
-                android:textSize="11sp"
+                android:textSize="10sp"
                 android:layout_gravity="center"
                 android:fontFamily="@font/poppins_regular"
                 android:layout_width="wrap_content"
@@ -94,17 +94,17 @@
             android:layout_marginLeft="3dp"
             android:background="@drawable/shape_border_radius"
             android:layout_width="60dp"
-            android:layout_height="100dp">
+            android:layout_height="75dp">
 
             <ImageView
                 android:layout_gravity="center"
                 android:src="@drawable/ductulator_icon"
-                android:layout_width="50dp"
-                android:layout_height="50dp"/>
+                android:layout_width="40dp"
+                android:layout_height="40dp"/>
             <TextView
                 android:text="@string/ductulator"
                 android:textColor="@color/heading_color"
-                android:textSize="11sp"
+                android:textSize="10sp"
                 android:layout_gravity="center"
                 android:fontFamily="@font/poppins_regular"
                 android:layout_width="wrap_content"
@@ -116,17 +116,17 @@
             android:layout_marginLeft="3dp"
             android:background="@drawable/shape_border_radius_active"
             android:layout_width="60dp"
-            android:layout_height="100dp">
+            android:layout_height="75dp">
 
             <ImageView
                 android:layout_gravity="center"
                 android:src="@drawable/co2_icon"
-                android:layout_width="50dp"
-                android:layout_height="50dp"/>
+                android:layout_width="40dp"
+                android:layout_height="40dp"/>
             <TextView
                 android:text="@string/co2"
                 android:textColor="@color/heading_color"
-                android:textSize="11sp"
+                android:textSize="10sp"
                 android:fontFamily="@font/poppins_regular"
                 android:layout_gravity="center"
                 android:layout_width="wrap_content"
@@ -139,17 +139,17 @@
             android:layout_marginLeft="3dp"
             android:background="@drawable/shape_border_radius"
             android:layout_width="60dp"
-            android:layout_height="100dp">
+            android:layout_height="75dp">
 
             <ImageView
                 android:layout_gravity="center"
-                android:src="@drawable/psycal_icon"
-                android:layout_width="50dp"
-                android:layout_height="50dp"/>
+                android:src="@drawable/weather_icon"
+                android:layout_width="40dp"
+                android:layout_height="40dp"/>
             <TextView
                 android:text="@string/weather_bin_data"
                 android:textColor="@color/heading_color"
-                android:textSize="11sp"
+                android:textSize="10sp"
                 android:fontFamily="@font/poppins_regular"
                 android:layout_gravity="center"
                 android:layout_width="wrap_content"
@@ -157,18 +157,19 @@
         </LinearLayout>
 
     </LinearLayout>
+
     <ScrollView
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:paddingBottom="30dp"
-        android:layout_marginTop="180dp"
+        android:layout_marginTop="170dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView"
-            android:layout_marginTop="180dp"
+            android:layout_marginTop="170dp"
             app:cardCornerRadius="8dp"
             android:layout_margin="10dp"
             android:paddingBottom="20dp"
@@ -183,11 +184,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
             <TextView
-                android:background="@color/light_blue"
+                android:background="@color/dark_blue"
                 android:layout_width="150dp"
                 android:padding="7dp"
                 android:text="INPUT"
-                android:textSize="15sp"
+                android:textSize="14sp"
                 android:gravity="center"
                 android:textColor="@color/white"
                 android:fontFamily="@font/poppins_medium"
