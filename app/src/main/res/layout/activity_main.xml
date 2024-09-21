@@ -80,7 +80,7 @@
                         android:weightSum="1"
                         android:layout_margin="5dp"
                         android:background="@drawable/shape_border_radius"
-                        android:layout_width="170dp"
+                        android:layout_width="165dp"
                         android:layout_height="55dp">
                         <TextView
                             android:layout_weight="0.5"
@@ -89,17 +89,17 @@
                             android:layout_height="wrap_content"
                             android:padding="4dp"
                             android:layout_marginLeft="5dp"
-                            android:layout_gravity="center"
+                            android:layout_gravity="left"
                             android:text="@string/psycal"
                             android:fontFamily="@font/poppins_italic"
                             android:textColor="@color/text_button_color"
-                            android:textSize="17sp" />
+                            android:textSize="16sp" />
                         <ImageView
                             android:layout_weight="0.5"
                             android:layout_marginLeft="10dp"
                             android:src="@drawable/psycal_icon"
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"/>
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"/>
 
                     </LinearLayout>
                     <LinearLayout
@@ -113,21 +113,21 @@
                             android:id="@+id/rbMixedAir"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="center"
+                            android:layout_gravity="left"
                             android:layout_marginLeft="5dp"
                             android:layout_weight="0.5"
                             android:fontFamily="@font/poppins_italic"
                             android:padding="4dp"
                             android:text="@string/mixed_air_conditions"
                             android:textColor="@color/text_button_color"
-                            android:textSize="17sp" />
+                            android:textSize="16sp" />
 
                         <ImageView
                             android:layout_weight="0.5"
-                            android:layout_marginLeft="10dp"
+                            android:layout_marginLeft="5dp"
                             android:src="@drawable/mixed_air_icon"
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"/>
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"/>
 
                     </LinearLayout>
 
@@ -153,21 +153,21 @@
                             android:id="@+id/rbUnitConverter"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="center"
+                            android:layout_gravity="left"
                             android:layout_marginLeft="5dp"
                             android:layout_weight="0.5"
                             android:fontFamily="@font/poppins_italic"
                             android:padding="4dp"
                             android:text="@string/unit_converter"
                             android:textColor="@color/text_button_color"
-                            android:textSize="17sp" />
+                            android:textSize="16sp" />
 
                         <ImageView
                             android:layout_weight="0.5"
                             android:layout_marginLeft="10dp"
                             android:src="@drawable/unit_converter_icon"
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"/>
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"/>
 
                     </LinearLayout>
                     <LinearLayout
@@ -183,17 +183,17 @@
                             android:layout_height="wrap_content"
                             android:padding="4dp"
                             android:layout_marginLeft="5dp"
-                            android:layout_gravity="center"
+                            android:layout_gravity="left"
                             android:text="@string/ductulator"
                             android:fontFamily="@font/poppins_italic"
                             android:textColor="@color/text_button_color"
-                            android:textSize="17sp" />
+                            android:textSize="16sp" />
                         <ImageView
                             android:layout_weight="0.5"
-                            android:layout_marginLeft="10dp"
+                            android:layout_marginLeft="5dp"
                             android:src="@drawable/ductulator_icon"
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"/>
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"/>
 
                     </LinearLayout>
 
@@ -222,17 +222,17 @@
                             android:layout_height="wrap_content"
                             android:padding="4dp"
                             android:layout_marginLeft="5dp"
-                            android:layout_gravity="center"
+                            android:layout_gravity="left"
                             android:text="@string/co2"
                             android:fontFamily="@font/poppins_italic"
                             android:textColor="@color/text_button_color"
-                            android:textSize="17sp" />
+                            android:textSize="16sp" />
                         <ImageView
                             android:layout_weight="0.5"
                             android:layout_marginLeft="10dp"
                             android:src="@drawable/co2_icon"
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"/>
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"/>
 
                     </LinearLayout>
                     <LinearLayout
@@ -248,161 +248,21 @@
                             android:layout_height="wrap_content"
                             android:padding="4dp"
                             android:layout_marginLeft="5dp"
-                            android:layout_gravity="center"
+                            android:layout_gravity="left"
                             android:text="@string/weather_bin_data"
                             android:fontFamily="@font/poppins_italic"
                             android:textColor="@color/text_button_color"
-                            android:textSize="17sp" />
+                            android:textSize="16sp" />
                         <ImageView
                             android:layout_weight="0.5"
-                            android:layout_marginLeft="10dp"
+                            android:layout_marginLeft="5dp"
                             android:src="@drawable/weather_icon"
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"/>
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"/>
 
                     </LinearLayout>
-
-
-
                 </LinearLayout>
-
-
             </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-<!--
-                &lt;!&ndash;adding a radio button &ndash;&gt;
-                <TextView
-                    android:id="@+id/rbMixedAir"
-                    android:layout_width="170dp"
-                    android:layout_height="wrap_content"
-                    android:checked="false"
-                    android:padding="4dp"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="10dp"
-                    android:drawablePadding="5dp"
-                    android:fontFamily="@font/poppins_medium"
-                    android:textColor="@color/text_button_color"
-                    android:drawableRight="@drawable/mixed_air_icon"
-                    android:background="@drawable/shape_border_radius"
-                    android:text="@string/mixed_air_conditions"
-                    android:textSize="13sp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/radioGroup2"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@+id/radioGroup1"
-                android:orientation="horizontal"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp">
-
-                <TextView
-                    android:id="@+id/rbUnitConverter"
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content"
-                    android:checked="false"
-                    android:padding="4dp"
-                    android:fontFamily="@font/poppins_medium"
-                    android:textColor="@color/text_button_color"
-                    android:layout_gravity="center"
-                    android:drawablePadding="5dp"
-                    android:background="@drawable/shape_border_radius"
-                    android:drawableRight="@drawable/unit_converter_icon"
-                    android:text="@string/unit_converter"
-                    android:textSize="13sp" />
-
-                &lt;!&ndash;adding a radio button &ndash;&gt;
-                <TextView
-                    android:id="@+id/rbDuctulator"
-                    android:layout_width="170dp"
-                    android:layout_height="wrap_content"
-                    android:checked="false"
-                    android:padding="4dp"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="10dp"
-                    android:drawablePadding="5dp"
-                    android:fontFamily="@font/poppins_medium"
-                    android:textColor="@color/text_button_color"
-                    android:drawableRight="@drawable/ductulator_icon"
-                    android:background="@drawable/shape_border_radius"
-                    android:text="@string/ductulator"
-                    android:textSize="13sp" />
-
-            </LinearLayout>
-            <LinearLayout
-                android:id="@+id/radioGroup3"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@+id/radioGroup2"
-                android:orientation="horizontal"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp">
-
-                <TextView
-                    android:id="@+id/rbCo2"
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content"
-                    android:checked="false"
-                    android:padding="4dp"
-                    android:fontFamily="@font/poppins_medium"
-                    android:textColor="@color/text_button_color"
-                    android:layout_gravity="center"
-                    android:drawablePadding="5dp"
-                    android:background="@drawable/shape_border_radius"
-                    android:drawableRight="@drawable/co2_icon"
-                    android:text="@string/co2"
-                    android:textSize="13sp" />
-
-                &lt;!&ndash;adding a radio button &ndash;&gt;
-                <TextView
-                    android:id="@+id/rbWeatherBin"
-                    android:layout_width="170dp"
-                    android:layout_height="wrap_content"
-                    android:checked="false"
-                    android:padding="4dp"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="10dp"
-                    android:drawablePadding="5dp"
-                    android:fontFamily="@font/poppins_medium"
-                    android:textColor="@color/text_button_color"
-                    android:drawableRight="@drawable/weather_icon"
-                    android:background="@drawable/shape_border_radius"
-                    android:text="@string/weather_bin_data"
-                    android:textSize="13sp" />
-
-            </LinearLayout>-->
-
         </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
-   <!-- <LinearLayout
-        android:id="@+id/btnEnter"
-        android:layout_marginTop="30dp"
-        android:padding="10dp"
-        android:layout_marginBottom="30dp"
-        android:layout_marginLeft="20dp"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:background="@drawable/btn_bg_selector"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content">
-        <TextView
-            android:textSize="15sp"
-            android:text="Enter"
-            android:fontFamily="@font/poppins_regular"
-            android:gravity="center"
-            android:textColor="@color/white"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-    </LinearLayout>-->
  </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

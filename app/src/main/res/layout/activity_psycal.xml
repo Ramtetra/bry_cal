@@ -17,6 +17,7 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginTop="10dp"
+        android:gravity="center"
         app:layout_constraintTop_toBottomOf="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -83,6 +84,14 @@
                 android:layout_height="40dp"/>
             <TextView
                 android:text="@string/unit_converter"
+                android:textColor="@color/heading_color"
+                android:textSize="10sp"
+                android:layout_gravity="center"
+                android:fontFamily="@font/poppins_regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="@string/converter"
                 android:textColor="@color/heading_color"
                 android:textSize="10sp"
                 android:layout_gravity="center"
@@ -204,7 +213,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/txtInputOutput"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginLeft="25dp"
                     android:orientation="horizontal">
 
                     <TextView
@@ -222,7 +231,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
                     <TextView
-                        android:text="PI"
+                        android:text="IP"
                         android:gravity="center"
                         android:textSize="14sp"
                         android:fontFamily="@font/poppins_medium"
@@ -235,6 +244,9 @@
                 <LinearLayout
                     android:id="@+id/layoutData1"
                     android:orientation="vertical"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="20dp"
                     app:layout_constraintTop_toBottomOf="@+id/layoutToggle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
@@ -243,27 +255,38 @@
                         android:weightSum="2"
                         android:layout_marginTop="10dp"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="50dp">
 
                         <EditText
                             android:id="@+id/et1"
-                            android:layout_weight="1.4"
+                            android:layout_weight="1.6"
                             android:inputType="numberDecimal"
                             android:padding="5dp"
                             android:layout_marginLeft="10dp"
                             android:layout_marginRight="10dp"
                             android:background="@drawable/shape_edittext_rounded"
                             android:layout_width="80dp"
-                            android:layout_height="45dp"/>
+                            android:layout_height="48dp"/>
 
-                        <Spinner
-                            android:id="@+id/spinner1"
-                            android:layout_weight="0.6"
-                            android:layout_marginRight="10dp"
-                            android:spinnerMode="dropdown"
-                            android:background="@drawable/spinner_background"
+                        <LinearLayout
+                            android:background="@drawable/shape_edittext_rounded"
+                            android:layout_weight="0.4"
                             android:layout_width="wrap_content"
-                            android:layout_height="50dp"/>
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:id="@+id/txt1"
+                                android:layout_weight="0.4"
+                                android:paddingBottom="10dp"
+                                android:textSize="14sp"
+                                android:gravity="center"
+                                android:textColor="@color/black"
+                                android:fontFamily="@font/poppins_regular"
+                                android:layout_marginRight="10dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="48dp"/>
+
+                        </LinearLayout>
+
 
                     </LinearLayout>
 
@@ -272,6 +295,8 @@
                 <LinearLayout
                     android:id="@+id/layoutData2"
                     android:orientation="vertical"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
                     app:layout_constraintTop_toBottomOf="@+id/layoutData1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
@@ -280,27 +305,38 @@
                         android:weightSum="2"
                         android:layout_marginTop="10dp"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="50dp">
 
                         <EditText
                             android:id="@+id/et2"
-                            android:layout_weight="1.4"
+                            android:layout_weight="1.6"
                             android:inputType="numberDecimal"
                             android:padding="5dp"
                             android:layout_marginLeft="10dp"
                             android:layout_marginRight="10dp"
                             android:background="@drawable/shape_edittext_rounded"
                             android:layout_width="80dp"
-                            android:layout_height="45dp"/>
+                            android:layout_height="48dp"/>
 
-                        <Spinner
-                            android:id="@+id/spinner2"
-                            android:layout_weight="0.6"
-                            android:spinnerMode="dropdown"
-                            android:layout_marginRight="10dp"
-                            android:background="@drawable/spinner_background"
+                        <LinearLayout
+                            android:background="@drawable/shape_edittext_rounded"
+                            android:layout_weight="0.4"
                             android:layout_width="wrap_content"
-                            android:layout_height="50dp"/>
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:id="@+id/txt2"
+                                android:layout_weight="0.4"
+                                android:paddingBottom="10dp"
+                                android:textSize="14sp"
+                                android:gravity="center"
+                                android:textColor="@color/black"
+                                android:fontFamily="@font/poppins_regular"
+                                android:layout_marginRight="10dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="48dp"/>
+
+                        </LinearLayout>
+
 
                     </LinearLayout>
                 </LinearLayout>
@@ -308,6 +344,8 @@
                 <LinearLayout
                     android:id="@+id/layoutData3"
                     android:orientation="vertical"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
                     app:layout_constraintTop_toBottomOf="@+id/layoutData2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
@@ -316,27 +354,38 @@
                         android:weightSum="2"
                         android:layout_marginTop="10dp"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="50dp">
 
                         <EditText
                             android:id="@+id/et3"
-                            android:layout_weight="1.4"
-                            android:inputType="numberDecimal"
-                            android:padding="5dp"
+                            android:layout_width="80dp"
+                            android:layout_height="48dp"
                             android:layout_marginLeft="10dp"
                             android:layout_marginRight="10dp"
+                            android:layout_weight="1.6"
                             android:background="@drawable/shape_edittext_rounded"
-                            android:layout_width="80dp"
-                            android:layout_height="45dp"/>
+                            android:inputType="numberDecimal"
+                            android:padding="5dp" />
 
-                        <Spinner
-                            android:id="@+id/spinner3"
-                            android:layout_weight="0.6"
-                            android:spinnerMode="dropdown"
-                            android:layout_marginRight="10dp"
-                            android:background="@drawable/spinner_background"
+                        <LinearLayout
+                            android:background="@drawable/shape_edittext_rounded"
+                            android:layout_weight="0.4"
                             android:layout_width="wrap_content"
-                            android:layout_height="50dp"/>
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:id="@+id/txt3"
+                                android:layout_weight="0.4"
+                                android:paddingBottom="10dp"
+                                android:textSize="14sp"
+                                android:gravity="center"
+                                android:textColor="@color/black"
+                                android:fontFamily="@font/poppins_regular"
+                                android:layout_marginRight="10dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="48dp"/>
+
+                        </LinearLayout>
+
 
                     </LinearLayout>
 
@@ -347,6 +396,8 @@
                 <LinearLayout
                     android:id="@+id/layoutData4"
                     android:orientation="vertical"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
                     app:layout_constraintTop_toBottomOf="@+id/layoutData3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
@@ -355,27 +406,38 @@
                         android:weightSum="2"
                         android:layout_marginTop="10dp"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="50dp">
 
                         <EditText
                             android:id="@+id/et4"
-                            android:layout_weight="1.4"
+                            android:layout_weight="1.6"
                             android:inputType="numberDecimal"
                             android:padding="5dp"
                             android:layout_marginLeft="10dp"
                             android:layout_marginRight="10dp"
                             android:background="@drawable/shape_edittext_rounded"
                             android:layout_width="80dp"
-                            android:layout_height="45dp"/>
+                            android:layout_height="48dp"/>
 
-                        <Spinner
-                            android:id="@+id/spinner4"
-                            android:layout_weight="0.6"
-                            android:spinnerMode="dropdown"
-                            android:layout_marginRight="10dp"
-                            android:background="@drawable/spinner_background"
+                        <LinearLayout
+                            android:background="@drawable/shape_edittext_rounded"
+                            android:layout_weight="0.4"
                             android:layout_width="wrap_content"
-                            android:layout_height="50dp"/>
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:id="@+id/txt4"
+                                android:layout_weight="0.4"
+                                android:paddingBottom="10dp"
+                                android:textSize="14sp"
+                                android:gravity="center"
+                                android:textColor="@color/black"
+                                android:fontFamily="@font/poppins_regular"
+                                android:layout_marginRight="10dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="48dp"/>
+
+                        </LinearLayout>
+
 
                     </LinearLayout>
 
@@ -384,6 +446,8 @@
                 <LinearLayout
                     android:id="@+id/layoutData5"
                     android:orientation="vertical"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
                     app:layout_constraintTop_toBottomOf="@+id/layoutData4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
@@ -392,35 +456,47 @@
                         android:weightSum="2"
                         android:layout_marginTop="10dp"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="50dp">
 
                         <EditText
                             android:id="@+id/et5"
-                            android:layout_weight="1.4"
+                            android:layout_weight="1.6"
                             android:inputType="numberDecimal"
                             android:padding="5dp"
                             android:layout_marginLeft="10dp"
                             android:layout_marginRight="10dp"
                             android:background="@drawable/shape_edittext_rounded"
                             android:layout_width="80dp"
-                            android:layout_height="45dp"/>
+                            android:layout_height="48dp"/>
 
-                        <Spinner
-                            android:id="@+id/spinner5"
-                            android:layout_weight="0.6"
-                            android:spinnerMode="dropdown"
-                            android:layout_marginRight="10dp"
-                            android:background="@drawable/spinner_background"
+                        <LinearLayout
+                            android:background="@drawable/shape_edittext_rounded"
+                            android:layout_weight="0.4"
                             android:layout_width="wrap_content"
-                            android:layout_height="50dp"/>
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:id="@+id/txt5"
+                                android:layout_weight="0.4"
+                                android:paddingBottom="10dp"
+                                android:textSize="14sp"
+                                android:gravity="center"
+                                android:textColor="@color/black"
+                                android:fontFamily="@font/poppins_regular"
+                                android:layout_marginRight="10dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="48dp"/>
+
+                        </LinearLayout>
+
 
                     </LinearLayout>
-
                 </LinearLayout>
 
                 <LinearLayout
                     android:id="@+id/layoutData6"
                     android:orientation="vertical"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
                     app:layout_constraintTop_toBottomOf="@+id/layoutData5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
@@ -429,10 +505,63 @@
                         android:weightSum="2"
                         android:layout_marginTop="10dp"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="50dp">
 
                         <EditText
                             android:id="@+id/et6"
+                            android:layout_weight="1.6"
+                            android:inputType="numberDecimal"
+                            android:padding="5dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:background="@drawable/shape_edittext_rounded"
+                            android:layout_width="80dp"
+                            android:layout_height="48dp"/>
+
+                        <LinearLayout
+                            android:background="@drawable/shape_edittext_rounded"
+                            android:layout_weight="0.4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:id="@+id/txt6"
+                                android:layout_weight="0.4"
+                                android:paddingBottom="10dp"
+                                android:textSize="14sp"
+                                android:gravity="center"
+                                android:textColor="@color/black"
+                                android:fontFamily="@font/poppins_regular"
+                                android:layout_marginRight="10dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="48dp"/>
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:weightSum="2"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    app:layout_constraintTop_toBottomOf="@+id/layoutData6"
+                   app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        android:orientation="horizontal"
+                        app:layout_constraintTop_toBottomOf="@+id/layoutData6"
+                        android:layout_weight="1.4"
+                        android:layout_marginTop="10dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp">
+
+                        <EditText
+                            android:id="@+id/et7"
                             android:layout_weight="1.4"
                             android:inputType="numberDecimal"
                             android:padding="5dp"
@@ -440,57 +569,69 @@
                             android:layout_marginRight="10dp"
                             android:background="@drawable/shape_edittext_rounded"
                             android:layout_width="80dp"
-                            android:layout_height="45dp"/>
+                            android:layout_height="48dp"/>
 
-                        <Spinner
-                            android:id="@+id/spinner6"
-                            android:layout_weight="0.6"
-                            android:spinnerMode="dropdown"
-                            android:layout_marginRight="10dp"
-                            android:background="@drawable/spinner_background"
-                            android:layout_width="wrap_content"
-                            android:layout_height="50dp"/>
 
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/btnAltitude"
+                        android:layout_marginTop="10dp"
+                        android:padding="5dp"
+                        android:layout_weight="0.6"
+                        android:layout_marginBottom="30dp"
+                        android:layout_marginLeft="20dp"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/layoutData6"
+                        android:background="@drawable/shape_dark_blue_color"
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:textSize="15sp"
+                            android:text="Altitude"
+                            android:gravity="center"
+                            android:layout_marginLeft="20dp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:textColor="@color/white"
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"/>
                     </LinearLayout>
 
                 </LinearLayout>
 
-                <LinearLayout
-                    android:id="@+id/btnAltitude"
-                    android:layout_marginTop="30dp"
-                    android:padding="10dp"
-                    android:layout_marginBottom="30dp"
-                    android:layout_marginLeft="20dp"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/layoutData6"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    android:background="@drawable/shape_dark_blue_color"
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content">
-                    <TextView
-                        android:textSize="15sp"
-                        android:text="Altitude"
-                        android:fontFamily="@font/poppins_regular"
-                        android:gravity="center"
-                        android:textColor="@color/white"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
-                </LinearLayout>
 
-                <EditText
-                    android:id="@+id/etResult"
-                    android:inputType="numberDecimal"
-                    android:padding="5dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginBottom="50dp"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/btnAltitude"
-                    android:background="@drawable/shape_edittext_rounded"
-                    android:layout_marginTop="10dp"
-                    android:layout_width="80dp"
-                    android:layout_height="45dp"/>
+                <!--
+                                <LinearLayout
+                                    android:id="@+id/layoutData7"
+                                    android:orientation="vertical"
+                                    app:layout_constraintTop_toBottomOf="@+id/layoutData6"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <LinearLayout
+                                        android:orientation="horizontal"
+                                        android:weightSum="2"
+                                        android:layout_marginTop="10dp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="50dp">
+
+                                        <EditText
+                                            android:id="@+id/et7"
+                                            android:layout_weight="1.4"
+                                            android:inputType="numberDecimal"
+                                            android:padding="5dp"
+                                            android:layout_marginLeft="10dp"
+                                            android:layout_marginRight="10dp"
+                                            android:background="@drawable/shape_edittext_rounded"
+                                            android:layout_width="80dp"
+                                            android:layout_height="48dp"/>
+
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+                -->
+
+
+
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.cardview.widget.CardView>

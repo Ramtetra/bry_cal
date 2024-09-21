@@ -2,7 +2,8 @@
     <string name="app_name">BryCal</string>
     <string name="psycal">Psycal</string>
     <string name="mixed_air_conditions">Mixed Air\nConditions</string>
-    <string name="unit_converter">Unit\nConverter</string>
+    <string name="unit_converter">Unit</string>
+    <string name="converter">Converter</string>
     <string name="ductulator">Ductulator</string>
     <string name="region">Region</string>
     <string name="co2">Calculator</string>

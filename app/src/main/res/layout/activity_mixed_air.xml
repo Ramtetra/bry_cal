@@ -18,6 +18,7 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginTop="10dp"
+        android:gravity="center"
         app:layout_constraintTop_toBottomOf="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -84,6 +85,14 @@
                 android:layout_height="40dp"/>
             <TextView
                 android:text="@string/unit_converter"
+                android:textColor="@color/heading_color"
+                android:textSize="10sp"
+                android:layout_gravity="center"
+                android:fontFamily="@font/poppins_regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="@string/converter"
                 android:textColor="@color/heading_color"
                 android:textSize="10sp"
                 android:layout_gravity="center"
@@ -255,7 +264,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
                 <TextView
-                    android:text="PI"
+                    android:text="IP"
                     android:gravity="center"
                     android:textSize="14sp"
                     android:fontFamily="@font/poppins_medium"
@@ -290,6 +299,7 @@
            android:orientation="vertical"
            android:layout_marginLeft="30dp"
            android:layout_marginRight="30dp"
+           android:layout_marginTop="20dp"
            app:layout_constraintTop_toBottomOf="@+id/layoutToggle"
            android:layout_width="match_parent"
            android:layout_height="wrap_content">
@@ -299,37 +309,25 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-            <com.google.android.material.textfield.TextInputLayout
+            <EditText
+                android:id="@+id/et1Value"
                 android:layout_weight="1"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/etFrom"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="numberDecimal"
-                    android:textSize="15sp">
-                </com.google.android.material.textfield.TextInputEditText>
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_weight="1"
+                android:inputType="numberDecimal"
+                android:padding="5dp"
                 android:layout_marginLeft="5dp"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@+id/layoutProjectName">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/etMotorHP1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="numberDecimal"
-                    android:textSize="15sp">
-                </com.google.android.material.textfield.TextInputEditText>
-            </com.google.android.material.textfield.TextInputLayout>
+                android:layout_marginRight="10dp"
+                android:background="@drawable/shape_edittext_rounded"
+                android:layout_width="80dp"
+                android:layout_height="45dp"/>
+            <EditText
+                android:id="@+id/etValue"
+                android:layout_weight="1"
+                android:inputType="numberDecimal"
+                android:padding="5dp"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/shape_edittext_rounded"
+                android:layout_width="80dp"
+                android:layout_height="45dp"/>
 
         </LinearLayout>
 
@@ -359,7 +357,7 @@
                        android:text="°F db"
                        android:layout_weight="0.1"
                        android:background="@drawable/shape_mixed_air_light_blue_right"
-                       android:layout_width="wrap_content"
+                       android:layout_width="40dp"
                        android:padding="5dp"
                        android:layout_height="45dp"/>
                </LinearLayout>
@@ -383,7 +381,7 @@
                        android:text="°F db"
                        android:layout_weight="0.1"
                        android:background="@drawable/shape_mixed_air_light_orange_right"
-                       android:layout_width="wrap_content"
+                       android:layout_width="40dp"
                        android:padding="5dp"
                        android:layout_height="45dp"/>
                </LinearLayout>
@@ -416,7 +414,7 @@
                        android:text="°F wb"
                        android:layout_weight="0.1"
                        android:background="@drawable/shape_mixed_air_light_blue_right"
-                       android:layout_width="wrap_content"
+                       android:layout_width="40dp"
                        android:padding="5dp"
                        android:layout_height="45dp"/>
                </LinearLayout>
@@ -440,7 +438,7 @@
                        android:text="°F wb"
                        android:layout_weight="0.1"
                        android:background="@drawable/shape_mixed_air_light_orange_right"
-                       android:layout_width="wrap_content"
+                       android:layout_width="40dp"
                        android:padding="5dp"
                        android:layout_height="45dp"/>
                </LinearLayout>
@@ -473,7 +471,7 @@
                        android:text="%RH"
                        android:layout_weight="0.1"
                        android:background="@drawable/shape_mixed_air_light_blue_right"
-                       android:layout_width="wrap_content"
+                       android:layout_width="40dp"
                        android:padding="5dp"
                        android:layout_height="45dp"/>
                </LinearLayout>
@@ -497,7 +495,7 @@
                        android:text="%RH"
                        android:layout_weight="0.1"
                        android:background="@drawable/shape_mixed_air_light_orange_right"
-                       android:layout_width="wrap_content"
+                       android:layout_width="40dp"
                        android:padding="5dp"
                        android:layout_height="45dp"/>
                </LinearLayout>
@@ -530,7 +528,7 @@
                        android:text="Btu/ib"
                        android:layout_weight="0.1"
                        android:background="@drawable/shape_mixed_air_light_blue_right"
-                       android:layout_width="wrap_content"
+                       android:layout_width="40dp"
                        android:padding="5dp"
                        android:layout_height="45dp"/>
                </LinearLayout>
@@ -554,7 +552,7 @@
                        android:text="Btu/ib"
                        android:layout_weight="0.1"
                        android:background="@drawable/shape_mixed_air_light_orange_right"
-                       android:layout_width="wrap_content"
+                       android:layout_width="40dp"
                        android:padding="5dp"
                        android:layout_height="45dp"/>
                </LinearLayout>
@@ -587,7 +585,7 @@
                        android:text="°F dp"
                        android:layout_weight="0.1"
                        android:background="@drawable/shape_mixed_air_light_blue_right"
-                       android:layout_width="wrap_content"
+                       android:layout_width="40dp"
                        android:padding="5dp"
                        android:layout_height="45dp"/>
                </LinearLayout>
@@ -611,7 +609,7 @@
                        android:text="°F dp"
                        android:layout_weight="0.1"
                        android:background="@drawable/shape_mixed_air_light_orange_right"
-                       android:layout_width="wrap_content"
+                       android:layout_width="40dp"
                        android:padding="5dp"
                        android:layout_height="45dp"/>
                </LinearLayout>
@@ -623,7 +621,6 @@
                android:orientation="horizontal"
                android:layout_marginLeft="5dp"
                android:layout_marginRight="5dp"
-               android:layout_marginBottom="80dp"
                android:layout_width="match_parent"
                android:layout_height="wrap_content">
                <LinearLayout
@@ -674,6 +671,159 @@
                        android:layout_height="45dp"/>
                </LinearLayout>
            </LinearLayout>
+
+
+           <LinearLayout
+               android:orientation="vertical"
+               android:layout_marginLeft="50dp"
+               android:layout_marginRight="50dp"
+               android:layout_gravity="center"
+               android:layout_marginTop="20dp"
+               android:layout_marginBottom="80dp"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content">
+               <LinearLayout
+                   android:layout_weight="1"
+                   android:orientation="horizontal"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content">
+                   <EditText
+                       android:id="@+id/et21"
+                       android:layout_weight="1.8"
+                       android:inputType="numberDecimal"
+                       android:padding="5dp"
+                       android:layout_marginTop="10dp"
+                       android:background="@drawable/shape_mixed_air_flower_blue_left"
+                       android:layout_width="wrap_content"
+                       android:layout_height="45dp"/>
+                   <TextView
+                       android:id="@+id/txt21"
+                       android:text="°F db"
+                       android:layout_weight="0.2"
+                       android:background="@drawable/shape_mixed_air_flower_blue_right"
+                       android:layout_width="wrap_content"
+                       android:padding="5dp"
+                       android:layout_height="45dp"/>
+               </LinearLayout>
+               <LinearLayout
+                   android:layout_weight="1"
+                   android:orientation="horizontal"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content">
+                   <EditText
+                       android:id="@+id/et22"
+                       android:layout_weight="1.8"
+                       android:inputType="numberDecimal"
+                       android:padding="5dp"
+                       android:layout_marginTop="10dp"
+                       android:background="@drawable/shape_mixed_air_flower_blue_left"
+                       android:layout_width="wrap_content"
+                       android:layout_height="45dp"/>
+                   <TextView
+                       android:id="@+id/txt22"
+                       android:text="%RH"
+                       android:layout_weight="0.2"
+                       android:background="@drawable/shape_mixed_air_flower_blue_right"
+                       android:layout_width="wrap_content"
+                       android:padding="5dp"
+                       android:layout_height="45dp"/>
+               </LinearLayout>
+               <LinearLayout
+                   android:layout_weight="1"
+                   android:orientation="horizontal"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content">
+                   <EditText
+                       android:id="@+id/et23"
+                       android:layout_weight="1.8"
+                       android:inputType="numberDecimal"
+                       android:padding="5dp"
+                       android:layout_marginTop="10dp"
+                       android:background="@drawable/shape_mixed_air_flower_blue_left"
+                       android:layout_width="wrap_content"
+                       android:layout_height="45dp"/>
+                   <TextView
+                       android:id="@+id/txt23"
+                       android:text="°Bu/lb"
+                       android:layout_weight="0.2"
+                       android:background="@drawable/shape_mixed_air_flower_blue_right"
+                       android:layout_width="wrap_content"
+                       android:padding="5dp"
+                       android:layout_height="45dp"/>
+               </LinearLayout>
+               <LinearLayout
+                   android:layout_weight="1"
+                   android:orientation="horizontal"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content">
+                   <EditText
+                       android:id="@+id/et24"
+                       android:layout_weight="1.8"
+                       android:inputType="numberDecimal"
+                       android:padding="5dp"
+                       android:layout_marginTop="10dp"
+                       android:background="@drawable/shape_mixed_air_flower_blue_left"
+                       android:layout_width="wrap_content"
+                       android:layout_height="45dp"/>
+                   <TextView
+                       android:id="@+id/txt24"
+                       android:text="°F dp"
+                       android:layout_weight="0.2"
+                       android:background="@drawable/shape_mixed_air_flower_blue_right"
+                       android:layout_width="wrap_content"
+                       android:padding="5dp"
+                       android:layout_height="45dp"/>
+               </LinearLayout>
+
+               <LinearLayout
+                   android:layout_weight="1"
+                   android:orientation="horizontal"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content">
+                   <EditText
+                       android:id="@+id/et25"
+                       android:layout_weight="1.8"
+                       android:inputType="numberDecimal"
+                       android:padding="5dp"
+                       android:layout_marginTop="10dp"
+                       android:background="@drawable/shape_mixed_air_flower_blue_left"
+                       android:layout_width="wrap_content"
+                       android:layout_height="45dp"/>
+                   <TextView
+                       android:id="@+id/txt25"
+                       android:text="°Gr/ib"
+                       android:layout_weight="0.2"
+                       android:background="@drawable/shape_mixed_air_flower_blue_right"
+                       android:layout_width="wrap_content"
+                       android:padding="5dp"
+                       android:layout_height="45dp"/>
+               </LinearLayout>
+
+               <LinearLayout
+                   android:layout_weight="1"
+                   android:orientation="horizontal"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content">
+                   <EditText
+                       android:id="@+id/et26"
+                       android:layout_weight="1.8"
+                       android:inputType="numberDecimal"
+                       android:padding="5dp"
+                       android:layout_marginTop="10dp"
+                       android:background="@drawable/shape_mixed_air_flower_blue_left"
+                       android:layout_width="wrap_content"
+                       android:layout_height="45dp"/>
+                   <TextView
+                       android:id="@+id/txt26"
+                       android:text="°Gr/ib"
+                       android:layout_weight="0.2"
+                       android:background="@drawable/shape_mixed_air_flower_blue_right"
+                       android:layout_width="wrap_content"
+                       android:padding="5dp"
+                       android:layout_height="45dp"/>
+               </LinearLayout>
+           </LinearLayout>
+
        </LinearLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
 

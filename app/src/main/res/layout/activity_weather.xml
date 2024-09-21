@@ -15,6 +15,7 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginTop="10dp"
+        android:gravity="center"
         app:layout_constraintTop_toBottomOf="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -81,6 +82,14 @@
                 android:layout_height="40dp"/>
             <TextView
                 android:text="@string/unit_converter"
+                android:textColor="@color/heading_color"
+                android:textSize="10sp"
+                android:layout_gravity="center"
+                android:fontFamily="@font/poppins_regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="@string/converter"
                 android:textColor="@color/heading_color"
                 android:textSize="10sp"
                 android:layout_gravity="center"
