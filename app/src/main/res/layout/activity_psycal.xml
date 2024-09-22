@@ -561,10 +561,11 @@
                         android:layout_height="50dp">
 
                         <EditText
-                            android:id="@+id/et7"
+                            android:id="@+id/etAltitude"
                             android:layout_weight="1.4"
                             android:inputType="numberDecimal"
                             android:padding="5dp"
+                            android:text="0"
                             android:layout_marginLeft="10dp"
                             android:layout_marginRight="10dp"
                             android:background="@drawable/shape_edittext_rounded"
