@@ -873,7 +873,6 @@ public class UnitConverterActivity extends AppCompatActivity {
                       }
                   }
 
-
                   ///..........Power.........................///
                   else if (inputUnits.equalsIgnoreCase("Watt")){
                       if (outputUnits.equalsIgnoreCase("Watt")){
@@ -923,7 +922,222 @@ public class UnitConverterActivity extends AppCompatActivity {
                           BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
                           binding.etTo.setText(String.valueOf(roundedValue));
                       }
-                  }}
+                  }
+                  else if (inputUnits.equalsIgnoreCase("Gigawatt")) {
+                      if (outputUnits.equalsIgnoreCase("Watt")) {
+                          double footValue = (inputValue*1000000000);
+                          BigDecimal num2 = new BigDecimal(footValue);
+                          BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
+                          binding.etTo.setText(String.valueOf(roundedValue));
+                      } else if (outputUnits.equalsIgnoreCase("Kilowatt")) {
+                          double footValue = (inputValue*1000000);
+                          BigDecimal num2 = new BigDecimal(footValue);
+                          BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
+                          binding.etTo.setText(String.valueOf(roundedValue));
+                      } else if (outputUnits.equalsIgnoreCase("Gigawatt")) {
+                          double footValue = (inputValue/1000000);
+                          BigDecimal num2 = new BigDecimal(footValue);
+                          BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
+                          binding.etTo.setText(String.valueOf(roundedValue));
+                      } else if (outputUnits.equalsIgnoreCase("Megawatt")) {
+                          double footValue = (inputValue/1000);
+                          BigDecimal num2 = new BigDecimal(footValue);
+                          BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
+                          binding.etTo.setText(String.valueOf(roundedValue));
+                      }
+                  }
+                  else if (inputUnits.equalsIgnoreCase("Megawatt")) {
+                      if (outputUnits.equalsIgnoreCase("Watt")) {
+                          double footValue = (inputValue*1000000);
+                          BigDecimal num2 = new BigDecimal(footValue);
+                          BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
+                          binding.etTo.setText(String.valueOf(roundedValue));
+                      } else if (outputUnits.equalsIgnoreCase("Kilowatt")) {
+                          double footValue = (inputValue*1000);
+                          BigDecimal num2 = new BigDecimal(footValue);
+                          BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
+                          binding.etTo.setText(String.valueOf(roundedValue));
+                      } else if (outputUnits.equalsIgnoreCase("Gigawatt")) {
+                          double footValue = (inputValue/1000);
+                          BigDecimal num2 = new BigDecimal(footValue);
+                          BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
+                          binding.etTo.setText(String.valueOf(roundedValue));
+                      } else if (outputUnits.equalsIgnoreCase("Megawatt")) {
+                          double footValue = (inputValue);
+                          BigDecimal num2 = new BigDecimal(footValue);
+                          BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
+                          binding.etTo.setText(String.valueOf(roundedValue));
+                      }
+                  }
+
+                    ///..........Energy.........................///
+                  else if (inputUnits.equalsIgnoreCase("Joule")){
+                      if (outputUnits.equalsIgnoreCase("Joule")){
+                          double footValue=(inputValue);
+                          BigDecimal num2 = new BigDecimal(footValue);
+                          BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
+                          binding.etTo.setText(String.valueOf(roundedValue));
+                      }
+                      else if (outputUnits.equalsIgnoreCase("Btu")){
+                          double footValue=(inputValue/1055);
+                          BigDecimal num2 = new BigDecimal(footValue);
+                          BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
+                          binding.etTo.setText(String.valueOf(roundedValue));
+                      }
+                      else if (outputUnits.equalsIgnoreCase("Calorie")){
+                          double footValue=(inputValue/4184);
+                          BigDecimal num2 = new BigDecimal(footValue);
+                          BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
+                          binding.etTo.setText(String.valueOf(roundedValue));
+                      }
+                      else if (outputUnits.equalsIgnoreCase("Kilowatt-Hours")){
+                          double footValue=(inputValue/3.6000000);
+                          BigDecimal num2 = new BigDecimal(footValue);
+                          BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
+                          binding.etTo.setText(String.valueOf(roundedValue));
+                      }
+                  }
+                  else if (inputUnits.equalsIgnoreCase("Btu")){
+                      if (outputUnits.equalsIgnoreCase("Joule")){
+                          double footValue=(inputValue*1055);
+                          BigDecimal num2 = new BigDecimal(footValue);
+                          BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
+                          binding.etTo.setText(String.valueOf(roundedValue));
+                      }
+                      else if (outputUnits.equalsIgnoreCase("Btu")){
+                          double footValue=(inputValue);
+                          BigDecimal num2 = new BigDecimal(footValue);
+                          BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
+                          binding.etTo.setText(String.valueOf(roundedValue));
+                      }
+                      else if (outputUnits.equalsIgnoreCase("Calorie")){
+                          double footValue=(inputValue/3.966);
+                          BigDecimal num2 = new BigDecimal(footValue);
+                          BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
+                          binding.etTo.setText(String.valueOf(roundedValue));
+                      }
+                      else if (outputUnits.equalsIgnoreCase("Kilowatt-Hours")){
+                          double footValue=(inputValue/3412);
+                          BigDecimal num2 = new BigDecimal(footValue);
+                          BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
+                          binding.etTo.setText(String.valueOf(roundedValue));
+                      }
+                  }
+                  else if (inputUnits.equalsIgnoreCase("Calorie")){
+                      if (outputUnits.equalsIgnoreCase("Joule")){
+                          double footValue=(inputValue*4184);
+                          BigDecimal num2 = new BigDecimal(footValue);
+                          BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
+                          binding.etTo.setText(String.valueOf(roundedValue));
+                      }
+                      else if (outputUnits.equalsIgnoreCase("Btu")){
+                          double footValue=(inputValue*3.966);
+                          BigDecimal num2 = new BigDecimal(footValue);
+                          BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
+                          binding.etTo.setText(String.valueOf(roundedValue));
+                      }
+                      else if (outputUnits.equalsIgnoreCase("Calorie")){
+                          double footValue=(inputValue);
+                          BigDecimal num2 = new BigDecimal(footValue);
+                          BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
+                          binding.etTo.setText(String.valueOf(roundedValue));
+                      }
+                      else if (outputUnits.equalsIgnoreCase("Kilowatt-Hours")){
+                          double footValue=(inputValue/860.4);
+                          BigDecimal num2 = new BigDecimal(footValue);
+                          BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
+                          binding.etTo.setText(String.valueOf(roundedValue));
+                      }
+                  }
+                  else if (inputUnits.equalsIgnoreCase("Kilowatt-Hours")){
+                      if (outputUnits.equalsIgnoreCase("Joule")){
+                          double footValue=(inputValue*3.6000000);
+                          BigDecimal num2 = new BigDecimal(footValue);
+                          BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
+                          binding.etTo.setText(String.valueOf(roundedValue));
+                      }
+                      else if (outputUnits.equalsIgnoreCase("Btu")){
+                          double footValue=(inputValue/3412);
+                          BigDecimal num2 = new BigDecimal(footValue);
+                          BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
+                          binding.etTo.setText(String.valueOf(roundedValue));
+                      }
+                      else if (outputUnits.equalsIgnoreCase("Calorie")){
+                          double footValue=(inputValue*860.4);
+                          BigDecimal num2 = new BigDecimal(footValue);
+                          BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
+                          binding.etTo.setText(String.valueOf(roundedValue));
+                      }
+                      else if (outputUnits.equalsIgnoreCase("Kilowatt-Hours")){
+                          double footValue=(inputValue);
+                          BigDecimal num2 = new BigDecimal(footValue);
+                          BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
+                          binding.etTo.setText(String.valueOf(roundedValue));
+                      }
+                  }
+
+                    ///..........Humidity.........................///
+                  else if (inputUnits.equalsIgnoreCase("Celsius")){
+                      if (outputUnits.equalsIgnoreCase("Celsius")){
+                          double footValue=(inputValue);
+                          BigDecimal num2 = new BigDecimal(footValue);
+                          BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
+                          binding.etTo.setText(String.valueOf(roundedValue));
+                      }
+                      else if (outputUnits.equalsIgnoreCase("Kelvin")){
+                          double footValue=(inputValue+273.15);
+                          BigDecimal num2 = new BigDecimal(footValue);
+                          BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
+                          binding.etTo.setText(String.valueOf(roundedValue));
+                      }
+                      else if (outputUnits.equalsIgnoreCase("Fahrenheit")){
+                          double footValue=(inputValue*9/5)+32;
+                          BigDecimal num2 = new BigDecimal(footValue);
+                          BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
+                          binding.etTo.setText(String.valueOf(roundedValue));
+                      }
+                  }
+                  else if (inputUnits.equalsIgnoreCase("Kelvin")){
+                      if (outputUnits.equalsIgnoreCase("Celsius")){
+                          double footValue=(inputValue-273.15);
+                          BigDecimal num2 = new BigDecimal(footValue);
+                          BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
+                          binding.etTo.setText(String.valueOf(roundedValue));
+                      }
+                      else if (outputUnits.equalsIgnoreCase("Kelvin")){
+                          double footValue=(inputValue);
+                          BigDecimal num2 = new BigDecimal(footValue);
+                          BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
+                          binding.etTo.setText(String.valueOf(roundedValue));
+                      }
+                      else if (outputUnits.equalsIgnoreCase("Fahrenheit")){
+                          double footValue=(inputValue-273.15)*9/5+32;
+                          BigDecimal num2 = new BigDecimal(footValue);
+                          BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
+                          binding.etTo.setText(String.valueOf(roundedValue));
+                      }
+                  }
+                  else if (inputUnits.equalsIgnoreCase("Fahrenheit")){
+                      if (outputUnits.equalsIgnoreCase("Celsius")){
+                          double footValue=(inputValue-32)*5/9;
+                          BigDecimal num2 = new BigDecimal(footValue);
+                          BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
+                          binding.etTo.setText(String.valueOf(roundedValue));
+                      }
+                      else if (outputUnits.equalsIgnoreCase("Kelvin")){
+                          double footValue=(inputValue-32)*5/9+273.15;
+                          BigDecimal num2 = new BigDecimal(footValue);
+                          BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
+                          binding.etTo.setText(String.valueOf(roundedValue));
+                      }
+                      else if (outputUnits.equalsIgnoreCase("Fahrenheit")){
+                          double footValue=(inputValue);
+                          BigDecimal num2 = new BigDecimal(footValue);
+                          BigDecimal roundedValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
+                          binding.etTo.setText(String.valueOf(roundedValue));
+                      }
+                  }
+                }
             }
         });
 

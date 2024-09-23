@@ -121,30 +121,6 @@ public class PsycalActivity extends AppCompatActivity {
 
             }
         });
-        /*
-        if (!input7.isEmpty()) {
-            altitude= Integer.parseInt(input7);
-        } else {
-            // Handle empty input case
-            Toast.makeText(this, "Input is empty", Toast.LENGTH_SHORT).show();
-        }*/
-
-
-          /*  binding.btnAltitude.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String input7 = binding.et2.getText().toString().trim();
-                double secondValue= Double.parseDouble(binding.et2.getText().toString());
-                Toast.makeText(PsycalActivity.this, ""+secondValue, Toast.LENGTH_SHORT).show();
-            }
-        });
-*/
-       /* double firstValue= Double.parseDouble(binding.et1.getText().toString());
-        double secondValue= Double.parseDouble(binding.et2.getText().toString());
-        double  thirdValue= Double.parseDouble(binding.et3.getText().toString());
-        double fourthValue= Double.parseDouble(binding.et4.getText().toString());
-        double fiveValue= Double.parseDouble(binding.et5.getText().toString());
-        double sixValue= Double.parseDouble(binding.et6.getText().toString());*/
          binding.et2.addTextChangedListener(new TextWatcher() {
              @Override
              public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -211,19 +187,247 @@ public class PsycalActivity extends AppCompatActivity {
              }
          });
 
-        if (!binding.et1.getText().toString().isEmpty() && !binding.et2.getText().toString().isEmpty()){
+        binding.et3.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
-        } else if (!binding.et1.getText().toString().isEmpty() && !binding.et3.getText().toString().isEmpty()){
+            }
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                try {
+                    if (!s.toString().isEmpty() && checkedValue==false) {
+                        double firstValue= Double.parseDouble(binding.et1.getText().toString());
+                        double altitude=Double.parseDouble(binding.etAltitude.getText().toString());
+                        Double thirdValue = Double.parseDouble(s.toString());
+                        Double rhValues=LCSI_RH(firstValue, thirdValue, altitude);
+                        BigDecimal num1 = new BigDecimal(rhValues);
+                        BigDecimal roundedRHValue = num1.setScale(1, RoundingMode.HALF_UP);
+                        binding.et2.setText(String.valueOf(roundedRHValue));
+                        Double kgValue=LCSI_RHTOGRAMS(firstValue,rhValues,altitude);
+                        binding.et4.setText(String.valueOf(kgValue));
+                        Double dpValue=LCSI_DEWPOINT(firstValue,kgValue);
+                        BigDecimal num2 = new BigDecimal(dpValue);
+                        BigDecimal roundedDpValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
+                        binding.et5.setText(String.valueOf(roundedDpValue));
+                        Double gkgValue=LCSI_WBTOGRAMS(firstValue,dpValue,altitude);
+                        binding.et6.setText(String.valueOf(gkgValue));
+                    }else {
+                        double firstValue= Double.parseDouble(binding.et1.getText().toString());
+                        double altitude=Double.parseDouble(binding.etAltitude.getText().toString());
+                        Double secondValue = Double.parseDouble(s.toString());
+                        Double thirdValue=LCRH(firstValue, secondValue, altitude);
+                        //BigDecimal num1 = new BigDecimal(rhValues);
+                        //BigDecimal roundedRHValue = num1.setScale(1, RoundingMode.HALF_UP);
+                        binding.et2.setText(String.valueOf(thirdValue));
+                        Double btuValue=LCRHTOGRAINS(firstValue,thirdValue,altitude);
+                        BigDecimal num3 = new BigDecimal(btuValue);
+                        BigDecimal roundedBtuValue = num3.setScale(1, RoundingMode.HALF_UP);
+                        binding.et4.setText(String.valueOf(roundedBtuValue));
+                        Double dpValue=LCDEWPOINT(firstValue,btuValue);
+                        BigDecimal num4 = new BigDecimal(dpValue);
+                        BigDecimal roundedDpValue = num4.setScale(1, RoundingMode.HALF_UP);
+                        binding.et5.setText(String.valueOf(roundedDpValue));
+                        Double lbValue=LCWBTOGRAINS(firstValue,secondValue,dpValue);
+                        BigDecimal num5 = new BigDecimal(lbValue);
+                        BigDecimal roundedLBValue = num5.setScale(1, RoundingMode.HALF_UP);
+                        binding.et6.setText(String.valueOf(roundedLBValue));
+                        /* Double kgValue=LCSI_RHTOGRAMS(firstValue,rhValues,altitude);
+                         binding.et4.setText(String.valueOf(kgValue));
+                         Double dpValue=LCSI_DEWPOINT(firstValue,kgValue);
+                         BigDecimal num2 = new BigDecimal(dpValue);
+                         BigDecimal roundedDpValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
+                         binding.et5.setText(String.valueOf(roundedDpValue));
+                         Double gkgValue=LCSI_WBTOGRAMS(firstValue,dpValue,altitude);
+                         binding.et6.setText(String.valueOf(gkgValue));*/
 
-        } else if (!binding.et1.getText().toString().isEmpty() && !binding.et4.getText().toString().isEmpty()){
+                    }
+                } catch (NumberFormatException e) {
+                    // Handle the case where input cannot be parsed to a Double
+                    //Toast.makeText(PsycalActivity.this, "Invalid input", Toast.LENGTH_SHORT).show();
+                }
+            }
 
-        }
-        else if (!binding.et1.getText().toString().isEmpty() && !binding.et5.getText().toString().isEmpty()){
+            @Override
+            public void afterTextChanged(Editable s) {
 
-        }
-        else if (!binding.et1.getText().toString().isEmpty() && !binding.et6.getText().toString().isEmpty()){
+            }
+        });
 
-        }
+     /*   binding.et4.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                try {
+                    if (!s.toString().isEmpty() && checkedValue==false) {
+                        double firstValue= Double.parseDouble(binding.et1.getText().toString());
+                        double altitude=Double.parseDouble(binding.etAltitude.getText().toString());
+                        Double fourthValue = Double.parseDouble(s.toString());
+                        Double rhValues=LCSI_RH(firstValue, fourthValue, altitude);
+                        BigDecimal num1 = new BigDecimal(rhValues);
+                        BigDecimal roundedRHValue = num1.setScale(1, RoundingMode.HALF_UP);
+                        binding.et2.setText(String.valueOf(roundedRHValue));
+                        Double kgValue=LCSI_RHTOGRAMS(firstValue,rhValues,altitude);
+                        binding.et3.setText(String.valueOf(kgValue));
+                        Double dpValue=LCSI_DEWPOINT(firstValue,kgValue);
+                        BigDecimal num2 = new BigDecimal(dpValue);
+                        BigDecimal roundedDpValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
+                        binding.et5.setText(String.valueOf(roundedDpValue));
+                        Double gkgValue=LCSI_WBTOGRAMS(firstValue,dpValue,altitude);
+                        binding.et6.setText(String.valueOf(gkgValue));
+                    }else {
+                        double firstValue= Double.parseDouble(binding.et1.getText().toString());
+                        double altitude=Double.parseDouble(binding.etAltitude.getText().toString());
+                        Double fourthValue = Double.parseDouble(s.toString());
+                        Double thirdValue=LCRH(firstValue, fourthValue, altitude);
+                        //BigDecimal num1 = new BigDecimal(rhValues);
+                        //BigDecimal roundedRHValue = num1.setScale(1, RoundingMode.HALF_UP);
+                        binding.et2.setText(String.valueOf(thirdValue));
+                        Double btuValue=LCRHTOGRAINS(firstValue,thirdValue,altitude);
+                        BigDecimal num3 = new BigDecimal(btuValue);
+                        BigDecimal roundedBtuValue = num3.setScale(1, RoundingMode.HALF_UP);
+                        binding.et3.setText(String.valueOf(roundedBtuValue));
+                        Double dpValue=LCDEWPOINT(firstValue,btuValue);
+                        BigDecimal num4 = new BigDecimal(dpValue);
+                        BigDecimal roundedDpValue = num4.setScale(1, RoundingMode.HALF_UP);
+                        binding.et5.setText(String.valueOf(roundedDpValue));
+                        Double lbValue=LCWBTOGRAINS(firstValue,secondValue,dpValue);
+                        BigDecimal num5 = new BigDecimal(lbValue);
+                        BigDecimal roundedLBValue = num5.setScale(1, RoundingMode.HALF_UP);
+                        binding.et6.setText(String.valueOf(roundedLBValue));
+
+                    }
+                } catch (NumberFormatException e) {
+                    // Handle the case where input cannot be parsed to a Double
+                    //Toast.makeText(PsycalActivity.this, "Invalid input", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+        binding.et5.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                try {
+                    if (!s.toString().isEmpty() && checkedValue==false) {
+                        double firstValue= Double.parseDouble(binding.et1.getText().toString());
+                        double altitude=Double.parseDouble(binding.etAltitude.getText().toString());
+                        Double fiveThValue = Double.parseDouble(s.toString());
+                        Double rhValues=LCSI_RH(firstValue, fiveThValue, altitude);
+                        BigDecimal num1 = new BigDecimal(rhValues);
+                        BigDecimal roundedRHValue = num1.setScale(1, RoundingMode.HALF_UP);
+                        binding.et2.setText(String.valueOf(roundedRHValue));
+                        Double kgValue=LCSI_RHTOGRAMS(firstValue,rhValues,altitude);
+                        binding.et3.setText(String.valueOf(kgValue));
+                        Double dpValue=LCSI_DEWPOINT(firstValue,kgValue);
+                        BigDecimal num2 = new BigDecimal(dpValue);
+                        BigDecimal roundedDpValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
+                        binding.et4.setText(String.valueOf(roundedDpValue));
+                        Double gkgValue=LCSI_WBTOGRAMS(firstValue,dpValue,altitude);
+                        binding.et6.setText(String.valueOf(gkgValue));
+                    }else {
+                        double firstValue= Double.parseDouble(binding.et1.getText().toString());
+                        double altitude=Double.parseDouble(binding.etAltitude.getText().toString());
+                        Double fiveThValue = Double.parseDouble(s.toString());
+                        Double thirdValue=LCRH(firstValue, fiveThValue, altitude);
+                        //BigDecimal num1 = new BigDecimal(rhValues);
+                        //BigDecimal roundedRHValue = num1.setScale(1, RoundingMode.HALF_UP);
+                        binding.et2.setText(String.valueOf(thirdValue));
+                        Double btuValue=LCRHTOGRAINS(firstValue,thirdValue,altitude);
+                        BigDecimal num3 = new BigDecimal(btuValue);
+                        BigDecimal roundedBtuValue = num3.setScale(1, RoundingMode.HALF_UP);
+                        binding.et3.setText(String.valueOf(roundedBtuValue));
+                        Double dpValue=LCDEWPOINT(firstValue,btuValue);
+                        BigDecimal num4 = new BigDecimal(dpValue);
+                        BigDecimal roundedDpValue = num4.setScale(1, RoundingMode.HALF_UP);
+                        binding.et4.setText(String.valueOf(roundedDpValue));
+                        Double lbValue=LCWBTOGRAINS(firstValue,secondValue,dpValue);
+                        BigDecimal num5 = new BigDecimal(lbValue);
+                        BigDecimal roundedLBValue = num5.setScale(1, RoundingMode.HALF_UP);
+                        binding.et6.setText(String.valueOf(roundedLBValue));
+
+                    }
+                } catch (NumberFormatException e) {
+                    // Handle the case where input cannot be parsed to a Double
+                    //Toast.makeText(PsycalActivity.this, "Invalid input", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+        binding.et6.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                try {
+                    if (!s.toString().isEmpty() && checkedValue==false) {
+                        double firstValue= Double.parseDouble(binding.et1.getText().toString());
+                        double altitude=Double.parseDouble(binding.etAltitude.getText().toString());
+                        Double sixTValue = Double.parseDouble(s.toString());
+                        Double rhValues=LCSI_RH(firstValue, sixTValue, altitude);
+                        BigDecimal num1 = new BigDecimal(rhValues);
+                        BigDecimal roundedRHValue = num1.setScale(1, RoundingMode.HALF_UP);
+                        binding.et2.setText(String.valueOf(roundedRHValue));
+                        Double kgValue=LCSI_RHTOGRAMS(firstValue,rhValues,altitude);
+                        binding.et3.setText(String.valueOf(kgValue));
+                        Double dpValue=LCSI_DEWPOINT(firstValue,kgValue);
+                        BigDecimal num2 = new BigDecimal(dpValue);
+                        BigDecimal roundedDpValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
+                        binding.et5.setText(String.valueOf(roundedDpValue));
+                        Double gkgValue=LCSI_WBTOGRAMS(firstValue,dpValue,altitude);
+                        binding.et4.setText(String.valueOf(gkgValue));
+                    }else {
+                        double firstValue= Double.parseDouble(binding.et1.getText().toString());
+                        double altitude=Double.parseDouble(binding.etAltitude.getText().toString());
+                        Double fourthValue = Double.parseDouble(s.toString());
+                        Double thirdValue=LCRH(firstValue, fourthValue, altitude);
+                        //BigDecimal num1 = new BigDecimal(rhValues);
+                        //BigDecimal roundedRHValue = num1.setScale(1, RoundingMode.HALF_UP);
+                        binding.et2.setText(String.valueOf(thirdValue));
+                        Double btuValue=LCRHTOGRAINS(firstValue,thirdValue,altitude);
+                        BigDecimal num3 = new BigDecimal(btuValue);
+                        BigDecimal roundedBtuValue = num3.setScale(1, RoundingMode.HALF_UP);
+                        binding.et3.setText(String.valueOf(roundedBtuValue));
+                        Double dpValue=LCDEWPOINT(firstValue,btuValue);
+                        BigDecimal num4 = new BigDecimal(dpValue);
+                        BigDecimal roundedDpValue = num4.setScale(1, RoundingMode.HALF_UP);
+                        binding.et5.setText(String.valueOf(roundedDpValue));
+                        Double lbValue=LCWBTOGRAINS(firstValue,secondValue,dpValue);
+                        BigDecimal num5 = new BigDecimal(lbValue);
+                        BigDecimal roundedLBValue = num5.setScale(1, RoundingMode.HALF_UP);
+                        binding.et4.setText(String.valueOf(roundedLBValue));
+
+                    }
+                } catch (NumberFormatException e) {
+                    // Handle the case where input cannot be parsed to a Double
+                    //Toast.makeText(PsycalActivity.this, "Invalid input", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });*/
+
+
     }
     public double LCDEWPOINT(double grains, double feet) {
         // Validate the grain input

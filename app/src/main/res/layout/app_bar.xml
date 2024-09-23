@@ -23,7 +23,6 @@
                     android:layout_width="100dp"
                     android:layout_height="50dp"/>
 
-
                 <ImageView
                     android:id="@+id/logo2"
                     android:src="@drawable/dri_logo"
@@ -36,7 +35,7 @@
                     android:layout_height="wrap_content"/>
 
               <ImageView
-                  android:src="@drawable/logo_top"
+                  android:src="@drawable/brycal_black"
                   app:layout_constraintTop_toTopOf="parent"
                   android:paddingBottom="5dp"
                   app:layout_constraintBottom_toBottomOf="parent"
