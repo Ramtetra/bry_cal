@@ -28,6 +28,9 @@ public class PsycalActivity extends AppCompatActivity {
     double num9,num10;
     boolean checkedValue=false;
     double firstValue,secondValue,thirdValue,fourthValue,fiveValue,sixValue;
+    boolean isUpdatingFirst = false;
+    boolean isUpdatingSecond = false;
+    boolean isCursorVisible=true;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -124,35 +127,40 @@ public class PsycalActivity extends AppCompatActivity {
          binding.et2.addTextChangedListener(new TextWatcher() {
              @Override
              public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
              }
              @Override
              public void onTextChanged(CharSequence s, int start, int before, int count) {
                  try {
                      if (!s.toString().isEmpty() && checkedValue==false) {
-                         double firstValue= Double.parseDouble(binding.et1.getText().toString());
-                         double altitude=Double.parseDouble(binding.etAltitude.getText().toString());
-                         Double sValue = Double.parseDouble(s.toString());
-                         Double rhValues=LCSI_RH(firstValue, sValue, altitude);
-                         BigDecimal num1 = new BigDecimal(rhValues);
-                         BigDecimal roundedRHValue = num1.setScale(1, RoundingMode.HALF_UP);
-                         binding.et3.setText(String.valueOf(roundedRHValue));
-                         Double kgValue=LCSI_RHTOGRAMS(firstValue,rhValues,altitude);
-                         binding.et4.setText(String.valueOf(kgValue));
-                         Double dpValue=LCSI_DEWPOINT(firstValue,kgValue);
-                         BigDecimal num2 = new BigDecimal(dpValue);
-                         BigDecimal roundedDpValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
-                         binding.et5.setText(String.valueOf(roundedDpValue));
-                         Double gkgValue=LCSI_WBTOGRAMS(firstValue,dpValue,altitude);
-                         binding.et6.setText(String.valueOf(gkgValue));
+                         boolean isCursorVisible = binding.et2.isCursorVisible();
+                         Log.d("getSecond", "onTextChanged: "+isCursorVisible);
+                         if (!isUpdatingFirst) {
+                             isUpdatingFirst = true; // Prevent recursion
+                              double firstValue= Double.parseDouble(binding.et1.getText().toString());
+                              double altitude=Double.parseDouble(binding.etAltitude.getText().toString());
+                              Double secondValue = Double.parseDouble(s.toString());
+                              Double rhValues=LCSI_RH(firstValue, secondValue, altitude);
+                              BigDecimal num1 = new BigDecimal(rhValues);
+                              BigDecimal roundedRHValue = num1.setScale(1, RoundingMode.HALF_UP);
+                             isUpdatingSecond = true;
+                              binding.et3.setText(String.valueOf(roundedRHValue));
+                             isUpdatingSecond = false; // Reset flag
+                              Double kgValue=LCSI_RHTOGRAMS(firstValue,rhValues,altitude);
+                              binding.et4.setText(String.valueOf(kgValue));
+                              Double dpValue=LCSI_DEWPOINT(firstValue,kgValue);
+                              BigDecimal num2 = new BigDecimal(dpValue);
+                              BigDecimal roundedDpValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
+                              binding.et5.setText(String.valueOf(roundedDpValue));
+                              Double gkgValue=LCSI_WBTOGRAMS(firstValue,dpValue,altitude);
+                              binding.et6.setText(String.valueOf(gkgValue));
+                          }
+
                      }else {
                          double firstValue= Double.parseDouble(binding.et1.getText().toString());
                          double altitude=Double.parseDouble(binding.etAltitude.getText().toString());
                          Double secondValue = Double.parseDouble(s.toString());
                          Double rhValues=LCRH(firstValue, secondValue, altitude);
-                         //BigDecimal num1 = new BigDecimal(rhValues);
-                         //BigDecimal roundedRHValue = num1.setScale(1, RoundingMode.HALF_UP);
-                         binding.et3.setText(String.valueOf(rhValues));
+                        binding.et3.setText(String.valueOf(rhValues));
                          Double btuValue=LCRHTOGRAINS(firstValue,rhValues,altitude);
                          BigDecimal num3 = new BigDecimal(btuValue);
                          BigDecimal roundedBtuValue = num3.setScale(1, RoundingMode.HALF_UP);
@@ -165,15 +173,6 @@ public class PsycalActivity extends AppCompatActivity {
                          BigDecimal num5 = new BigDecimal(lbValue);
                          BigDecimal roundedLBValue = num5.setScale(1, RoundingMode.HALF_UP);
                          binding.et6.setText(String.valueOf(roundedLBValue));
-                        /* Double kgValue=LCSI_RHTOGRAMS(firstValue,rhValues,altitude);
-                         binding.et4.setText(String.valueOf(kgValue));
-                         Double dpValue=LCSI_DEWPOINT(firstValue,kgValue);
-                         BigDecimal num2 = new BigDecimal(dpValue);
-                         BigDecimal roundedDpValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
-                         binding.et5.setText(String.valueOf(roundedDpValue));
-                         Double gkgValue=LCSI_WBTOGRAMS(firstValue,dpValue,altitude);
-                         binding.et6.setText(String.valueOf(gkgValue));*/
-
                      }
                  } catch (NumberFormatException e) {
                      // Handle the case where input cannot be parsed to a Double
@@ -187,7 +186,7 @@ public class PsycalActivity extends AppCompatActivity {
              }
          });
 
-        binding.et3.addTextChangedListener(new TextWatcher() {
+          binding.et3.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -196,21 +195,28 @@ public class PsycalActivity extends AppCompatActivity {
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 try {
                     if (!s.toString().isEmpty() && checkedValue==false) {
-                        double firstValue= Double.parseDouble(binding.et1.getText().toString());
-                        double altitude=Double.parseDouble(binding.etAltitude.getText().toString());
-                        Double thirdValue = Double.parseDouble(s.toString());
-                        Double rhValues=LCSI_RH(firstValue, thirdValue, altitude);
-                        BigDecimal num1 = new BigDecimal(rhValues);
-                        BigDecimal roundedRHValue = num1.setScale(1, RoundingMode.HALF_UP);
-                        binding.et2.setText(String.valueOf(roundedRHValue));
-                        Double kgValue=LCSI_RHTOGRAMS(firstValue,rhValues,altitude);
-                        binding.et4.setText(String.valueOf(kgValue));
-                        Double dpValue=LCSI_DEWPOINT(firstValue,kgValue);
-                        BigDecimal num2 = new BigDecimal(dpValue);
-                        BigDecimal roundedDpValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
-                        binding.et5.setText(String.valueOf(roundedDpValue));
-                        Double gkgValue=LCSI_WBTOGRAMS(firstValue,dpValue,altitude);
-                        binding.et6.setText(String.valueOf(gkgValue));
+                        boolean isCursorVisible = binding.et3.isCursorVisible();
+                        Log.d("getThird", "onTextChanged: "+isCursorVisible);
+                        if (!isUpdatingSecond) {
+                            isUpdatingSecond = true; // Prevent recursion
+                            double firstValue= Double.parseDouble(binding.et1.getText().toString());
+                            double altitude=Double.parseDouble(binding.etAltitude.getText().toString());
+                            Double thirdValue = Double.parseDouble(s.toString());
+                            Double rhValues=LCSI_RH(firstValue, thirdValue, altitude);
+                            BigDecimal num1 = new BigDecimal(rhValues);
+                            BigDecimal roundedRHValue = num1.setScale(1, RoundingMode.HALF_UP);
+                            binding.et2.setText(String.valueOf(roundedRHValue));
+                            Double kgValue=LCSI_RHTOGRAMS(firstValue,rhValues,altitude);
+                            binding.et4.setText(String.valueOf(kgValue));
+                            Double dpValue=LCSI_DEWPOINT(firstValue,kgValue);
+                            BigDecimal num2 = new BigDecimal(dpValue);
+                            BigDecimal roundedDpValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
+                            binding.et5.setText(String.valueOf(roundedDpValue));
+                            Double gkgValue=LCSI_WBTOGRAMS(firstValue,dpValue,altitude);
+                            binding.et6.setText(String.valueOf(gkgValue));
+                            isUpdatingSecond = false; // Reset the flag
+                        }
+
                     }else {
                         double firstValue= Double.parseDouble(binding.et1.getText().toString());
                         double altitude=Double.parseDouble(binding.etAltitude.getText().toString());
@@ -231,14 +237,6 @@ public class PsycalActivity extends AppCompatActivity {
                         BigDecimal num5 = new BigDecimal(lbValue);
                         BigDecimal roundedLBValue = num5.setScale(1, RoundingMode.HALF_UP);
                         binding.et6.setText(String.valueOf(roundedLBValue));
-                        /* Double kgValue=LCSI_RHTOGRAMS(firstValue,rhValues,altitude);
-                         binding.et4.setText(String.valueOf(kgValue));
-                         Double dpValue=LCSI_DEWPOINT(firstValue,kgValue);
-                         BigDecimal num2 = new BigDecimal(dpValue);
-                         BigDecimal roundedDpValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
-                         binding.et5.setText(String.valueOf(roundedDpValue));
-                         Double gkgValue=LCSI_WBTOGRAMS(firstValue,dpValue,altitude);
-                         binding.et6.setText(String.valueOf(gkgValue));*/
 
                     }
                 } catch (NumberFormatException e) {
@@ -252,6 +250,8 @@ public class PsycalActivity extends AppCompatActivity {
 
             }
         });
+
+
 
      /*   binding.et4.addTextChangedListener(new TextWatcher() {
             @Override
