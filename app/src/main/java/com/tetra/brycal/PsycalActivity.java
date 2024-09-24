@@ -20,10 +20,6 @@ import java.math.RoundingMode;
 
 public class PsycalActivity extends AppCompatActivity {
  ActivityPsycalBinding binding;
-    String selectedOption = "SI";
-    String[] siSelected = {"°C"};
-    String[] ipSelected = {"°F db"};
-    double altitude=0;
     PsyCal psyCal;
     double num9,num10;
     boolean checkedValue=false;
@@ -34,7 +30,6 @@ public class PsycalActivity extends AppCompatActivity {
     boolean isUpdatingFourth = false;
     boolean isUpdatingFive = false;
     boolean isUpdatingSix = false;
-    boolean isCursorVisible=true;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -136,12 +131,13 @@ public class PsycalActivity extends AppCompatActivity {
              @Override
              public void onTextChanged(CharSequence s, int start, int before, int count) {
                  try {
+                     if (!isUpdatingSecond) {
+                         isUpdatingSecond = true; // Prevent recursion
+                         double firstValue = Double.parseDouble(binding.et1.getText().toString());
+                         double altitude = Double.parseDouble(binding.etAltitude.getText().toString());
+                         Double secondValue = Double.parseDouble(s.toString());
+
                      if (!s.toString().isEmpty() && checkedValue==false) {
-                         if (!isUpdatingSecond) {
-                             isUpdatingSecond = true; // Prevent recursion
-                              double firstValue= Double.parseDouble(binding.et1.getText().toString());
-                              double altitude=Double.parseDouble(binding.etAltitude.getText().toString());
-                              Double secondValue = Double.parseDouble(s.toString());
                               Double rhValues=LCSI_RH(firstValue, secondValue, altitude);
                               BigDecimal num1 = new BigDecimal(rhValues);
                               BigDecimal roundedRHValue = num1.setScale(1, RoundingMode.HALF_UP);
@@ -162,46 +158,36 @@ public class PsycalActivity extends AppCompatActivity {
                               isUpdatingSix=true;
                               binding.et6.setText(String.valueOf(gkgValue));
                               isUpdatingSix=false;
+                          }else {
+                         Double rhValues = LCRH(firstValue, secondValue, altitude);
+                         isUpdatingThird = true;
+                         binding.et3.setText(String.valueOf(rhValues));
+                         isUpdatingThird = false;
+                         Double btuValue = LCRHTOGRAINS(firstValue, rhValues, altitude);
+                         BigDecimal num3 = new BigDecimal(btuValue);
+                         BigDecimal roundedBtuValue = num3.setScale(1, RoundingMode.HALF_UP);
+                         isUpdatingFourth=true;
+                         binding.et4.setText(String.valueOf(roundedBtuValue));
+                         isUpdatingFourth=false;
+                         Double dpValue = LCDEWPOINT(firstValue, btuValue);
+                         BigDecimal num4 = new BigDecimal(dpValue);
+                         BigDecimal roundedDpValue = num4.setScale(1, RoundingMode.HALF_UP);
+                         isUpdatingFive=true;
+                         binding.et5.setText(String.valueOf(roundedDpValue));
+                         isUpdatingFive=false;
+                         Double lbValue = LCWBTOGRAINS(firstValue, secondValue, dpValue);
+                         BigDecimal num5 = new BigDecimal(lbValue);
+                         BigDecimal roundedLBValue = num5.setScale(1, RoundingMode.HALF_UP);
+                         isUpdatingSix=true;
+                         binding.et6.setText(String.valueOf(roundedLBValue));
+                         isUpdatingSix=false;
 
-                              isUpdatingSecond=false; // Reset flag
-
-                          }
-
-                     }else {
-                         if (!isUpdatingSecond) {
-                             isUpdatingSecond = true; // Prevent recursion
-                             double firstValue = Double.parseDouble(binding.et1.getText().toString());
-                             double altitude = Double.parseDouble(binding.etAltitude.getText().toString());
-                             Double secondValue = Double.parseDouble(s.toString());
-                             Double rhValues = LCRH(firstValue, secondValue, altitude);
-                             isUpdatingThird = true;
-                             binding.et3.setText(String.valueOf(rhValues));
-                             isUpdatingThird = false;
-                             Double btuValue = LCRHTOGRAINS(firstValue, rhValues, altitude);
-                             BigDecimal num3 = new BigDecimal(btuValue);
-                             BigDecimal roundedBtuValue = num3.setScale(1, RoundingMode.HALF_UP);
-                             isUpdatingFourth=true;
-                             binding.et4.setText(String.valueOf(roundedBtuValue));
-                             isUpdatingFourth=false;
-                             Double dpValue = LCDEWPOINT(firstValue, btuValue);
-                             BigDecimal num4 = new BigDecimal(dpValue);
-                             BigDecimal roundedDpValue = num4.setScale(1, RoundingMode.HALF_UP);
-                             isUpdatingFive=true;
-                             binding.et5.setText(String.valueOf(roundedDpValue));
-                             isUpdatingFive=false;
-                             Double lbValue = LCWBTOGRAINS(firstValue, secondValue, dpValue);
-                             BigDecimal num5 = new BigDecimal(lbValue);
-                             BigDecimal roundedLBValue = num5.setScale(1, RoundingMode.HALF_UP);
-                             isUpdatingSix=true;
-                             binding.et6.setText(String.valueOf(roundedLBValue));
-                             isUpdatingSix=false;
-
-                             isUpdatingSecond=false; // Reset flag
-                         }
+                     }
+                         isUpdatingSecond=false; // Reset flag
                      }
                  } catch (NumberFormatException e) {
-                     // Handle the case where input cannot be parsed to a Double
-                     //Toast.makeText(PsycalActivity.this, "Invalid input", Toast.LENGTH_SHORT).show();
+                     isUpdatingSecond = false; // Reset flag in case of exception
+
                  }
              }
 
@@ -219,73 +205,63 @@ public class PsycalActivity extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 try {
-                    if (!s.toString().isEmpty() && checkedValue==false) {
-                        if (!isUpdatingThird) {
-                            isUpdatingThird = true; // Prevent recursion
-                            double firstValue= Double.parseDouble(binding.et1.getText().toString());
-                            double altitude=Double.parseDouble(binding.etAltitude.getText().toString());
-                            Double thirdValue = Double.parseDouble(s.toString());
-                            Double rhValues=LCSI_RH(firstValue, thirdValue, altitude);
+                    if (!isUpdatingThird) {
+                        isUpdatingThird = true; // Prevent recursion
+                        double firstValue = Double.parseDouble(binding.et1.getText().toString());
+                        double altitude = Double.parseDouble(binding.etAltitude.getText().toString());
+                        Double thirdValue = Double.parseDouble(s.toString());
+
+                        if (!s.toString().isEmpty() && checkedValue == false) {
+                            Double rhValues = LCSI_RH(firstValue, thirdValue, altitude);
                             BigDecimal num1 = new BigDecimal(rhValues);
                             BigDecimal roundedRHValue = num1.setScale(1, RoundingMode.HALF_UP);
-                            isUpdatingSecond=true;
+                            isUpdatingSecond = true;
                             binding.et2.setText(String.valueOf(roundedRHValue));
-                            isUpdatingSecond=false;
-                            Double kgValue=LCSI_RHTOGRAMS(firstValue,rhValues,altitude);
-                            isUpdatingFourth=true;
+                            isUpdatingSecond = false;
+                            Double kgValue = LCSI_RHTOGRAMS(firstValue, rhValues, altitude);
+                            isUpdatingFourth = true;
                             binding.et4.setText(String.valueOf(kgValue));
-                            isUpdatingFourth=false;
-                            Double dpValue=LCSI_DEWPOINT(firstValue,kgValue);
+                            isUpdatingFourth = false;
+                            Double dpValue = LCSI_DEWPOINT(firstValue, kgValue);
                             BigDecimal num2 = new BigDecimal(dpValue);
                             BigDecimal roundedDpValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
-                            isUpdatingFive=true;
+                            isUpdatingFive = true;
                             binding.et5.setText(String.valueOf(roundedDpValue));
-                            isUpdatingFive=false;
-                            Double gkgValue=LCSI_WBTOGRAMS(firstValue,dpValue,altitude);
-                            isUpdatingSix=true;
+                            isUpdatingFive = false;
+                            Double gkgValue = LCSI_WBTOGRAMS(firstValue, dpValue, altitude);
+                            isUpdatingSix = true;
                             binding.et6.setText(String.valueOf(gkgValue));
-                            isUpdatingSix=false;
-
-                            isUpdatingThird = false; // Reset the flag
-                        }
-
-                    }else {
-                        if (!isUpdatingThird) {
-                            isUpdatingThird = true; // Prevent recursion
-                            double firstValue = Double.parseDouble(binding.et1.getText().toString());
-                            double altitude = Double.parseDouble(binding.etAltitude.getText().toString());
-                            Double secondValue = Double.parseDouble(s.toString());
-                            Double thirdValue = LCRH(firstValue, secondValue, altitude);
+                            isUpdatingSix = false;
+                        } else {
+                            Double rhValues = LCRH(firstValue, thirdValue, altitude);
                             //BigDecimal num1 = new BigDecimal(rhValues);
                             //BigDecimal roundedRHValue = num1.setScale(1, RoundingMode.HALF_UP);
-                            isUpdatingSecond=true;
-                            binding.et2.setText(String.valueOf(thirdValue));
-                            isUpdatingSecond=false;
+                            isUpdatingSecond = true;
+                            binding.et2.setText(String.valueOf(rhValues));
+                            isUpdatingSecond = false;
                             Double btuValue = LCRHTOGRAINS(firstValue, thirdValue, altitude);
                             BigDecimal num3 = new BigDecimal(btuValue);
                             BigDecimal roundedBtuValue = num3.setScale(1, RoundingMode.HALF_UP);
-                            isUpdatingFourth=true;
+                            isUpdatingFourth = true;
                             binding.et4.setText(String.valueOf(roundedBtuValue));
-                            isUpdatingFourth=false;
+                            isUpdatingFourth = false;
                             Double dpValue = LCDEWPOINT(firstValue, btuValue);
                             BigDecimal num4 = new BigDecimal(dpValue);
                             BigDecimal roundedDpValue = num4.setScale(1, RoundingMode.HALF_UP);
-                            isUpdatingFive=true;
+                            isUpdatingFive = true;
                             binding.et5.setText(String.valueOf(roundedDpValue));
-                            isUpdatingFive=false;
+                            isUpdatingFive = false;
                             Double lbValue = LCWBTOGRAINS(firstValue, secondValue, dpValue);
                             BigDecimal num5 = new BigDecimal(lbValue);
                             BigDecimal roundedLBValue = num5.setScale(1, RoundingMode.HALF_UP);
-                            isUpdatingSix=true;
+                            isUpdatingSix = true;
                             binding.et6.setText(String.valueOf(roundedLBValue));
-                            isUpdatingSix=false;
-
-                            isUpdatingThird = false; // Reset the flag
+                            isUpdatingSix = false;
                         }
+                        isUpdatingThird = false; // Reset the flag
                     }
                 } catch (NumberFormatException e) {
-                    // Handle the case where input cannot be parsed to a Double
-                    //Toast.makeText(PsycalActivity.this, "Invalid input", Toast.LENGTH_SHORT).show();
+                    isUpdatingThird = false; // Reset the flag
                 }
             }
 
@@ -303,41 +279,34 @@ public class PsycalActivity extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 try {
-                    if (!s.toString().isEmpty() && checkedValue==false) {
-                        if (!isUpdatingFourth) {
-                            isUpdatingFourth = true; // Prevent recursion
-                            double firstValue = Double.parseDouble(binding.et1.getText().toString());
-                            double altitude = Double.parseDouble(binding.etAltitude.getText().toString());
-                            Double fourthValue = Double.parseDouble(s.toString());
+                    if (!isUpdatingFourth) {
+                        isUpdatingFourth = true; // Prevent recursion
+                        double firstValue = Double.parseDouble(binding.et1.getText().toString());
+                        double altitude = Double.parseDouble(binding.etAltitude.getText().toString());
+                        Double fourthValue = Double.parseDouble(s.toString());
+
+                        if (!s.toString().isEmpty() && checkedValue == false) {
                             Double rhValues = LCSI_RH(firstValue, fourthValue, altitude);
                             BigDecimal num1 = new BigDecimal(rhValues);
                             BigDecimal roundedRHValue = num1.setScale(1, RoundingMode.HALF_UP);
-                            isUpdatingSecond=true;
+                            isUpdatingSecond = true;
                             binding.et2.setText(String.valueOf(roundedRHValue));
-                            isUpdatingSecond=false;
+                            isUpdatingSecond = false;
                             Double kgValue = LCSI_RHTOGRAMS(firstValue, rhValues, altitude);
-                            isUpdatingThird=true;
+                            isUpdatingThird = true;
                             binding.et3.setText(String.valueOf(kgValue));
-                            isUpdatingThird=false;
+                            isUpdatingThird = false;
                             Double dpValue = LCSI_DEWPOINT(firstValue, kgValue);
                             BigDecimal num2 = new BigDecimal(dpValue);
                             BigDecimal roundedDpValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
-                            isUpdatingFive=true;
+                            isUpdatingFive = true;
                             binding.et5.setText(String.valueOf(roundedDpValue));
-                            isUpdatingFive=false;
+                            isUpdatingFive = false;
                             Double gkgValue = LCSI_WBTOGRAMS(firstValue, dpValue, altitude);
-                            isUpdatingSix=true;
+                            isUpdatingSix = true;
                             binding.et6.setText(String.valueOf(gkgValue));
-                            isUpdatingSix=false;
-
-                            isUpdatingFourth = false; // Reset the flag
-                        }
-                    }else {
-                        if (!isUpdatingFourth) {
-                            isUpdatingFourth = true; // Prevent recursion
-                            double firstValue = Double.parseDouble(binding.et1.getText().toString());
-                            double altitude = Double.parseDouble(binding.etAltitude.getText().toString());
-                            Double fourthValue = Double.parseDouble(s.toString());
+                            isUpdatingSix = false;
+                        } else {
                             Double thirdValue = LCRH(firstValue, fourthValue, altitude);
                             //BigDecimal num1 = new BigDecimal(rhValues);
                             //BigDecimal roundedRHValue = num1.setScale(1, RoundingMode.HALF_UP);
@@ -363,12 +332,11 @@ public class PsycalActivity extends AppCompatActivity {
                             binding.et6.setText(String.valueOf(roundedLBValue));
                             isUpdatingSix = false;
 
-                            isUpdatingFourth = false; // Reset the flag
                         }
+                        isUpdatingFourth = false; // Reset the flag
                     }
                 } catch (NumberFormatException e) {
-                    // Handle the case where input cannot be parsed to a Double
-                    //Toast.makeText(PsycalActivity.this, "Invalid input", Toast.LENGTH_SHORT).show();
+                    isUpdatingFourth = false; // Reset the flag
                 }
             }
 
@@ -385,75 +353,64 @@ public class PsycalActivity extends AppCompatActivity {
             }
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                try {
-                    if (!s.toString().isEmpty() && checkedValue==false) {
-                        if (!isUpdatingFive) {
-                            isUpdatingFive = true; // Prevent recursion
-                            double firstValue = Double.parseDouble(binding.et1.getText().toString());
-                            double altitude = Double.parseDouble(binding.etAltitude.getText().toString());
-                            Double fiveThValue = Double.parseDouble(s.toString());
-                            Double rhValues = LCSI_RH(firstValue, fiveThValue, altitude);
-                            BigDecimal num1 = new BigDecimal(rhValues);
-                            BigDecimal roundedRHValue = num1.setScale(1, RoundingMode.HALF_UP);
-                            isUpdatingSecond=true;
-                            binding.et2.setText(String.valueOf(roundedRHValue));
-                            isUpdatingSecond=false;
-                            Double kgValue = LCSI_RHTOGRAMS(firstValue, rhValues, altitude);
-                            isUpdatingThird=true;
-                            binding.et3.setText(String.valueOf(kgValue));
-                            isUpdatingThird=false;
-                            Double dpValue = LCSI_DEWPOINT(firstValue, kgValue);
-                            BigDecimal num2 = new BigDecimal(dpValue);
-                            BigDecimal roundedDpValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
-                            isUpdatingFourth=true;
-                            binding.et4.setText(String.valueOf(roundedDpValue));
-                            isUpdatingFourth=false;
-                            Double gkgValue = LCSI_WBTOGRAMS(firstValue, dpValue, altitude);
-                            isUpdatingSix=true;
-                            binding.et6.setText(String.valueOf(gkgValue));
-                            isUpdatingSix=false;
+                try { if (!isUpdatingFive) {
+                    isUpdatingFive = true; // Prevent recursion
+                    double firstValue = Double.parseDouble(binding.et1.getText().toString());
+                    double altitude = Double.parseDouble(binding.etAltitude.getText().toString());
+                    Double fiveValue = Double.parseDouble(s.toString());
+                    if (!s.toString().isEmpty() && checkedValue == false) {
 
-                            isUpdatingFive = false; // Reset the flag
-
-                        }
-                    }else {
-                        if (!isUpdatingFive) {
-                            isUpdatingFive = true; // Prevent recursion
-                        double firstValue= Double.parseDouble(binding.et1.getText().toString());
-                        double altitude=Double.parseDouble(binding.etAltitude.getText().toString());
-                        Double fiveThValue = Double.parseDouble(s.toString());
-                        Double thirdValue=LCRH(firstValue, fiveThValue, altitude);
+                        Double rhValues = LCSI_RH(firstValue, fiveValue, altitude);
+                        BigDecimal num1 = new BigDecimal(rhValues);
+                        BigDecimal roundedRHValue = num1.setScale(1, RoundingMode.HALF_UP);
+                        isUpdatingSecond = true;
+                        binding.et2.setText(String.valueOf(roundedRHValue));
+                        isUpdatingSecond = false;
+                        Double kgValue = LCSI_RHTOGRAMS(firstValue, rhValues, altitude);
+                        isUpdatingThird = true;
+                        binding.et3.setText(String.valueOf(kgValue));
+                        isUpdatingThird = false;
+                        Double dpValue = LCSI_DEWPOINT(firstValue, kgValue);
+                        BigDecimal num2 = new BigDecimal(dpValue);
+                        BigDecimal roundedDpValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
+                        isUpdatingFourth = true;
+                        binding.et4.setText(String.valueOf(roundedDpValue));
+                        isUpdatingFourth = false;
+                        Double gkgValue = LCSI_WBTOGRAMS(firstValue, dpValue, altitude);
+                        isUpdatingSix = true;
+                        binding.et6.setText(String.valueOf(gkgValue));
+                        isUpdatingSix = false;
+                    } else {
+                        Double thirdValue = LCRH(firstValue, fiveValue, altitude);
                         //BigDecimal num1 = new BigDecimal(rhValues);
                         //BigDecimal roundedRHValue = num1.setScale(1, RoundingMode.HALF_UP);
-                         isUpdatingSecond=true;
+                        isUpdatingSecond = true;
                         binding.et2.setText(String.valueOf(thirdValue));
-                        isUpdatingSecond=false;
-                        Double btuValue=LCRHTOGRAINS(firstValue,thirdValue,altitude);
+                        isUpdatingSecond = false;
+                        Double btuValue = LCRHTOGRAINS(firstValue, thirdValue, altitude);
                         BigDecimal num3 = new BigDecimal(btuValue);
                         BigDecimal roundedBtuValue = num3.setScale(1, RoundingMode.HALF_UP);
-                        isUpdatingThird=true;
+                        isUpdatingThird = true;
                         binding.et3.setText(String.valueOf(roundedBtuValue));
-                        isUpdatingThird=false;
-                        Double dpValue=LCDEWPOINT(firstValue,btuValue);
+                        isUpdatingThird = false;
+                        Double dpValue = LCDEWPOINT(firstValue, btuValue);
                         BigDecimal num4 = new BigDecimal(dpValue);
                         BigDecimal roundedDpValue = num4.setScale(1, RoundingMode.HALF_UP);
-                        isUpdatingFourth=true;
+                        isUpdatingFourth = true;
                         binding.et4.setText(String.valueOf(roundedDpValue));
-                        isUpdatingFourth=false;
-                        Double lbValue=LCWBTOGRAINS(firstValue,secondValue,dpValue);
+                        isUpdatingFourth = false;
+                        Double lbValue = LCWBTOGRAINS(firstValue, secondValue, dpValue);
                         BigDecimal num5 = new BigDecimal(lbValue);
                         BigDecimal roundedLBValue = num5.setScale(1, RoundingMode.HALF_UP);
-                        isUpdatingSix=true;
+                        isUpdatingSix = true;
                         binding.et6.setText(String.valueOf(roundedLBValue));
-                        isUpdatingSix=false;
+                        isUpdatingSix = false;
 
-                            isUpdatingFive = false; // Reset the flag
-
-                        }
                     }
+                    isUpdatingFive = false; // Reset the flag
+                }
                 } catch (NumberFormatException e) {
-                    // Handle the case where input cannot be parsed to a Double
-                    //Toast.makeText(PsycalActivity.this, "Invalid input", Toast.LENGTH_SHORT).show();
+                    isUpdatingFive = false; // Reset the flag
                 }
             }
 
@@ -471,12 +428,12 @@ public class PsycalActivity extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 try {
-                    if (!s.toString().isEmpty() && checkedValue==false) {
-                        if (!isUpdatingSix) {
-                            isUpdatingSix = true; // Prevent recursion
-                            double firstValue = Double.parseDouble(binding.et1.getText().toString());
-                            double altitude = Double.parseDouble(binding.etAltitude.getText().toString());
-                            Double sixTValue = Double.parseDouble(s.toString());
+                    if (!isUpdatingSix) {
+                        isUpdatingSix = true; // Prevent recursion
+                        double firstValue = Double.parseDouble(binding.et1.getText().toString());
+                        double altitude = Double.parseDouble(binding.etAltitude.getText().toString());
+                        Double sixTValue = Double.parseDouble(s.toString());
+                        if (!s.toString().isEmpty() && checkedValue == false) {
                             Double rhValues = LCSI_RH(firstValue, sixTValue, altitude);
                             BigDecimal num1 = new BigDecimal(rhValues);
                             BigDecimal roundedRHValue = num1.setScale(1, RoundingMode.HALF_UP);
@@ -498,45 +455,37 @@ public class PsycalActivity extends AppCompatActivity {
                             binding.et4.setText(String.valueOf(gkgValue));
                             isUpdatingFourth = false;
 
-                            isUpdatingSix=false;  // Reset the flag
-                        }
-                    }else {
-                        if (!isUpdatingSix) {
-                            isUpdatingSix = true; // Prevent recursion
-                            double firstValue = Double.parseDouble(binding.et1.getText().toString());
-                            double altitude = Double.parseDouble(binding.etAltitude.getText().toString());
-                            Double fourthValue = Double.parseDouble(s.toString());
+                        } else {
                             Double thirdValue = LCRH(firstValue, fourthValue, altitude);
                             //BigDecimal num1 = new BigDecimal(rhValues);
                             //BigDecimal roundedRHValue = num1.setScale(1, RoundingMode.HALF_UP);
-                            isUpdatingSecond=true;
+                            isUpdatingSecond = true;
                             binding.et2.setText(String.valueOf(thirdValue));
-                            isUpdatingSecond=false;
+                            isUpdatingSecond = false;
                             Double btuValue = LCRHTOGRAINS(firstValue, thirdValue, altitude);
                             BigDecimal num3 = new BigDecimal(btuValue);
                             BigDecimal roundedBtuValue = num3.setScale(1, RoundingMode.HALF_UP);
-                            isUpdatingThird=true;
+                            isUpdatingThird = true;
                             binding.et3.setText(String.valueOf(roundedBtuValue));
-                            isUpdatingThird=false;
+                            isUpdatingThird = false;
                             Double dpValue = LCDEWPOINT(firstValue, btuValue);
                             BigDecimal num4 = new BigDecimal(dpValue);
                             BigDecimal roundedDpValue = num4.setScale(1, RoundingMode.HALF_UP);
-                            isUpdatingFive=true;
+                            isUpdatingFive = true;
                             binding.et5.setText(String.valueOf(roundedDpValue));
-                            isUpdatingFive=false;
+                            isUpdatingFive = false;
                             Double lbValue = LCWBTOGRAINS(firstValue, secondValue, dpValue);
                             BigDecimal num5 = new BigDecimal(lbValue);
                             BigDecimal roundedLBValue = num5.setScale(1, RoundingMode.HALF_UP);
-                            isUpdatingFourth=true;
+                            isUpdatingFourth = true;
                             binding.et4.setText(String.valueOf(roundedLBValue));
-                            isUpdatingFourth=false;
+                            isUpdatingFourth = false;
 
-                            isUpdatingSix=false;  // Reset the flag
                         }
+                        isUpdatingSix = false;  // Reset the flag
                     }
                 } catch (NumberFormatException e) {
-                    // Handle the case where input cannot be parsed to a Double
-                    //Toast.makeText(PsycalActivity.this, "Invalid input", Toast.LENGTH_SHORT).show();
+                    isUpdatingSix=false;  // Reset the flag
                 }
             }
 
