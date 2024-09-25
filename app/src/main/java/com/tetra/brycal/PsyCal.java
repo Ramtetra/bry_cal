@@ -1,12 +1,7 @@
 package com.tetra.brycal;
 
 public class PsyCal {
-    private double OneAtmPSI = 14.695948775513;
-    private double OneAtminHg = 29.921299597519;
-    private double OneAtminH20 = 406.782461732239;
-    private double OneAtmmmHg = 760.001009776983;
     double num9,num10;
-
     public double LCDEWPOINT(double grains, double feet) {
         // Validate the grain input
         if (grains < 0.0 || grains > 16300.0) {
@@ -19,69 +14,64 @@ public class PsyCal {
 
         // Calculate the dew point
         double dewPoint = pressure * moistureRatio / (0.62198 + moistureRatio);
-        return XTDPAPP(pressure, dewPoint); // Return the calculated dew point
+        return dewPoint; // Return the calculated dew point
     }
 
     public double LCSI_DEWPOINT(double grams, double meters) {
         double num = 0.0;
-        double num2 = 0.0;
+        double num2 = grams * 7.0;
+        double num5 = meters * 39.37 / 12.0;
         double num3 = 0.0;
         double num4 = 0.0;
-        double num5 = 0.0;
         double num6 = 0.0;
-
-        num2 = grams * 7.0;
-        num5 = meters * 39.37 / 12.0;
-
+        double resValue4=0.0;
         if (num2 < 0.0 || num2 > 16300.0) {
             num4 = -9999.0;
         } else {
             num3 = num2 / 7000.0;
             num = (1.3598E-08 * Math.pow(num5, 2.0) - 0.0010717 * num5 + 29.921) / 2.036;
             num6 = num * num3 / (0.62198 + num3);
-            num4 = XTDPAPP(num, num6);  // Assuming XTDPAPP is defined elsewhere
+            //num4 = XTDPAPP(num, num6);  // Ensure XTDPAPP returns a valid value
         }
-
-        return (num4 - 32.0) * 5.0 / 9.0;  // Convert Fahrenheit to Celsius
+        double result = (num4*num6 - 32.0) * (5.0 / 9.0);
+        return result;  // Convert Fahrenheit to Celsius
     }
     private double XTDPAPP(double atm, double pwsapp) {
         double num = 0.0;
-        double num2 = 0.0;
-        double num3 = 0.0;
-        double num4 = 0.0;
-        double num5 = 0.0;
-        double num6 = 0.0;
-        double num7 = 0.0;
+        double num2 = pwsapp;
+        double num3 = XTDP(num2); // Assuming XTDP is defined elsewhere
+        double num5 = XFS(atm, num3); // Assuming XFS is defined elsewhere
+        double num6 = 1.0;
+        double num4= 0.0;
 
         // Check if pwsapp is less than 0
         if (pwsapp < 0.0) {
             return -9999.0;
         }
 
-        num2 = pwsapp;
-        num3 = XTDP(num2); // Assuming XTDP is defined elsewhere
-        num5 = XFS(atm, num3); // Assuming XFS is defined elsewhere
-        num2 = pwsapp / num5;
-        num6 = 1.0;
+        // Log initial values
+        System.out.println("Initial pwsapp: " + pwsapp + ", atm: " + atm);
 
         // While loop to adjust the values
-        while (!(num6 < 1E-06)) {
+        while (num6 >= 1E-06) {
+            num2 = pwsapp / num5;
             num3 = XTDP(num2);
             num5 = XFS(atm, num3);
             num4 = pwsapp / num5;
-            num7 = 1.0;
 
-            // Ensuring num7 is set to the max of num2 and 1.0
-            if (num2 > num7) {
-                num7 = num2;
-            }
-
+            // Ensure num7 is set to the max of num2 and 1.0
+            double num7 = Math.max(num2, 1.0);
             num6 = Math.abs((num2 - num4) / num7);
-            num2 = num4;
+
+            // Log values in each iteration
+            System.out.println("num2: " + num2 + ", num4: " + num4 + ", num6: " + num6);
+
+            num2 = num4; // Update for next iteration
         }
 
         return num3;
     }
+
 
     private double XTDP(double pws) {
         double num = 0.0;
@@ -364,7 +354,7 @@ public class PsyCal {
         num3 = meters * 39.37 / 12.0;
 
         // Assuming LCRH method is defined elsewhere
-        return LCRH(num, num2, num3);
+        return num3;
     }
     public double LCRH(double Temp_Fdb, double grains, double feet) {
         double num = 0.0;
@@ -393,7 +383,6 @@ public class PsyCal {
 
             // Final relative humidity calculation
             num5 = num3 / (1.0 - (1.0 - num3) * num4) * 100.0;
-
             // Ensure relative humidity is not over 100%
             if (num5 > 100.0) {
                 num5 = -9999.0; // Error case
@@ -422,9 +411,8 @@ public class PsyCal {
         if (num < -80.0 || num > 1500.0 || RH < 0.0 || RH > 1.0) {
             return -9999.0; // Return error code for invalid input
         }
-
         // Call LCRHTOGRAINS method and convert grains to grams
-        return LCRHTOGRAINS(num, RH, num2) / 7.0;
+        return num*RH*num2/7.0;
     }
 
     public double LCRHTOGRAINS(double Temp_Fdb, double RH, double ft) {
@@ -589,4 +577,5 @@ public class PsyCal {
 
         return num5 * 7000.0 / 7.0;
     }
+
 }
