@@ -354,7 +354,7 @@ public class PsyCal {
         num3 = meters * 39.37 / 12.0;
 
         // Assuming LCRH method is defined elsewhere
-        return num3;
+        return LCRH(num, num2, num3);
     }
     public double LCRH(double Temp_Fdb, double grains, double feet) {
         double num = 0.0;
@@ -576,6 +576,19 @@ public class PsyCal {
         }
 
         return num5 * 7000.0 / 7.0;
+    }
+    public double LCSI_ENTHALPY(double Temp_Cdb, double grams) {
+        double num = 0.0;
+        double num2 = 0.0;
+
+        // Convert Celsius to Fahrenheit
+        num = Temp_Cdb * 9.0 / 5.0 + 32.0;
+
+        // Convert grams to the required value (multiplied by 7)
+        num2 = grams * 7.0;
+
+        // Return the calculated enthalpy
+        return (0.24 * num + num2 / 7000.0 * (1061.0 + 0.444 * num) - 7.712) * 2.326;
     }
 
 }

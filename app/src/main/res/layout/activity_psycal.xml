@@ -31,6 +31,7 @@
 
             <ImageView
                 android:src="@drawable/psycal_icon"
+                android:paddingTop="3dp"
                 android:layout_gravity="center"
                 android:layout_width="40dp"
                 android:layout_height="40dp"/>
@@ -54,6 +55,7 @@
             android:layout_height="75dp">
 
             <ImageView
+                android:paddingTop="3dp"
                 android:src="@drawable/mixed_air_icon"
                 android:layout_gravity="center"
                 android:layout_width="40dp"
@@ -79,6 +81,7 @@
 
             <ImageView
                 android:layout_gravity="center"
+                android:paddingTop="3dp"
                 android:src="@drawable/unit_converter_icon"
                 android:layout_width="40dp"
                 android:layout_height="40dp"/>
@@ -109,6 +112,7 @@
 
             <ImageView
                 android:layout_gravity="center"
+                android:paddingTop="3dp"
                 android:src="@drawable/ductulator_icon"
                 android:layout_width="40dp"
                 android:layout_height="40dp"/>
@@ -130,6 +134,7 @@
             android:layout_height="75dp">
 
             <ImageView
+                android:paddingTop="3dp"
                 android:layout_gravity="center"
                 android:src="@drawable/co2_icon"
                 android:layout_width="40dp"
@@ -153,6 +158,7 @@
             android:layout_height="75dp">
 
             <ImageView
+                android:paddingTop="3dp"
                 android:layout_gravity="center"
                 android:src="@drawable/weather_icon"
                 android:layout_width="40dp"

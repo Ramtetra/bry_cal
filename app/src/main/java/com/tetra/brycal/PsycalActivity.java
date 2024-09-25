@@ -137,23 +137,23 @@ public class PsycalActivity extends AppCompatActivity {
                          Double secondValue = Double.parseDouble(s.toString());
 
                      if (!s.toString().isEmpty() && checkedValue==false) {
-                              Double rhValues=psyCal.LCSI_RH(firstValue, secondValue, altitude);
+                              Double rhValues=psyCal.LCSI_WBTOGRAMS(firstValue, secondValue, altitude);
                               BigDecimal num1 = new BigDecimal(rhValues);
                               BigDecimal roundedRHValue = num1.setScale(1, RoundingMode.HALF_UP);
                               isUpdatingThird = true;
                               binding.et3.setText(String.valueOf(roundedRHValue));
                              isUpdatingThird = false; // Reset flag
-                              Double kgValue=psyCal.LCSI_RHTOGRAMS(firstValue,rhValues,altitude);
+                              Double kgValue=psyCal.LCSI_RH(firstValue,rhValues,altitude);
                               isUpdatingFourth=true;
                               binding.et4.setText(String.valueOf(kgValue));
                               isUpdatingFourth=false;
-                              Double dpValue=psyCal.LCSI_DEWPOINT(firstValue,kgValue);
+                              Double dpValue=psyCal.LCSI_DEWPOINT(rhValues,altitude);
                               BigDecimal num2 = new BigDecimal(dpValue);
                               BigDecimal roundedDpValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
                               isUpdatingFive=true;
                               binding.et5.setText(String.valueOf(roundedDpValue));
                              isUpdatingFive=false;
-                              Double gkgValue=psyCal.LCSI_WBTOGRAMS(firstValue,dpValue,altitude);
+                              Double gkgValue=psyCal.LCSI_ENTHALPY(firstValue,rhValues);
                               isUpdatingSix=true;
                               binding.et6.setText(String.valueOf(gkgValue));
                               isUpdatingSix=false;
@@ -211,13 +211,13 @@ public class PsycalActivity extends AppCompatActivity {
                         Double thirdValue = Double.parseDouble(s.toString());
 
                         if (!s.toString().isEmpty() && checkedValue == false) {
-                            Double rhValues = psyCal.LCSI_RH(firstValue, thirdValue, altitude);
+                            Double rhValues = psyCal.LCSI_ENTHALPY(firstValue, thirdValue);
                             BigDecimal num1 = new BigDecimal(rhValues);
                             BigDecimal roundedRHValue = num1.setScale(1, RoundingMode.HALF_UP);
                             isUpdatingSecond = true;
                             binding.et2.setText(String.valueOf(roundedRHValue));
                             isUpdatingSecond = false;
-                            Double kgValue = psyCal.LCSI_RHTOGRAMS(firstValue, rhValues, altitude);
+                            Double kgValue = psyCal.LCSI_RH(firstValue, rhValues, altitude);
                             isUpdatingFourth = true;
                             binding.et4.setText(String.valueOf(kgValue));
                             isUpdatingFourth = false;

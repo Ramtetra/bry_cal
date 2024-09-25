@@ -86,16 +86,18 @@
                             android:layout_weight="0.5"
                             android:id="@+id/rbPsycal"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_height="55dp"
                             android:padding="4dp"
                             android:layout_marginLeft="5dp"
                             android:layout_gravity="left"
                             android:text="@string/psycal"
+                            android:gravity="left|center"
                             android:fontFamily="@font/poppins_italic"
                             android:textColor="@color/text_button_color"
                             android:textSize="16sp" />
                         <ImageView
                             android:layout_weight="0.5"
+                            android:layout_gravity="center"
                             android:layout_marginLeft="10dp"
                             android:src="@drawable/psycal_icon"
                             android:layout_width="45dp"
@@ -112,10 +114,11 @@
                         <TextView
                             android:id="@+id/rbMixedAir"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_height="55dp"
                             android:layout_gravity="left"
                             android:layout_marginLeft="5dp"
                             android:layout_weight="0.5"
+                            android:gravity="left|center"
                             android:fontFamily="@font/poppins_italic"
                             android:padding="4dp"
                             android:text="@string/mixed_air_conditions"
@@ -124,6 +127,7 @@
 
                         <ImageView
                             android:layout_weight="0.5"
+                            android:layout_gravity="center"
                             android:layout_marginLeft="5dp"
                             android:src="@drawable/mixed_air_icon"
                             android:layout_width="45dp"
@@ -155,16 +159,17 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="left"
                             android:layout_marginLeft="5dp"
-                            android:layout_weight="0.5"
+                            android:layout_weight="0.4"
+                            android:gravity="left|center"
                             android:fontFamily="@font/poppins_italic"
                             android:padding="4dp"
-                            android:text="@string/unit_converter"
+                            android:text="@string/unit_converter1"
                             android:textColor="@color/text_button_color"
                             android:textSize="16sp" />
 
                         <ImageView
                             android:layout_weight="0.5"
-                            android:layout_marginLeft="10dp"
+                            android:layout_gravity="center"
                             android:src="@drawable/unit_converter_icon"
                             android:layout_width="45dp"
                             android:layout_height="45dp"/>
@@ -180,8 +185,9 @@
                             android:layout_weight="0.5"
                             android:id="@+id/rbDuctulator"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_height="55dp"
                             android:padding="4dp"
+                            android:gravity="left|center"
                             android:layout_marginLeft="5dp"
                             android:layout_gravity="left"
                             android:text="@string/ductulator"
@@ -190,6 +196,7 @@
                             android:textSize="16sp" />
                         <ImageView
                             android:layout_weight="0.5"
+                            android:layout_gravity="center"
                             android:layout_marginLeft="5dp"
                             android:src="@drawable/ductulator_icon"
                             android:layout_width="45dp"
@@ -222,13 +229,14 @@
                             android:layout_height="wrap_content"
                             android:padding="4dp"
                             android:layout_marginLeft="5dp"
-                            android:layout_gravity="left"
+                            android:gravity="left|center"
                             android:text="@string/co2"
                             android:fontFamily="@font/poppins_italic"
                             android:textColor="@color/text_button_color"
                             android:textSize="16sp" />
                         <ImageView
                             android:layout_weight="0.5"
+                            android:layout_gravity="center"
                             android:layout_marginLeft="10dp"
                             android:src="@drawable/co2_icon"
                             android:layout_width="45dp"
@@ -248,13 +256,14 @@
                             android:layout_height="wrap_content"
                             android:padding="4dp"
                             android:layout_marginLeft="5dp"
-                            android:layout_gravity="left"
+                            android:gravity="left|center"
                             android:text="@string/weather_bin_data"
                             android:fontFamily="@font/poppins_italic"
                             android:textColor="@color/text_button_color"
                             android:textSize="16sp" />
                         <ImageView
                             android:layout_weight="0.5"
+                            android:layout_gravity="center"
                             android:layout_marginLeft="5dp"
                             android:src="@drawable/weather_icon"
                             android:layout_width="45dp"
