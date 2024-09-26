@@ -18,7 +18,6 @@ import com.tetra.brycal.databinding.ActivityMixedAirBinding;
 
 public class MixedAirActivity extends AppCompatActivity {
     private ActivityMixedAirBinding binding;
-   String selectedOption;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

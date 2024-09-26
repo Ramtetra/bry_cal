@@ -133,8 +133,19 @@ public class PsyLib {
     /// <param name="atm">atmospheric pressure in psia</param>
     /// <param name="T">temperature °F</param>
     /// <returns>Fs</returns>
-    private static double XFS(double atm, double T) {
-        // Variables initialization
+    /**
+     * Calculates Fs as a function of atmospheric pressure (psia) and temperature (°F).
+     *
+     * @param atm atmospheric pressure in psi
+     * @param T temperature in °F
+     * @return Fs value
+     */
+
+/*
+    private static double XFS(double atm, double T)
+    {
+        // finds Fs AS FUNCTION of atmospheric pressure(psia) AND Temperature (deg F)
+
         double x = 0;
         double y = 0;
         double tk = 0;
@@ -175,44 +186,284 @@ public class PsyLib {
         double Fsnew = 0;
         double Fs = 0;
         double lnFs = 0;
+        //double answer = 0;
         short i = 0;
 
-        // Saturation pressure calculation (y)
-        y = 0.000000019578 * Math.pow(T, 4) - 0.0000061977 * Math.pow(T, 3) + 0.0010557 * Math.pow(T, 2) - 0.069597 * T + 1.5286;
+        //check for boiling and set XFs to 1.000000 if > boiling point
+        //y is saturation pressure in psi
+        y = 0.000000019578 * (System.Math.Pow(T, 4)) - 0.0000061977 * (System.Math.Pow(T, 3)) + 0.0010557 * (System.Math.Pow(T, 2)) - 0.069597 * T + 1.5286;
 
-        // Check for boiling and set XFS to 1.0 if near boiling
-        if (atm < 0.98 * y) {
+        if (atm < 0.98 * y) //almost boiling so set XFs to 1.0
+        {
             return 1;
         }
 
-        p = atm * 6894.8; // Convert atm to pascal
-        tk = (T - 32) * 5 / 9 + 273.15; // Convert Fahrenheit to Kelvin
+        p = atm * 6894.8;
+        tk = (T - 32) * 5 / 9 + 273.15;
 
-        // Ensure minimum value of tk
+        // this FUNCTION is troublesome AT low temp
+        if (tk < 173)
+        {
+            tk = 173;
+        }
+        // its limits are 173 Kelvin here
+
+        ps = XPWS(T) * 6894.8;
+
+        //Find constants as function of Tk
+        Baa = 34.9568 - 6687.72 / tk - 2101410 / tk / tk + 92474600 / tk / tk / tk;
+        Caa = 1259.75 - 190905 / tk + 63246700 / tk / tk;
+        R = 8314410; //Pa cm3/mol/k
+        Bprime = 0.000000007 - 0.00000000147184 * System.Math.Exp(1734.29 / tk);
+        Cprime = 0.00000000000000104 - 3.35297E-18 * System.Math.Exp(3645.09 / tk);
+        Bww = R * tk * Bprime;
+        Cwww = R * R * tk * tk * (Cprime + (Bprime * Bprime));
+        Baw = 32.366097 - 14113.8 / tk - 1244535 / tk / tk - 2348789000.0 / ((System.Math.Pow(tk, 4)));
+        Caaw = 483.737 + 105678 / tk - 65639400 / tk / tk + 29444200000.0 / ((System.Math.Pow(tk, 3))) - 3193170000000.0 / ((System.Math.Pow(tk, 4)));
+        Caww = -1000000 * System.Math.Exp(-10.728876 + 3478.02 / tk - 383383 / tk / tk + 33406000 / ((System.Math.Pow(tk, 3))));
+        J[0] = 0;
+        //kappa = (8.875 + 0.0165 * tk) * (10 ^ -11);
+        kappa = (8.875 + 0.0165 * tk) * System.Math.Pow(10,-11);
+        if ((273.15 < tk) && (tk < 373.15))
+        {
+            J[0] = 50.88496;
+            J[1] = 0.6163813;
+            J[2] = 0.001459187;
+            J[3] = 0.00002008438;
+            J[4] = -0.5847727 * System.Math.Pow(10,-7);   //(10 ^ -7);
+            J[5] = 0.410411 * System.Math.Pow(10,-9);   //(10 ^ -9);
+            J[6] = 0.01967348;
+        }
+        if (373.16 < tk)
+        {
+            J[0] = 50.884917;
+            J[1] = 0.62590623;
+            J[2] = 0.0013848668;
+            J[3] = 0.21603427 * System.Math.Pow(10,-4);   //(10 ^ -4);
+            J[4] = -0.72087667 * System.Math.Pow(10,-7);   //(10 ^ -7);
+            J[5] = 0.46545054 * System.Math.Pow(10,-9);   //(10 ^ -9);
+            J[6] = 0.019859983;
+        }
+        if (J[0] > 0)
+        {
+            x = J[0];
+            for (i = 1; i <= 5; i++)
+            {
+                x = x + J[i] * ((System.Math.Pow(tk, i)));
+            }
+            kappa = (x / (1 + J[6] * tk)) * System.Math.Pow(10,-11);   //(10 ^ -11);
+        }
+
+
+        K = 0;
+        if (tk > 273.15)
+        {
+
+            ag = -0.0005943;
+            bg = -0.147;
+            cg = -0.0512;
+            dg = -0.1076;
+            eg = 0.8447;
+            A = ag;
+            b = cg * 1000 / tk + dg;
+            c = bg * (System.Math.Pow((1000 / tk), 2)) + eg * 1000 / tk - 1;
+
+            log10KO = (-b + System.Math.Sqrt((System.Math.Pow(b, 2)) - 4 * A * c)) / 2 * A;
+            lnKO = log10KO * System.Math.Log(10);
+            KO = System.Math.Exp(lnKO);
+
+
+            ag = -0.1021;
+            bg = -0.1482;
+            cg = -0.019;
+            dg = -0.03741;
+            eg = 0.851;
+            A = ag;
+            b = cg * 1000 / tk + dg;
+            c = bg * (System.Math.Pow((1000 / tk), 2)) + eg * 1000 / tk - 1;
+
+            log10KN = (-b + System.Math.Sqrt((System.Math.Pow(b, 2)) - 4 * A * c)) / 2 * A;
+            lnKN = log10KN * System.Math.Log(10);
+            KN = System.Math.Exp(lnKN);
+
+            KA = 1 / (0.22 / KO + 0.78 / KN);
+            K = 0.0001 / KA / 101325;
+
+        }
+
+
+        if (tk < 273.15)
+        {
+            vc = 0.001070003 - 0.249936e-7 * tk + 0.371611e-9 * tk * tk;
+            //vc = 0.001070003 - 0.249936 * 10 ^ -7 * tk + 0.371611 * 10 ^ -9 * tk * tk;
+        }
+        else
+        {
+            F[0] = -2403.60201;
+            F[1] = -1.40758895;
+            F[2] = 0.1068287657;
+            F[3] = -0.0002914492351;
+            F[4] = 0.373497936 * System.Math.Pow(10,-6);   //(10 ^ -6);
+            F[5] = -0.21203787 * System.Math.Pow(10,-9);   //(10 ^ -9);
+            F[6] = -3.424442728;
+            F[7] = 0.01619785;
+            vc = F[0];
+            for (i = 1; i <= 5; i++)
+            {
+                vc = vc + F[i] * ((System.Math.Pow(tk, i)));
+            }
+            vc = (F[6] + F[7] * tk) / vc; // inverts density
+        }
+        vc = vc * 18015.28; //page 525 2794
+
+        Rcon = R * R * tk * tk;
+
+        //succesive iteration on eq 18
+        Fsnew = 1; //first try
+        i = 0;
+        do
+        {
+
+            Fs = Fsnew;
+            xas = (p - Fsnew * ps) / p;
+            lnFs = ((1 + kappa * ps) * (p - ps) - 0.5 * kappa * (((System.Math.Pow(p, 2))) - ((System.Math.Pow(ps, 2))))) * vc * R * tk;
+            lnFs = lnFs + System.Math.Log(1 - K * xas * p) * Rcon;
+            lnFs = lnFs + ((System.Math.Pow(xas, 2))) * p * Baa * R * tk;
+            lnFs = lnFs - 2 * ((System.Math.Pow(xas, 2))) * p * Baw * R * tk;
+            lnFs = lnFs - (p - ps - xas * xas * p) * Bww * R * tk;
+            lnFs = lnFs + ((System.Math.Pow(xas, 3))) * p * p * Caa;
+            lnFs = lnFs + (3 * xas * xas * (1 - 2 * xas) * p * p) * 0.5 * Caaw;
+            lnFs = lnFs - 3 * xas * xas * (1 - xas) * p * p * Caww;
+            lnFs = lnFs - ((1 + 2 * xas) * ((System.Math.Pow((1 - xas), 2))) * p * p - ps * ps) * 0.5 * Cwww;
+            lnFs = lnFs - xas * xas * (1 - 3 * xas) * (1 - xas) * p * p * Baa * Bww;
+            lnFs = lnFs - 2 * ((System.Math.Pow(xas, 3))) * (2 - 3 * xas) * p * p * Baa * Baw;
+            lnFs = lnFs + 6 * xas * xas * ((System.Math.Pow((1 - xas), 2))) * p * p * Bww * Baw;
+            lnFs = lnFs - 3 * ((System.Math.Pow(xas, 4))) * p * p * 0.5 * Baa * Baa;
+            lnFs = lnFs - 2 * xas * xas * (1 - xas) * (1 - 3 * xas) * p * p * Baw * Baw;
+            lnFs = lnFs - (ps * ps - (1 + 3 * xas) * ((System.Math.Pow((1 - xas), 3))) * p * p) * 0.5 * Bww * Bww;
+
+            lnFs = lnFs / R / R / tk / tk;
+
+
+
+            Fsnew = Math.exp(lnFs);
+
+            if (double.IsNaN(Fsnew))
+            {
+                return double.NaN;
+            }
+
+            if (Math.abs(Fs - Fsnew) < 0.000001)
+            {
+                break;
+            }
+
+
+        } while (true);
+
+        if (Fsnew > 1)
+        {
+            return Fsnew;
+        }
+        else
+        {
+            return 1;
+        }
+    }
+*/
+
+    private static double XFS(double atm, double T) {
+        // Declare and initialize variables
+        double x = 0;
+        double y = 0;
+        double tk = 0;
+        double p = 0;
+        double ps = 0;
+        double[] J = new double[11];
+        double[] F = new double[11];
+        double Bprime = 0;
+        double Caa = 0;
+        double Baa = 0;
+        double R = 0;
+        double Cprime = 0;
+        double Caww = 0;
+        double Baw = 0;
+        double Bww = 0;
+        double Cwww = 0;
+        double Caaw = 0;
+        double kappa = 0;
+        double dg = 0;
+        double bg = 0;
+        double ag = 0;
+        double cg = 0;
+        double eg = 0;
+        double b = 0;
+        double A = 0;
+        double c = 0;
+        double lnKO = 0;
+        double log10KO = 0;
+        double KO = 0;
+        double lnKN = 0;
+        double log10KN = 0;
+        double KN = 0;
+        double K = 0;
+        double KA = 0;
+        double vc = 0;
+        double Rcon = 0;
+        double xas = 0;
+        double Fsnew = 0;
+        double Fs = 0;
+        double lnFs = 0;
+
+        // Check for boiling and set Fs to 1.0 if atmospheric pressure is below 98% of saturation pressure
+        // y is saturation pressure in psi
+        y = 0.000000019578 * Math.pow(T, 4)
+                - 0.0000061977 * Math.pow(T, 3)
+                + 0.0010557 * Math.pow(T, 2)
+                - 0.069597 * T
+                + 1.5286;
+
+        if (atm < 0.98 * y) { // Almost boiling
+            return 1.0;
+        }
+
+        // Convert atmospheric pressure from psi to Pascals
+        p = atm * 6894.8;
+
+        // Convert Fahrenheit to Kelvin
+        tk = (T - 32) * 5 / 9.0 + 273.15;
+
+        // Limit tk to a minimum of 173 Kelvin
         if (tk < 173) {
             tk = 173;
         }
 
-        // Calculate saturation vapor pressure (ps) in Pascal using XPWS method
-        ps = XPWS(T) * 6894.8;
+        // Calculate saturation vapor pressure in Pascals
+        ps = XPWS(T) * 6894.8; // Ensure xpws(double T) is defined elsewhere
 
-        // Calculate constants as a function of temperature (tk)
-        Baa = 34.9568 - 6687.72 / tk - 2101410 / (tk * tk) + 92474600 / (tk * tk * tk);
-        Caa = 1259.75 - 190905 / tk + 63246700 / (tk * tk);
-        R = 8314410; // Ideal gas constant in Pa cm3/mol/K
+        // Find constants as a function of Tk
+        Baa = 34.9568 - 6687.72 / tk - 2101410.0 / (tk * tk) + 92474600.0 / (tk * tk * tk);
+        Caa = 1259.75 - 190905.0 / tk + 63246700.0 / (tk * tk);
+        R = 8314410; // Pa·cm³/mol/K
         Bprime = 0.000000007 - 0.00000000147184 * Math.exp(1734.29 / tk);
         Cprime = 0.00000000000000104 - 3.35297E-18 * Math.exp(3645.09 / tk);
         Bww = R * tk * Bprime;
         Cwww = R * R * tk * tk * (Cprime + (Bprime * Bprime));
-        Baw = 32.366097 - 14113.8 / tk - 1244535 / (tk * tk) - 2348789000.0 / (Math.pow(tk, 4));
-        Caaw = 483.737 + 105678 / tk - 65639400 / (tk * tk) + 29444200000.0 / (Math.pow(tk, 3)) - 3193170000000.0 / (Math.pow(tk, 4));
-        Caww = -1000000 * Math.exp(-10.728876 + 3478.02 / tk - 383383 / (tk * tk) + 33406000 / (Math.pow(tk, 3)));
+        Baw = 32.366097 - 14113.8 / tk - 1244535.0 / (tk * tk) - 2348789000.0 / Math.pow(tk, 4);
+        Caaw = 483.737 + 105678.0 / tk - 65639400.0 / (tk * tk)
+                + 29444200000.0 / Math.pow(tk, 3)
+                - 3193170000000.0 / Math.pow(tk, 4);
+        Caww = -1000000.0 * Math.exp(-10.728876 + 3478.02 / tk - 383383.0 / (tk * tk)
+                + 33406000.0 / Math.pow(tk, 3));
 
-        // Calculate kappa based on temperature
+        // Initialize J array
+        J[0] = 0;
+
+        // Calculate kappa
         kappa = (8.875 + 0.0165 * tk) * Math.pow(10, -11);
 
-        // Temperature-specific calculations
-        if ((273.15 < tk) && (tk < 373.15)) {
+        // Assign J values based on Tk
+        if (tk > 273.15 && tk < 373.15) {
             J[0] = 50.88496;
             J[1] = 0.6163813;
             J[2] = 0.001459187;
@@ -220,7 +471,8 @@ public class PsyLib {
             J[4] = -0.5847727 * Math.pow(10, -7);
             J[5] = 0.410411 * Math.pow(10, -9);
             J[6] = 0.01967348;
-        } else if (tk > 373.16) {
+        }
+        if (tk > 373.16) {
             J[0] = 50.884917;
             J[1] = 0.62590623;
             J[2] = 0.0013848668;
@@ -230,18 +482,19 @@ public class PsyLib {
             J[6] = 0.019859983;
         }
 
-        // Further adjustments to kappa based on the J array
+        // Update kappa based on J values
         if (J[0] > 0) {
             x = J[0];
-            for (i = 1; i <= 5; i++) {
-                x = x + J[i] * Math.pow(tk, i);
+            for (int index = 1; index <= 5; index++) {
+                x += J[index] * Math.pow(tk, index);
             }
             kappa = (x / (1 + J[6] * tk)) * Math.pow(10, -11);
         }
 
-        // Additional calculations for KO, KN, and KA
+        // Initialize K
+        K = 0;
+
         if (tk > 273.15) {
-            // KO calculation
             ag = -0.0005943;
             bg = -0.147;
             cg = -0.0512;
@@ -249,12 +502,12 @@ public class PsyLib {
             eg = 0.8447;
             A = ag;
             b = cg * 1000 / tk + dg;
-            c = bg * Math.pow(1000 / tk, 2) + eg * 1000 / tk - 1;
+            c = bg * Math.pow(1000.0 / tk, 2) + eg * 1000.0 / tk - 1;
+
             log10KO = (-b + Math.sqrt(Math.pow(b, 2) - 4 * A * c)) / (2 * A);
             lnKO = log10KO * Math.log(10);
             KO = Math.exp(lnKO);
 
-            // KN calculation
             ag = -0.1021;
             bg = -0.1482;
             cg = -0.019;
@@ -262,17 +515,17 @@ public class PsyLib {
             eg = 0.851;
             A = ag;
             b = cg * 1000 / tk + dg;
-            c = bg * Math.pow(1000 / tk, 2) + eg * 1000 / tk - 1;
+            c = bg * Math.pow(1000.0 / tk, 2) + eg * 1000.0 / tk - 1;
+
             log10KN = (-b + Math.sqrt(Math.pow(b, 2) - 4 * A * c)) / (2 * A);
             lnKN = log10KN * Math.log(10);
             KN = Math.exp(lnKN);
 
-            // KA calculation
-            KA = 1 / (0.22 / KO + 0.78 / KN);
-            K = 0.0001 / KA / 101325;
+            KA = 1.0 / (0.22 / KO + 0.78 / KN);
+            K = 0.0001 / KA / 101325.0;
         }
 
-        // vc calculation based on temperature
+        // Calculate vc based on tk
         if (tk < 273.15) {
             vc = 0.001070003 - 0.249936e-7 * tk + 0.371611e-9 * tk * tk;
         } else {
@@ -285,36 +538,65 @@ public class PsyLib {
             F[6] = -3.424442728;
             F[7] = 0.01619785;
             vc = F[0];
-            for (i = 1; i <= 5; i++) {
-                vc = vc + F[i] * Math.pow(tk, i);
+            for (int index = 1; index <= 5; index++) {
+                vc += F[index] * Math.pow(tk, index);
             }
-            vc = (F[6] + F[7] * tk) / vc;
+            vc = (F[6] + F[7] * tk) / vc; // Inverts density
         }
-        vc = vc * 18015.28;
+        vc = vc * 18015.28; // Convert to appropriate units
 
+        // Calculate Rcon
         Rcon = R * R * tk * tk;
 
-        // Iteration to solve for Fs
-        Fsnew = 1;
+        // Successive iteration to solve for Fs
+        Fsnew = 1.0; // Initial guess
         do {
             Fs = Fsnew;
             xas = (p - Fsnew * ps) / p;
 
-            lnFs = ((1 + kappa * ps) * (p - ps) - 0.5 * kappa * (Math.pow(p, 2) - Math.pow(ps, 2))) * vc * R * tk;
+            lnFs = ((1 + kappa * ps) * (p - ps) - 0.5 * kappa * (Math.pow(p, 2) - Math.pow(ps, 2)))
+                    * vc * R * tk;
             lnFs += Math.log(1 - K * xas * p) * Rcon;
-            lnFs += Math.pow(xas, 2) * Bww;
-            lnFs += Math.pow(xas, 3) * Cwww;
-            lnFs += (1 - xas) * xas * Baw;
-            lnFs += Math.pow(1 - xas, 2) * xas * Caww;
-            lnFs += Math.pow(1 - xas, 3) * Caaw;
-            lnFs += Math.pow(1 - xas, 2) * Baa;
-            lnFs += Math.pow(1 - xas, 3) * Caa;
+            lnFs += Math.pow(xas, 2) * p * Baa * R * tk;
+            lnFs -= 2 * Math.pow(xas, 2) * p * Baw * R * tk;
+            lnFs -= (p - ps - Math.pow(xas, 2) * p) * Bww * R * tk;
+            lnFs += Math.pow(xas, 3) * p * p * Caa;
+            lnFs += (3 * Math.pow(xas, 2) * (1 - 2 * xas) * p * p) * 0.5 * Caaw;
+            lnFs -= 3 * Math.pow(xas, 2) * (1 - xas) * p * p * Caww;
+            lnFs -= (1 + 2 * xas) * Math.pow(1 - xas, 2) * p * p * Cwww
+                    - Math.pow(ps, 2) * 0.5 * Cwww;
+            lnFs -= Math.pow(xas, 2) * (1 - 3 * xas) * (1 - xas) * p * p * Baa * Bww;
+            lnFs -= 2 * Math.pow(xas, 3) * (2 - 3 * xas) * p * p * Baa * Baw;
+            lnFs += 6 * Math.pow(xas, 2) * Math.pow(1 - xas, 2) * p * p * Bww * Baw;
+            lnFs -= 3 * Math.pow(xas, 4) * p * p * 0.5 * Math.pow(Baa, 2);
+            lnFs -= 2 * Math.pow(xas, 2) * (1 - xas) * (1 - 3 * xas) * p * p * Math.pow(Baw, 2);
+            lnFs -= (Math.pow(ps, 2) - (1 + 3 * xas) * Math.pow(1 - xas, 3) * p * p) * 0.5 * Math.pow(Bww, 2);
+
+            lnFs = lnFs / (R * R * tk * tk);
 
             Fsnew = Math.exp(lnFs);
-        } while (Math.abs(Fsnew - Fs) > 0.001);
 
-        return Fsnew;
+            // Check for NaN
+            if (Double.isNaN(Fsnew)) {
+                return Double.NaN;
+            }
+
+            // Check for convergence
+            if (Math.abs(Fs - Fsnew) < 0.000001) {
+                break;
+            }
+
+        } while (true);
+
+        // Ensure Fsnew does not fall below 1
+        if (Fsnew > 1.0) {
+            return Fsnew;
+        } else {
+            return 1.0;
+        }
     }
+
+
     /**
      * Private Function - Intermediate calculation
      *

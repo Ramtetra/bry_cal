@@ -136,25 +136,24 @@ public class PsycalActivity extends AppCompatActivity {
                          double firstValue = Double.parseDouble(binding.et1.getText().toString());
                          double altitude = Double.parseDouble(binding.etAltitude.getText().toString());
                          Double secondValue = Double.parseDouble(s.toString());
-
                      if (!s.toString().isEmpty() && checkedValue==false) {
-                              Double rhValues=psyCal.LCSI_WBTOGRAMS(firstValue, secondValue, altitude);
-                              BigDecimal num1 = new BigDecimal(rhValues);
-                              BigDecimal roundedRHValue = num1.setScale(1, RoundingMode.HALF_UP);
+                              Double hrValues=psyCal.LCSI_WBTOGRAMS(firstValue, secondValue, altitude);
+                              BigDecimal num1 = new BigDecimal(hrValues);
+                              BigDecimal roundedRHValue = num1.setScale(2, RoundingMode.HALF_UP);
                               isUpdatingThird = true;
-                              binding.et3.setText(String.valueOf(roundedRHValue));
+                              binding.et6.setText(String.valueOf(roundedRHValue));
                              isUpdatingThird = false; // Reset flag
-                              Double kgValue=psyCal.LCSI_RH(firstValue,rhValues,altitude);
+                              Double kgValue=psyCal.LCSI_RH(firstValue,hrValues,altitude);
                               isUpdatingFourth=true;
                               binding.et4.setText(String.valueOf(kgValue));
                               isUpdatingFourth=false;
-                              Double dpValue=psyCal.LCSI_DEWPOINT(rhValues,altitude);
+                              Double dpValue=psyCal.LCSI_DEWPOINT(hrValues,altitude);
                               BigDecimal num2 = new BigDecimal(dpValue);
                               BigDecimal roundedDpValue = num2.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
                               isUpdatingFive=true;
                               binding.et5.setText(String.valueOf(roundedDpValue));
-                             isUpdatingFive=false;
-                              Double gkgValue=psyCal.LCSI_ENTHALPY(firstValue,rhValues);
+                              isUpdatingFive=false;
+                              Double gkgValue=psyCal.LCSI_ENTHALPY(firstValue,hrValues);
                               isUpdatingSix=true;
                               binding.et6.setText(String.valueOf(gkgValue));
                               isUpdatingSix=false;

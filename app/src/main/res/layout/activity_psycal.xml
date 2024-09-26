@@ -181,7 +181,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:paddingBottom="30dp"
-        android:layout_marginTop="170dp"
+        android:layout_marginTop="190dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -282,9 +282,9 @@
                             <TextView
                                 android:id="@+id/txt1"
                                 android:layout_weight="0.4"
-                                android:paddingBottom="10dp"
                                 android:textSize="14sp"
                                 android:gravity="center"
+                                android:layout_gravity="center"
                                 android:textColor="@color/black"
                                 android:fontFamily="@font/poppins_regular"
                                 android:layout_marginRight="10dp"
@@ -332,7 +332,6 @@
                             <TextView
                                 android:id="@+id/txt2"
                                 android:layout_weight="0.4"
-                                android:paddingBottom="10dp"
                                 android:textSize="14sp"
                                 android:gravity="center"
                                 android:textColor="@color/black"
@@ -381,7 +380,6 @@
                             <TextView
                                 android:id="@+id/txt3"
                                 android:layout_weight="0.4"
-                                android:paddingBottom="10dp"
                                 android:textSize="14sp"
                                 android:gravity="center"
                                 android:textColor="@color/black"
@@ -433,7 +431,6 @@
                             <TextView
                                 android:id="@+id/txt4"
                                 android:layout_weight="0.4"
-                                android:paddingBottom="10dp"
                                 android:textSize="14sp"
                                 android:gravity="center"
                                 android:textColor="@color/black"
@@ -483,7 +480,6 @@
                             <TextView
                                 android:id="@+id/txt5"
                                 android:layout_weight="0.4"
-                                android:paddingBottom="10dp"
                                 android:textSize="14sp"
                                 android:gravity="center"
                                 android:textColor="@color/black"
@@ -532,7 +528,6 @@
                             <TextView
                                 android:id="@+id/txt6"
                                 android:layout_weight="0.4"
-                                android:paddingBottom="10dp"
                                 android:textSize="14sp"
                                 android:gravity="center"
                                 android:textColor="@color/black"
