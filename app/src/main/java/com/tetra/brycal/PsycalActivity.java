@@ -20,7 +20,7 @@ import java.math.RoundingMode;
 
 public class PsycalActivity extends AppCompatActivity {
  ActivityPsycalBinding binding;
-    PsyCal psyCal;
+    PsyLib psyCal;
     boolean checkedValue=false;
     double firstValue,secondValue,thirdValue,fourthValue,fiveValue,sixValue;
 
@@ -41,7 +41,7 @@ public class PsycalActivity extends AppCompatActivity {
         binding.txt4.setText("kJ/kg");
         binding.txt5.setText("°C dp");
         binding.txt6.setText("g/kg");
-        psyCal=new PsyCal();
+        psyCal=new PsyLib();
         binding.layout1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -90,6 +90,7 @@ public class PsycalActivity extends AppCompatActivity {
                 startActivity(intent2);
             }
         });
+
         binding.switchBtn.setOnCheckedChangeListener((buttonView, isChecked) -> {
             if (isChecked) {
                 checkedValue = binding.switchBtn.isChecked();
@@ -338,14 +339,13 @@ public class PsycalActivity extends AppCompatActivity {
                     isUpdatingFourth = false; // Reset the flag
                 }
             }
-
             @Override
             public void afterTextChanged(Editable s) {
 
             }
         });
 
-        binding.et5.addTextChangedListener(new TextWatcher() {
+          binding.et5.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -419,7 +419,7 @@ public class PsycalActivity extends AppCompatActivity {
             }
         });
 
-        binding.et6.addTextChangedListener(new TextWatcher() {
+          binding.et6.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 

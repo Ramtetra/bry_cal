@@ -29,13 +29,14 @@
 
             <ImageView
                 android:src="@drawable/psycal_icon"
+                android:paddingTop="5dp"
                 android:layout_gravity="center"
                 android:layout_width="40dp"
                 android:layout_height="40dp"/>
             <TextView
                 android:text="@string/psycal"
                 android:textColor="@color/heading_color"
-                android:textSize="10sp"
+                android:textSize="8sp"
                 android:fontFamily="@font/poppins_regular"
                 android:layout_gravity="center"
                 android:layout_width="wrap_content"
@@ -53,13 +54,14 @@
 
             <ImageView
                 android:src="@drawable/mixed_air_icon"
+                android:paddingTop="5dp"
                 android:layout_gravity="center"
                 android:layout_width="40dp"
                 android:layout_height="40dp"/>
             <TextView
                 android:text="@string/mixed_air_conditions"
                 android:textColor="@color/heading_color"
-                android:textSize="10sp"
+                android:textSize="8sp"
                 android:layout_gravity="center"
                 android:fontFamily="@font/poppins_regular"
                 android:layout_width="wrap_content"
@@ -77,13 +79,14 @@
 
             <ImageView
                 android:layout_gravity="center"
+                android:paddingTop="5dp"
                 android:src="@drawable/unit_converter_icon"
                 android:layout_width="40dp"
                 android:layout_height="40dp"/>
             <TextView
                 android:text="@string/unit_converter"
                 android:textColor="@color/heading_color"
-                android:textSize="10sp"
+                android:textSize="8sp"
                 android:layout_gravity="center"
                 android:fontFamily="@font/poppins_regular"
                 android:layout_width="wrap_content"
@@ -91,7 +94,7 @@
             <TextView
                 android:text="@string/converter"
                 android:textColor="@color/heading_color"
-                android:textSize="10sp"
+                android:textSize="8sp"
                 android:layout_gravity="center"
                 android:fontFamily="@font/poppins_regular"
                 android:layout_width="wrap_content"
@@ -107,13 +110,14 @@
 
             <ImageView
                 android:layout_gravity="center"
+                android:paddingTop="5dp"
                 android:src="@drawable/ductulator_icon"
                 android:layout_width="40dp"
                 android:layout_height="40dp"/>
             <TextView
                 android:text="@string/ductulator"
                 android:textColor="@color/heading_color"
-                android:textSize="10sp"
+                android:textSize="8sp"
                 android:layout_gravity="center"
                 android:fontFamily="@font/poppins_regular"
                 android:layout_width="wrap_content"
@@ -128,6 +132,7 @@
             android:layout_height="75dp">
 
             <ImageView
+                android:paddingTop="5dp"
                 android:layout_gravity="center"
                 android:src="@drawable/co2_icon"
                 android:layout_width="40dp"
@@ -135,7 +140,7 @@
             <TextView
                 android:text="@string/co2"
                 android:textColor="@color/heading_color"
-                android:textSize="10sp"
+                android:textSize="8sp"
                 android:fontFamily="@font/poppins_regular"
                 android:layout_gravity="center"
                 android:layout_width="wrap_content"
@@ -152,13 +157,14 @@
 
             <ImageView
                 android:layout_gravity="center"
+                android:paddingTop="5dp"
                 android:src="@drawable/weather_icon"
                 android:layout_width="40dp"
                 android:layout_height="40dp"/>
             <TextView
                 android:text="@string/weather_bin_data"
                 android:textColor="@color/heading_color"
-                android:textSize="10sp"
+                android:textSize="8sp"
                 android:fontFamily="@font/poppins_regular"
                 android:layout_gravity="center"
                 android:layout_width="wrap_content"
