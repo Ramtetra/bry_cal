@@ -96,7 +96,7 @@
             <TextView
                 android:text="@string/converter"
                 android:textColor="@color/heading_color"
-                android:textSize="10sp"
+                android:textSize="8sp"
                 android:layout_gravity="center"
                 android:fontFamily="@font/poppins_regular"
                 android:layout_width="wrap_content"
