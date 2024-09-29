@@ -18,6 +18,7 @@
         android:layout_marginRight="10dp"
         android:layout_marginTop="10dp"
         android:gravity="center"
+        android:weightSum="6"
         app:layout_constraintTop_toBottomOf="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -25,8 +26,9 @@
         <LinearLayout
             android:id="@+id/layout1"
             android:orientation="vertical"
+            android:layout_weight="1"
             android:background="@drawable/shape_border_radius_active"
-            android:layout_width="50dp"
+            android:layout_width="0dp"
             android:layout_height="75dp">
 
             <ImageView
@@ -44,14 +46,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
         </LinearLayout>
-
-
         <LinearLayout
             android:id="@+id/layout2"
             android:orientation="vertical"
             android:layout_marginLeft="3dp"
+            android:layout_weight="1"
             android:background="@drawable/shape_border_radius"
-            android:layout_width="60dp"
+            android:layout_width="0dp"
             android:layout_height="75dp">
 
             <ImageView
@@ -70,13 +71,13 @@
                 android:layout_height="wrap_content"/>
         </LinearLayout>
 
-
         <LinearLayout
             android:id="@+id/layout3"
             android:orientation="vertical"
             android:layout_marginLeft="3dp"
+            android:layout_weight="1"
             android:background="@drawable/shape_border_radius"
-            android:layout_width="52dp"
+            android:layout_width="0dp"
             android:layout_height="75dp">
 
             <ImageView
@@ -106,8 +107,9 @@
             android:id="@+id/layout4"
             android:orientation="vertical"
             android:layout_marginLeft="3dp"
+            android:layout_weight="1"
             android:background="@drawable/shape_border_radius"
-            android:layout_width="60dp"
+            android:layout_width="0dp"
             android:layout_height="75dp">
 
             <ImageView
@@ -129,8 +131,9 @@
             android:id="@+id/layout5"
             android:orientation="vertical"
             android:layout_marginLeft="3dp"
+            android:layout_weight="1"
             android:background="@drawable/shape_border_radius"
-            android:layout_width="60dp"
+            android:layout_width="0dp"
             android:layout_height="75dp">
 
             <ImageView
@@ -153,8 +156,9 @@
             android:id="@+id/layout6"
             android:orientation="vertical"
             android:layout_marginLeft="3dp"
+            android:layout_weight="1"
             android:background="@drawable/shape_border_radius"
-            android:layout_width="60dp"
+            android:layout_width="0dp"
             android:layout_height="75dp">
 
             <ImageView
@@ -277,7 +281,7 @@
                         <LinearLayout
                             android:background="@drawable/shape_edittext_rounded"
                             android:layout_weight="0.4"
-                            android:layout_width="wrap_content"
+                            android:layout_width="40dp"
                             android:layout_height="wrap_content">
                             <TextView
                                 android:id="@+id/txt1"
@@ -327,7 +331,7 @@
                         <LinearLayout
                             android:background="@drawable/shape_edittext_rounded"
                             android:layout_weight="0.4"
-                            android:layout_width="wrap_content"
+                            android:layout_width="40dp"
                             android:layout_height="wrap_content">
                             <TextView
                                 android:id="@+id/txt2"
@@ -375,7 +379,7 @@
                         <LinearLayout
                             android:background="@drawable/shape_edittext_rounded"
                             android:layout_weight="0.4"
-                            android:layout_width="wrap_content"
+                            android:layout_width="40dp"
                             android:layout_height="wrap_content">
                             <TextView
                                 android:id="@+id/txt3"
@@ -426,18 +430,19 @@
                         <LinearLayout
                             android:background="@drawable/shape_edittext_rounded"
                             android:layout_weight="0.4"
-                            android:layout_width="wrap_content"
+                            android:layout_width="40dp"
                             android:layout_height="wrap_content">
+
                             <TextView
                                 android:id="@+id/txt4"
+                                android:layout_width="43dp"
+                                android:layout_height="48dp"
+                                android:layout_marginRight="10dp"
                                 android:layout_weight="0.4"
-                                android:textSize="14sp"
+                                android:fontFamily="@font/poppins_regular"
                                 android:gravity="center"
                                 android:textColor="@color/black"
-                                android:fontFamily="@font/poppins_regular"
-                                android:layout_marginRight="10dp"
-                                android:layout_width="wrap_content"
-                                android:layout_height="48dp"/>
+                                android:textSize="14sp" />
 
                         </LinearLayout>
 
@@ -475,7 +480,7 @@
                         <LinearLayout
                             android:background="@drawable/shape_edittext_rounded"
                             android:layout_weight="0.4"
-                            android:layout_width="wrap_content"
+                            android:layout_width="40dp"
                             android:layout_height="wrap_content">
                             <TextView
                                 android:id="@+id/txt5"
@@ -523,7 +528,7 @@
                         <LinearLayout
                             android:background="@drawable/shape_edittext_rounded"
                             android:layout_weight="0.4"
-                            android:layout_width="wrap_content"
+                            android:layout_width="40dp"
                             android:layout_height="wrap_content">
                             <TextView
                                 android:id="@+id/txt6"
@@ -556,19 +561,18 @@
                         app:layout_constraintLeft_toLeftOf="parent"
                         android:orientation="horizontal"
                         app:layout_constraintTop_toBottomOf="@+id/layoutData6"
-                        android:layout_weight="1.4"
+                        android:layout_weight="1.6"
                         android:layout_marginTop="10dp"
-                        android:layout_width="wrap_content"
+                        android:layout_width="80dp"
                         android:layout_height="50dp">
 
                         <EditText
                             android:id="@+id/etAltitude"
-                            android:layout_weight="1.4"
+                            android:layout_weight="1.6"
                             android:inputType="numberDecimal"
                             android:padding="5dp"
                             android:text="0"
                             android:layout_marginLeft="10dp"
-                            android:layout_marginRight="10dp"
                             android:background="@drawable/shape_edittext_rounded"
                             android:layout_width="80dp"
                             android:layout_height="48dp"/>
@@ -579,59 +583,27 @@
                         android:id="@+id/btnAltitude"
                         android:layout_marginTop="12dp"
                         android:padding="5dp"
-                        android:layout_weight="0.6"
+                        android:layout_weight="0.4"
                         android:layout_marginBottom="30dp"
-                        android:layout_marginLeft="20dp"
+                        android:layout_marginLeft="10dp"
                         app:layout_constraintRight_toRightOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/layoutData6"
-                        android:background="@drawable/shape_dark_blue_color"
-                        android:layout_width="60dp"
+                        android:background="@color/dark_blue"
+                        android:layout_width="40dp"
                         android:layout_height="wrap_content">
                         <TextView
                             android:textSize="15sp"
                             android:text="Altitude"
                             android:gravity="center"
-                            android:layout_marginLeft="20dp"
+                            android:padding="5dp"
+                            android:layout_weight="0.4"
                             android:fontFamily="@font/poppins_regular"
                             android:textColor="@color/white"
-                            android:layout_width="wrap_content"
+                            android:layout_width="40dp"
                             android:layout_height="wrap_content"/>
                     </LinearLayout>
 
                 </LinearLayout>
-
-
-                <!--
-                                <LinearLayout
-                                    android:id="@+id/layoutData7"
-                                    android:orientation="vertical"
-                                    app:layout_constraintTop_toBottomOf="@+id/layoutData6"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content">
-                                    <LinearLayout
-                                        android:orientation="horizontal"
-                                        android:weightSum="2"
-                                        android:layout_marginTop="10dp"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="50dp">
-
-                                        <EditText
-                                            android:id="@+id/et7"
-                                            android:layout_weight="1.4"
-                                            android:inputType="numberDecimal"
-                                            android:padding="5dp"
-                                            android:layout_marginLeft="10dp"
-                                            android:layout_marginRight="10dp"
-                                            android:background="@drawable/shape_edittext_rounded"
-                                            android:layout_width="80dp"
-                                            android:layout_height="48dp"/>
-
-
-                                    </LinearLayout>
-
-                                </LinearLayout>
-                -->
-
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -639,7 +611,5 @@
         </androidx.cardview.widget.CardView>
 
     </ScrollView>
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

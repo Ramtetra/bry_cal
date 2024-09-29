@@ -30,8 +30,7 @@
     <string name="total_electric">Total Electric</string>
     <string name="service_factor">Service Factor(%)</string>
     <string name="running_hrs">Running HRS/DAY</string>
-    <string name="no_of_work">No. of work ing days</string>
-
+    <string name="no_of_work">Working days</string>
 
     <style name="CustomTextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
         <item name="android:layout_height">70dp</item>

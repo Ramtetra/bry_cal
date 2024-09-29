@@ -52,6 +52,7 @@
                 android:text="I am an Air Engineer"
                 android:textSize="16sp"
                 android:paddingTop="7dp"
+                android:textColor="#1E2A6E"
                 android:fontFamily="@font/poppins_bold"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
@@ -79,9 +80,10 @@
                     android:layout_height="65dp">
                     <LinearLayout
                         android:weightSum="1"
+                        android:layout_weight="1"
                         android:layout_margin="5dp"
                         android:background="@drawable/shape_border_radius"
-                        android:layout_width="165dp"
+                        android:layout_width="0dp"
                         android:layout_height="55dp">
                         <TextView
                             android:layout_weight="0.5"
@@ -108,8 +110,9 @@
                     <LinearLayout
                         android:weightSum="1"
                         android:layout_margin="5dp"
+                        android:layout_weight="1"
                         android:background="@drawable/shape_border_radius"
-                        android:layout_width="165dp"
+                        android:layout_width="0dp"
                         android:layout_height="55dp">
 
                         <TextView
@@ -151,8 +154,9 @@
                     <LinearLayout
                         android:weightSum="1"
                         android:layout_margin="5dp"
+                        android:layout_weight="1"
                         android:background="@drawable/shape_border_radius"
-                        android:layout_width="165dp"
+                        android:layout_width="0dp"
                         android:layout_height="55dp">
 
                         <TextView
@@ -174,15 +178,16 @@
                             android:layout_marginRight="10dp"
                             android:layout_gravity="center"
                             android:src="@drawable/unit_converter_icon"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"/>
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"/>
 
                     </LinearLayout>
                     <LinearLayout
                         android:weightSum="1"
                         android:layout_margin="5dp"
+                        android:layout_weight="1"
                         android:background="@drawable/shape_border_radius"
-                        android:layout_width="165dp"
+                        android:layout_width="0dp"
                         android:layout_height="55dp">
                         <TextView
                             android:layout_weight="0.5"
@@ -223,8 +228,9 @@
                     <LinearLayout
                         android:weightSum="1"
                         android:layout_margin="5dp"
+                        android:layout_weight="1"
                         android:background="@drawable/shape_border_radius"
-                        android:layout_width="165dp"
+                        android:layout_width="0dp"
                         android:layout_height="55dp">
                         <TextView
                             android:layout_weight="0.5"
@@ -240,6 +246,7 @@
                             android:textSize="16sp" />
                         <ImageView
                             android:layout_weight="0.5"
+                            android:layout_marginRight="5dp"
                             android:layout_gravity="center"
                             android:layout_marginLeft="5dp"
                             android:src="@drawable/co2_icon"
@@ -250,8 +257,9 @@
                     <LinearLayout
                         android:weightSum="1"
                         android:layout_margin="5dp"
+                        android:layout_weight="1"
                         android:background="@drawable/shape_border_radius"
-                        android:layout_width="165dp"
+                        android:layout_width="0dp"
                         android:layout_height="55dp">
                         <TextView
                             android:layout_weight="0.5"
