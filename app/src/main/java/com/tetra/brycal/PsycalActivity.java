@@ -226,7 +226,7 @@ public class PsycalActivity extends AppCompatActivity {
                             binding.et3.setText(String.valueOf(result.getRelH()));
                             isUpdatingThird=false;
                             isUpdatingSix=true;
-                            binding.et6.setText(String.valueOf(result.getEnth()));
+                            binding.et6.setText(String.valueOf(result.getAbsHum()));
                             isUpdatingSix=false;
                             isUpdatingFive=true;
                             binding.et5.setText(String.valueOf(result.getDensity()));

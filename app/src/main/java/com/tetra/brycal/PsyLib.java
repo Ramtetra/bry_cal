@@ -199,13 +199,22 @@ public class PsyLib {
         double tDensity = 0;
         double tAbsHum = 0;
         int errCode = 0;
+        double temp_tdbt=0;
+        double Temp_tEnthalpy=0;
+        double temp_tAbsHum=0;
 
         if (units != 0) {
             // Perform calculations
-            tdbt=tdbt+273.15;
-            tAbsHum=tEnthalpy-(1.006*tdbt)/2442+(1.92*tdbt);
-            //tEnthalpy=tEnthalpy/2.326+7.712;
-          //  tAbsHum = (tEnthalpy - 0.24 * tdbt) / (1061 + 0.444 * tdbt) * 7000;
+
+            temp_tdbt = tdbt * 9 / 5 + 32;
+            Temp_tEnthalpy = tEnthalpy / 2.326 + 7.712;
+
+            temp_tAbsHum=(Temp_tEnthalpy-0.24 * temp_tdbt)/(1061 + 0.444 * temp_tdbt) *7000;
+
+            tdbt = (temp_tdbt - 32) * 5 / 9;
+
+            tAbsHum=temp_tAbsHum/7;
+
             tDensity = codeTranslation.LCSI_DEWPOINT(tAbsHum, tAlt);
             tWbt = codeTranslation.LCSI_WETBULB(tdbt, tAbsHum, tAlt);
             tRelH = codeTranslation.LCSI_RH(tdbt, tAbsHum, tAlt);
