@@ -43,7 +43,7 @@ public class Co2Activity extends AppCompatActivity {
                    double et2Value= Double.parseDouble(binding.et2.getText().toString());
                    double et3Value= Double.parseDouble(binding.et3.getText().toString());
                    double et4Value= Double.parseDouble(binding.et4.getText().toString());
-                   double totalKwh=et1Value+et2Value+et3Value+et4Value;
+                   double totalKwh=(et1Value*et2Value*et3Value*et4Value)/1000;
                    double commValue=(totalKwh*Float.parseFloat(region))/1000;
                    BigDecimal num1 = new BigDecimal(totalKwh);
                    BigDecimal roundedValue1 = num1.setScale(1, RoundingMode.HALF_UP); // Returns 12.35
