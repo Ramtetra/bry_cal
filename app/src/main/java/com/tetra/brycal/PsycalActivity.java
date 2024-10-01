@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
+import android.widget.Toast;
 
 import com.tetra.brycal.databinding.ActivityPsycalBinding;
 import com.tetra.brycal.model.CalculationResult2;
@@ -130,6 +131,12 @@ public class PsycalActivity extends AppCompatActivity {
              @Override
              public void onTextChanged(CharSequence s, int start, int before, int count) {
                  try {
+                     if (s.length() > 0 && binding.et1.getText().toString().trim().isEmpty()) {
+                         binding.et1.setError("Please enter first field value");
+                         Toast.makeText(PsycalActivity.this, "Please enter first field value", Toast.LENGTH_SHORT).show();
+                     } else {
+                         binding.et1.setError(null);  // Clear the error once the condition is met
+                     }
                      if (!isUpdatingSecond) {
                          isUpdatingSecond = true; // Prevent recursion*/
                          double firstValue = Double.parseDouble(binding.et1.getText().toString());
@@ -149,6 +156,7 @@ public class PsycalActivity extends AppCompatActivity {
                              isUpdatingSix = true;
                              binding.et6.setText(String.valueOf(result.getAbsHum()));
                              isUpdatingSix = false;
+
                          }
                          isUpdatingSecond = false; // Reset flag in case of exception
                      }
@@ -171,6 +179,12 @@ public class PsycalActivity extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 try {
+                    if (s.length() > 0 && binding.et1.getText().toString().trim().isEmpty()) {
+                        binding.et1.setError("Please enter first field value");
+                        Toast.makeText(PsycalActivity.this, "Please enter first field value", Toast.LENGTH_SHORT).show();
+                    } else {
+                        binding.et1.setError(null);  // Clear the error once the condition is met
+                    }
                      if (!isUpdatingThird) {
                          isUpdatingThird = true; // Prevent recursion*//*
                     double firstValue = Double.parseDouble(binding.et1.getText().toString());
@@ -212,6 +226,12 @@ public class PsycalActivity extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 try {
+                    if (s.length() > 0 && binding.et1.getText().toString().trim().isEmpty()) {
+                        binding.et1.setError("Please enter first field value");
+                        Toast.makeText(PsycalActivity.this, "Please enter first field value", Toast.LENGTH_SHORT).show();
+                    } else {
+                        binding.et1.setError(null);  // Clear the error once the condition is met
+                    }
                     if (!isUpdatingFourth) {
                         isUpdatingFourth = true; // Prevent recursion*//*
                         double firstValue = Double.parseDouble(binding.et1.getText().toString());
@@ -254,6 +274,12 @@ public class PsycalActivity extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 try {
+                    if (s.length() > 0 && binding.et1.getText().toString().trim().isEmpty()) {
+                        binding.et1.setError("Please enter first field value");
+                        Toast.makeText(PsycalActivity.this, "Please enter first field value", Toast.LENGTH_SHORT).show();
+                    } else {
+                        binding.et1.setError(null);  // Clear the error once the condition is met
+                    }
                     if (!isUpdatingFive) {
                         isUpdatingFive = true; // Prevent recursion*//*
                         double firstValue = Double.parseDouble(binding.et1.getText().toString());
@@ -295,6 +321,12 @@ public class PsycalActivity extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 try {
+                    if (s.length() > 0 && binding.et1.getText().toString().trim().isEmpty()) {
+                        binding.et1.setError("Please enter first field value");
+                        Toast.makeText(PsycalActivity.this, "Please enter first field value", Toast.LENGTH_SHORT).show();
+                    } else {
+                        binding.et1.setError(null);  // Clear the error once the condition is met
+                    }
                     if (!isUpdatingSix) {
                         isUpdatingSix = true; // Prevent recursion*//*
                         double firstValue = Double.parseDouble(binding.et1.getText().toString());

@@ -42,6 +42,10 @@ public class UnitConverterActivity extends AppCompatActivity {
         binding.cardLength.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                binding.etFrom.setText("");
+                binding.etTo.setText("");
+                binding.etUnitInput.setText(""); // Clear the text
+                binding.etUnitOutput.setText(""); // Clear the text
                 binding.cardLength.setBackgroundColor(getResources().getColor(R.color.dark_blue));
                 binding.cardArea.setBackgroundColor(getResources().getColor(R.color.light_yellow_card));
                 binding.cardVolume.setBackgroundColor(getResources().getColor(R.color.light_yellow_card));
@@ -62,6 +66,10 @@ public class UnitConverterActivity extends AppCompatActivity {
         binding.cardArea.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                binding.etFrom.setText("");
+                binding.etTo.setText("");
+                binding.etUnitInput.setText(""); // Clear the text
+                binding.etUnitOutput.setText(""); // Clear the text
                 binding.cardLength.setBackgroundColor(getResources().getColor(R.color.light_yellow_card));
                 binding.cardArea.setBackgroundColor(getResources().getColor(R.color.dark_blue));
                 binding.cardVolume.setBackgroundColor(getResources().getColor(R.color.light_yellow_card));
@@ -82,6 +90,10 @@ public class UnitConverterActivity extends AppCompatActivity {
         binding.cardVolume.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                binding.etFrom.setText("");
+                binding.etTo.setText("");
+                binding.etUnitInput.setText(""); // Clear the text
+                binding.etUnitOutput.setText(""); // Clear the text
                 binding.cardLength.setBackgroundColor(getResources().getColor(R.color.light_yellow_card));
                 binding.cardArea.setBackgroundColor(getResources().getColor(R.color.light_yellow_card));
                 binding.cardVolume.setBackgroundColor(getResources().getColor(R.color.dark_blue));
@@ -103,6 +115,10 @@ public class UnitConverterActivity extends AppCompatActivity {
         binding.cardTemperature.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                binding.etFrom.setText("");
+                binding.etTo.setText("");
+                binding.etUnitInput.setText(""); // Clear the text
+                binding.etUnitOutput.setText(""); // Clear the text
                 binding.cardLength.setBackgroundColor(getResources().getColor(R.color.light_yellow_card));
                 binding.cardArea.setBackgroundColor(getResources().getColor(R.color.light_yellow_card));
                 binding.cardVolume.setBackgroundColor(getResources().getColor(R.color.light_yellow_card));
@@ -123,6 +139,10 @@ public class UnitConverterActivity extends AppCompatActivity {
         binding.cardPressure.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                binding.etFrom.setText("");
+                binding.etTo.setText("");
+                binding.etUnitInput.setText(""); // Clear the text
+                binding.etUnitOutput.setText(""); // Clear the text
                 binding.cardLength.setBackgroundColor(getResources().getColor(R.color.light_yellow_card));
                 binding.cardArea.setBackgroundColor(getResources().getColor(R.color.light_yellow_card));
                 binding.cardVolume.setBackgroundColor(getResources().getColor(R.color.light_yellow_card));
@@ -144,6 +164,10 @@ public class UnitConverterActivity extends AppCompatActivity {
         binding.cardAirFlow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                binding.etFrom.setText("");
+                binding.etTo.setText("");
+                binding.etUnitInput.setText(""); // Clear the text
+                binding.etUnitOutput.setText(""); // Clear the text
                 binding.cardLength.setBackgroundColor(getResources().getColor(R.color.light_yellow_card));
                 binding.cardArea.setBackgroundColor(getResources().getColor(R.color.light_yellow_card));
                 binding.cardVolume.setBackgroundColor(getResources().getColor(R.color.light_yellow_card));
@@ -164,6 +188,10 @@ public class UnitConverterActivity extends AppCompatActivity {
         binding.cardWeight.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                binding.etFrom.setText("");
+                binding.etTo.setText("");
+                binding.etUnitInput.setText(""); // Clear the text
+                binding.etUnitOutput.setText(""); // Clear the text
                 binding.cardLength.setBackgroundColor(getResources().getColor(R.color.light_yellow_card));
                 binding.cardArea.setBackgroundColor(getResources().getColor(R.color.light_yellow_card));
                 binding.cardVolume.setBackgroundColor(getResources().getColor(R.color.light_yellow_card));
@@ -184,6 +212,10 @@ public class UnitConverterActivity extends AppCompatActivity {
         binding.cardPower.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                binding.etFrom.setText("");
+                binding.etTo.setText("");
+                binding.etUnitInput.setText(""); // Clear the text
+                binding.etUnitOutput.setText(""); // Clear the text
                 binding.cardLength.setBackgroundColor(getResources().getColor(R.color.light_yellow_card));
                 binding.cardArea.setBackgroundColor(getResources().getColor(R.color.light_yellow_card));
                 binding.cardVolume.setBackgroundColor(getResources().getColor(R.color.light_yellow_card));
@@ -204,6 +236,10 @@ public class UnitConverterActivity extends AppCompatActivity {
         binding.cardEnergy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                binding.etFrom.setText("");
+                binding.etTo.setText("");
+                binding.etUnitInput.setText(""); // Clear the text
+                binding.etUnitOutput.setText(""); // Clear the text
                 binding.cardLength.setBackgroundColor(getResources().getColor(R.color.light_yellow_card));
                 binding.cardArea.setBackgroundColor(getResources().getColor(R.color.light_yellow_card));
                 binding.cardVolume.setBackgroundColor(getResources().getColor(R.color.light_yellow_card));
@@ -224,6 +260,10 @@ public class UnitConverterActivity extends AppCompatActivity {
         binding.cardHumidity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                binding.etFrom.setText("");
+                binding.etTo.setText("");
+                binding.etUnitInput.setText(""); // Clear the text
+                binding.etUnitOutput.setText(""); // Clear the text
                 binding.cardLength.setBackgroundColor(getResources().getColor(R.color.light_yellow_card));
                 binding.cardArea.setBackgroundColor(getResources().getColor(R.color.light_yellow_card));
                 binding.cardVolume.setBackgroundColor(getResources().getColor(R.color.light_yellow_card));
@@ -245,17 +285,10 @@ public class UnitConverterActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
               inputUnits=(String) parent.getItemAtPosition(position);
-                  /* if (inputUnits.equalsIgnoreCase("Meter")){
-                 
-               }*/
+            
             }
         });
-     /*   if (binding.etFrom.getText().toString().isEmpty()){
-            Toast.makeText(this, "Empty data", Toast.LENGTH_SHORT).show();
-        }else {
 
-        }*/
-       //
         binding.etUnitOutput.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
