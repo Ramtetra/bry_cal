@@ -227,12 +227,13 @@
                             android:layout_height="wrap_content">
                             <ImageView
                                 android:src="@drawable/length_icon"
+                                android:paddingTop="5dp"
                                 android:layout_gravity="center"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"/>
                             <TextView
                                 android:text="Length"
-                                android:textSize="11sp"
+                                android:textSize="10sp"
                                 android:fontFamily="@font/poppins_medium"
                                 android:textColor="@color/white"
                                 android:layout_gravity="center"
@@ -245,7 +246,7 @@
 
                     <androidx.cardview.widget.CardView
                         android:id="@+id/cardArea"
-                        android:layout_marginLeft="10dp"
+                        android:layout_marginLeft="7dp"
                         app:cardCornerRadius="8dp"
                         android:layout_weight="1"
                         app:layout_constraintLeft_toLeftOf="parent"
@@ -258,13 +259,14 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
                             <ImageView
+                                android:paddingTop="5dp"
                                 android:src="@drawable/area_icon"
                                 android:layout_gravity="center"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"/>
                             <TextView
                                 android:text="Area"
-                                android:textSize="11sp"
+                                android:textSize="10sp"
                                 android:fontFamily="@font/poppins_medium"
                                 android:textColor="@color/white"
                                 android:layout_gravity="center"
@@ -275,7 +277,7 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
-                        android:layout_marginLeft="10dp"
+                        android:layout_marginLeft="7dp"
                         app:cardCornerRadius="8dp"
                         android:layout_weight="1"
                         android:id="@+id/cardVolume"
@@ -289,13 +291,14 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
                             <ImageView
+                                android:paddingTop="5dp"
                                 android:src="@drawable/volume_icon"
                                 android:layout_gravity="center"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"/>
                             <TextView
                                 android:text="Volume"
-                                android:textSize="11sp"
+                                android:textSize="10sp"
                                 android:fontFamily="@font/poppins_medium"
                                 android:textColor="@color/white"
                                 android:layout_gravity="center"
@@ -306,7 +309,7 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
-                        android:layout_marginLeft="10dp"
+                        android:layout_marginLeft="7dp"
                         app:cardCornerRadius="8dp"
                         android:layout_weight="1"
                         android:id="@+id/cardTemperature"
@@ -320,13 +323,14 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
                             <ImageView
+                                android:paddingTop="5dp"
                                 android:src="@drawable/temprature_icon"
                                 android:layout_gravity="center"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"/>
                             <TextView
                                 android:text="Temperature"
-                                android:textSize="11sp"
+                                android:textSize="10sp"
                                 android:fontFamily="@font/poppins_medium"
                                 android:textColor="@color/white"
                                 android:layout_gravity="center"
@@ -360,13 +364,14 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
                             <ImageView
+                                android:paddingTop="5dp"
                                 android:src="@drawable/pressure_icon"
                                 android:layout_gravity="center"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"/>
                             <TextView
                                 android:text="Pressure"
-                                android:textSize="11sp"
+                                android:textSize="10sp"
                                 android:fontFamily="@font/poppins_medium"
                                 android:textColor="@color/white"
                                 android:layout_gravity="center"
@@ -378,7 +383,7 @@
 
 
                     <androidx.cardview.widget.CardView
-                        android:layout_marginLeft="10dp"
+                        android:layout_marginLeft="7dp"
                         app:cardCornerRadius="8dp"
                         android:layout_weight="1"
                         android:id="@+id/cardAirFlow"
@@ -394,11 +399,12 @@
                             <ImageView
                                 android:src="@drawable/air_icon"
                                 android:layout_gravity="center"
+                                android:paddingTop="5dp"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"/>
                             <TextView
                                 android:text="Air Flow"
-                                android:textSize="11sp"
+                                android:textSize="10sp"
                                 android:fontFamily="@font/poppins_medium"
                                 android:textColor="@color/white"
                                 android:layout_gravity="center"
@@ -409,7 +415,7 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
-                        android:layout_marginLeft="10dp"
+                        android:layout_marginLeft="7dp"
                         app:cardCornerRadius="8dp"
                         android:layout_weight="1"
                         android:id="@+id/cardWeight"
@@ -423,13 +429,14 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
                             <ImageView
+                                android:paddingTop="5dp"
                                 android:src="@drawable/weight_icon"
                                 android:layout_gravity="center"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"/>
                             <TextView
                                 android:text="Weight"
-                                android:textSize="11sp"
+                                android:textSize="10sp"
                                 android:fontFamily="@font/poppins_medium"
                                 android:textColor="@color/white"
                                 android:layout_gravity="center"
@@ -440,7 +447,7 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
-                        android:layout_marginLeft="10dp"
+                        android:layout_marginLeft="7dp"
                         app:cardCornerRadius="8dp"
                         android:layout_weight="1"
                         android:id="@+id/cardPower"
@@ -454,13 +461,14 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
                             <ImageView
+                                android:paddingTop="5dp"
                                 android:src="@drawable/power_icon"
                                 android:layout_gravity="center"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"/>
                             <TextView
                                 android:text="Power"
-                                android:textSize="11sp"
+                                android:textSize="10sp"
                                 android:fontFamily="@font/poppins_medium"
                                 android:textColor="@color/white"
                                 android:layout_gravity="center"
@@ -495,13 +503,14 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
                             <ImageView
+                                android:paddingTop="5dp"
                                 android:src="@drawable/energy_icon"
                                 android:layout_gravity="center"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"/>
                             <TextView
                                 android:text="Energy"
-                                android:textSize="11sp"
+                                android:textSize="10sp"
                                 android:fontFamily="@font/poppins_medium"
                                 android:textColor="@color/white"
                                 android:layout_gravity="center"
@@ -513,7 +522,7 @@
 
 
                     <androidx.cardview.widget.CardView
-                        android:layout_marginLeft="10dp"
+                        android:layout_marginLeft="7dp"
                         app:cardCornerRadius="8dp"
                         android:id="@+id/cardHumidity"
                         android:layout_weight="0.32"
@@ -527,13 +536,14 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
                             <ImageView
+                                android:paddingTop="5dp"
                                 android:src="@drawable/humidiy_icon"
                                 android:layout_gravity="center"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"/>
                             <TextView
                                 android:text="Humidity"
-                                android:textSize="11sp"
+                                android:textSize="10sp"
                                 android:fontFamily="@font/poppins_medium"
                                 android:textColor="@color/white"
                                 android:layout_gravity="center"
